@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cd gemdir
+bundle install

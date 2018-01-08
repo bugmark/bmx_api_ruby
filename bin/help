@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+JARFILE=~/.codegen/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar 
+
+java -jar $JARFILE help generate
+
+java -jar $JARFILE config-help -l ruby

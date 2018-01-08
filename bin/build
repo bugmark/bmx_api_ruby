@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd gemdir
+rm -f *gem
+gem build bmx_ruby.gemspec

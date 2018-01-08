@@ -1,0 +1,9 @@
+{
+  "gemName":        "bmx_ruby",
+  "moduleName":     "BmxRuby",
+  "gemHomepage":    "https://github.com/bugmark/bmx_ruby",
+  "gemDescription": "Ruby bindings for BugMark Exchange",
+  "gemAuthor":      "Andrew Leak",
+  "gemAuthorEmail": "andy@r210.com",
+  "gemLicense":     "Nonstandard"
+}

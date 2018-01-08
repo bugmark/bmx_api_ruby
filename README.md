@@ -1,2 +1,4 @@
 # bmx_ruby
-Bugmark exchange / Ruby bindings
+
+Ruby bindings for BugMark exchange.
+
