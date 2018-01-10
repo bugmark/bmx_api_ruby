@@ -11,5 +11,5 @@ java -jar $JAR1/$JAR2 generate \
      -o gemdir \
      -a "Basic  sadfsdf" \
      -l ruby \
-     -c bin/Config.json
+     -c script/Config.json
 
