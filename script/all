@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-script/clean && script/gen && script/run_bundle && script/build && script/install
+# script/clean && script/gen && script/run_bundle && script/build && script/install
+
+script/gen && script/run_bundle && script/build && script/install
 
