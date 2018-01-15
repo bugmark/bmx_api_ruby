@@ -1,4 +1,4 @@
-# BmxRuby::EventsApi
+# BmxApiRuby::EventsApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -18,15 +18,15 @@ Return events
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::EventsApi.new
+api_instance = BmxApiRuby::EventsApi.new
 
 opts = { 
   after: 56 # Integer | <cursor> an event-ID
@@ -36,7 +36,7 @@ begin
   #Return events
   result = api_instance.get_events(opts)
   p result
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling EventsApi->get_events: #{e}"
 end
 ```
@@ -72,15 +72,15 @@ Update an event
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::EventsApi.new
+api_instance = BmxApiRuby::EventsApi.new
 
 id = 56 # Integer | 
 
@@ -91,7 +91,7 @@ begin
   #Update an event
   result = api_instance.put_events(id, etherscan_url)
   p result
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling EventsApi->put_events: #{e}"
 end
 ```

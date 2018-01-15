@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd gemdir
-gem install bmx_ruby-1.0.0.gem
+gem install bmx_api_ruby-1.0.0.gem

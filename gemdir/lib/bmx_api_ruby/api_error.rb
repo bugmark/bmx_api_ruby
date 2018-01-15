@@ -10,7 +10,7 @@ Swagger Codegen version: 2.3.0
 
 =end
 
-module BmxRuby
+module BmxApiRuby
   class ApiError < StandardError
     attr_reader :code, :response_headers, :response_body
 

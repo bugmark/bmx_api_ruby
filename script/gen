@@ -9,7 +9,7 @@ development=http://localhost:3000/api/v1/docs
 java -jar $JAR1/$JAR2 generate \
      -i $development \
      -o gemdir \
-     -a "Basic  sadfsdf" \
+     -a "Basic" \
      -l ruby \
      -c script/Config.json
 

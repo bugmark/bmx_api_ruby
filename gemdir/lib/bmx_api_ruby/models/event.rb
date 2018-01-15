@@ -12,7 +12,7 @@ Swagger Codegen version: 2.3.0
 
 require 'date'
 
-module BmxRuby
+module BmxApiRuby
   # Update an event
   class Event
     # Sequential ID
@@ -219,7 +219,7 @@ module BmxRuby
           end
         end
       else # model
-        temp_model = BmxRuby.const_get(type).new
+        temp_model = BmxApiRuby.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end

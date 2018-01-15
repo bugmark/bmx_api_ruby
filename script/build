@@ -2,4 +2,4 @@
 
 cd gemdir
 rm -f *gem
-gem build bmx_ruby.gemspec
+gem build bmx_api_ruby.gemspec

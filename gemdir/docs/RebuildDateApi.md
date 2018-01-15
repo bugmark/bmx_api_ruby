@@ -1,4 +1,4 @@
-# BmxRuby::RebuildDateApi
+# BmxApiRuby::RebuildDateApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -17,20 +17,20 @@ Return the system rebuild time
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::RebuildDateApi.new
+api_instance = BmxApiRuby::RebuildDateApi.new
 
 begin
   #Return the system rebuild time
   api_instance.get_rebuild_date
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling RebuildDateApi->get_rebuild_date: #{e}"
 end
 ```

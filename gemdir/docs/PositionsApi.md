@@ -1,4 +1,4 @@
-# BmxRuby::PositionsApi
+# BmxApiRuby::PositionsApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -17,20 +17,20 @@ Return all positions
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::PositionsApi.new
+api_instance = BmxApiRuby::PositionsApi.new
 
 begin
   #Return all positions
   api_instance.get_positions
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling PositionsApi->get_positions: #{e}"
 end
 ```

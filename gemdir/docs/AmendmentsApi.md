@@ -1,4 +1,4 @@
-# BmxRuby::AmendmentsApi
+# BmxApiRuby::AmendmentsApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -17,20 +17,20 @@ Return all amendments
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::AmendmentsApi.new
+api_instance = BmxApiRuby::AmendmentsApi.new
 
 begin
   #Return all amendments
   api_instance.get_amendments
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling AmendmentsApi->get_amendments: #{e}"
 end
 ```

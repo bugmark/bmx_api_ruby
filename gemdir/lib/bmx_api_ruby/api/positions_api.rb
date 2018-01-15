@@ -12,33 +12,33 @@ Swagger Codegen version: 2.3.0
 
 require "uri"
 
-module BmxRuby
-  class RebuildDateApi
+module BmxApiRuby
+  class PositionsApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
 
-    # Return the system rebuild time
-    # Return the system rebuild time
+    # Return all positions
+    # Return all positions
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def get_rebuild_date(opts = {})
-      get_rebuild_date_with_http_info(opts)
+    def get_positions(opts = {})
+      get_positions_with_http_info(opts)
       return nil
     end
 
-    # Return the system rebuild time
-    # Return the system rebuild time
+    # Return all positions
+    # Return all positions
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def get_rebuild_date_with_http_info(opts = {})
+    def get_positions_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: RebuildDateApi.get_rebuild_date ..."
+        @api_client.config.logger.debug "Calling API: PositionsApi.get_positions ..."
       end
       # resource path
-      local_var_path = "/rebuild_date"
+      local_var_path = "/positions"
 
       # query parameters
       query_params = {}
@@ -61,7 +61,7 @@ module BmxRuby
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: RebuildDateApi#get_rebuild_date\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: PositionsApi#get_positions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

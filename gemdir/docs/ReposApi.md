@@ -1,4 +1,4 @@
-# BmxRuby::ReposApi
+# BmxApiRuby::ReposApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -17,20 +17,20 @@ Return all repos
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::ReposApi.new
+api_instance = BmxApiRuby::ReposApi.new
 
 begin
   #Return all repos
   api_instance.get_repos
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling ReposApi->get_repos: #{e}"
 end
 ```

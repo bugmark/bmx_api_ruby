@@ -12,7 +12,7 @@ Swagger Codegen version: 2.3.0
 
 require "uri"
 
-module BmxRuby
+module BmxApiRuby
   class OffersApi
     attr_accessor :api_client
 

@@ -10,6 +10,6 @@ Swagger Codegen version: 2.3.0
 
 =end
 
-module BmxRuby
+module BmxApiRuby
   VERSION = "1.0.0"
 end

@@ -13,15 +13,15 @@ Swagger Codegen version: 2.3.0
 =end
 
 $:.push File.expand_path("../lib", __FILE__)
-require "bmx_ruby/version"
+require "bmx_api_ruby/version"
 
 Gem::Specification.new do |s|
-  s.name        = "bmx_ruby"
-  s.version     = BmxRuby::VERSION
+  s.name        = "bmx_api_ruby"
+  s.version     = BmxApiRuby::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Andrew Leak"]
   s.email       = ["andy@r210.com"]
-  s.homepage    = "https://github.com/bugmark/bmx_ruby"
+  s.homepage    = "https://github.com/bugmark/bmx_api_ruby"
   s.summary     = "Bugmark API Ruby Gem"
   s.description = "Ruby bindings for BugMark Exchange"
   s.license     = "Nonstandard"

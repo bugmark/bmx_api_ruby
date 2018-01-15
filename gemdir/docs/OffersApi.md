@@ -1,4 +1,4 @@
-# BmxRuby::OffersApi
+# BmxApiRuby::OffersApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -17,20 +17,20 @@ Return all offers
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::OffersApi.new
+api_instance = BmxApiRuby::OffersApi.new
 
 begin
   #Return all offers
   api_instance.get_offers
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling OffersApi->get_offers: #{e}"
 end
 ```

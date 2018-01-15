@@ -1,4 +1,4 @@
-# BmxRuby::ContractsApi
+# BmxApiRuby::ContractsApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
@@ -17,20 +17,20 @@ Return all contracts
 ### Example
 ```ruby
 # load the gem
-require 'bmx_ruby'
+require 'bmx_api_ruby'
 # setup authorization
-BmxRuby.configure do |config|
+BmxApiRuby.configure do |config|
   # Configure HTTP basic authorization: base
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxRuby::ContractsApi.new
+api_instance = BmxApiRuby::ContractsApi.new
 
 begin
   #Return all contracts
   api_instance.get_contracts
-rescue BmxRuby::ApiError => e
+rescue BmxApiRuby::ApiError => e
   puts "Exception when calling ContractsApi->get_contracts: #{e}"
 end
 ```

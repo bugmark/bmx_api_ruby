@@ -12,33 +12,33 @@ Swagger Codegen version: 2.3.0
 
 require "uri"
 
-module BmxRuby
-  class IssuesApi
+module BmxApiRuby
+  class AmendmentsApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
 
-    # Return all bugs
-    # Return all bugs
+    # Return all amendments
+    # Return all amendments
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def get_issues(opts = {})
-      get_issues_with_http_info(opts)
+    def get_amendments(opts = {})
+      get_amendments_with_http_info(opts)
       return nil
     end
 
-    # Return all bugs
-    # Return all bugs
+    # Return all amendments
+    # Return all amendments
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def get_issues_with_http_info(opts = {})
+    def get_amendments_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues ..."
+        @api_client.config.logger.debug "Calling API: AmendmentsApi.get_amendments ..."
       end
       # resource path
-      local_var_path = "/issues"
+      local_var_path = "/amendments"
 
       # query parameters
       query_params = {}
@@ -61,7 +61,7 @@ module BmxRuby
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: IssuesApi#get_issues\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AmendmentsApi#get_amendments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

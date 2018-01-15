@@ -1,4 +1,4 @@
-# BmxRuby::Event
+# BmxApiRuby::Event
 
 ## Properties
 Name | Type | Description | Notes

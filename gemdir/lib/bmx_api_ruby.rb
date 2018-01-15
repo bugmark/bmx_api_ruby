@@ -11,28 +11,28 @@ Swagger Codegen version: 2.3.0
 =end
 
 # Common files
-require 'bmx_ruby/api_client'
-require 'bmx_ruby/api_error'
-require 'bmx_ruby/version'
-require 'bmx_ruby/configuration'
+require 'bmx_api_ruby/api_client'
+require 'bmx_api_ruby/api_error'
+require 'bmx_api_ruby/version'
+require 'bmx_api_ruby/configuration'
 
 # Models
-require 'bmx_ruby/models/event'
+require 'bmx_api_ruby/models/event'
 
 # APIs
-require 'bmx_ruby/api/amendments_api'
-require 'bmx_ruby/api/contracts_api'
-require 'bmx_ruby/api/events_api'
-require 'bmx_ruby/api/issues_api'
-require 'bmx_ruby/api/offers_api'
-require 'bmx_ruby/api/positions_api'
-require 'bmx_ruby/api/rebuild_date_api'
-require 'bmx_ruby/api/repos_api'
+require 'bmx_api_ruby/api/amendments_api'
+require 'bmx_api_ruby/api/contracts_api'
+require 'bmx_api_ruby/api/events_api'
+require 'bmx_api_ruby/api/issues_api'
+require 'bmx_api_ruby/api/offers_api'
+require 'bmx_api_ruby/api/positions_api'
+require 'bmx_api_ruby/api/rebuild_date_api'
+require 'bmx_api_ruby/api/repos_api'
 
-module BmxRuby
+module BmxApiRuby
   class << self
     # Customize default settings for the SDK using block.
-    #   BmxRuby.configure do |config|
+    #   BmxApiRuby.configure do |config|
     #     config.username = "xxx"
     #     config.password = "xxx"
     #   end
