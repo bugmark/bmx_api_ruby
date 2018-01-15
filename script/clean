@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
 rm -rf gemdir
+rm -rf docs
+rm -rf lib
+rm -rf spec
+rm -rf Gem*
+rm -rf Rake*
+rm -rf bmx_api*
+rm -rf git_push*
+
