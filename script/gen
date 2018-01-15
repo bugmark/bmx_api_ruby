@@ -10,5 +10,5 @@ java -jar $JAR1/$JAR2 generate \
      -i $development \
      -a "Basic" \
      -l ruby \
-     -c script/Config.json
+     -c script/_config.json
 
