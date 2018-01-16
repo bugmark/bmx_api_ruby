@@ -18,6 +18,9 @@ require 'bmx_api_ruby/configuration'
 
 # Models
 require 'bmx_api_ruby/models/event'
+require 'bmx_api_ruby/models/status'
+require 'bmx_api_ruby/models/user_detail'
+require 'bmx_api_ruby/models/user_overview'
 
 # APIs
 require 'bmx_api_ruby/api/amendments_api'
@@ -29,6 +32,7 @@ require 'bmx_api_ruby/api/ping_api'
 require 'bmx_api_ruby/api/positions_api'
 require 'bmx_api_ruby/api/rebuild_date_api'
 require 'bmx_api_ruby/api/repos_api'
+require 'bmx_api_ruby/api/users_api'
 
 module BmxApiRuby
   class << self

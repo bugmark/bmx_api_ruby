@@ -23,16 +23,16 @@ module BmxApiRuby
     # Check server access
     # Check server access
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Status]
     def get_ping(opts = {})
-      get_ping_with_http_info(opts)
-      return nil
+      data, _status_code, _headers = get_ping_with_http_info(opts)
+      return data
     end
 
     # Check server access
     # Check server access
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
     def get_ping_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PingApi.get_ping ..."
@@ -59,7 +59,8 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Status')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PingApi#get_ping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

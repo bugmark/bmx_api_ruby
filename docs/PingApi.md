@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_ping**
-> get_ping
+> Status get_ping
 
 Check server access
 
@@ -29,7 +29,8 @@ api_instance = BmxApiRuby::PingApi.new
 
 begin
   #Check server access
-  api_instance.get_ping
+  result = api_instance.get_ping
+  p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling PingApi->get_ping: #{e}"
 end
@@ -40,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-nil (empty response body)
+[**Status**](Status.md)
 
 ### Authorization
 

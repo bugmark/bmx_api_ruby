@@ -88,11 +88,17 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | Return all positions
 *BmxApiRuby::RebuildDateApi* | [**get_rebuild_date**](docs/RebuildDateApi.md#get_rebuild_date) | **GET** /rebuild_date | Return the system rebuild time
 *BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | Return all repos
+*BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List users
+*BmxApiRuby::UsersApi* | [**get_users_usermail**](docs/UsersApi.md#get_users_usermail) | **GET** /users/{usermail} | Show user detail
+*BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user
 
 
 ## Documentation for Models
 
  - [BmxApiRuby::Event](docs/Event.md)
+ - [BmxApiRuby::Status](docs/Status.md)
+ - [BmxApiRuby::UserDetail](docs/UserDetail.md)
+ - [BmxApiRuby::UserOverview](docs/UserOverview.md)
 
 
 ## Documentation for Authorization

@@ -36,7 +36,7 @@ describe 'PingApi' do
   # Check server access
   # Check server access
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [Status]
   describe 'get_ping test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
