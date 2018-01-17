@@ -18,6 +18,8 @@ require 'bmx_api_ruby/configuration'
 
 # Models
 require 'bmx_api_ruby/models/event'
+require 'bmx_api_ruby/models/issue_detail'
+require 'bmx_api_ruby/models/issue_overview'
 require 'bmx_api_ruby/models/repo_detail'
 require 'bmx_api_ruby/models/repo_overview'
 require 'bmx_api_ruby/models/status'

@@ -20,19 +20,19 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # Return all bugs
-    # Return all bugs
+    # List all issues
+    # List all issues
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Array<IssueOverview>]
     def get_issues(opts = {})
-      get_issues_with_http_info(opts)
-      return nil
+      data, _status_code, _headers = get_issues_with_http_info(opts)
+      return data
     end
 
-    # Return all bugs
-    # Return all bugs
+    # List all issues
+    # List all issues
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Array<IssueOverview>, Fixnum, Hash)>] Array<IssueOverview> data, response status code and response headers
     def get_issues_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: IssuesApi.get_issues ..."
@@ -59,9 +59,63 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Array<IssueOverview>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: IssuesApi#get_issues\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show issue detail
+    # Show issue detail
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [IssueDetail]
+    def get_issues_uuid(uuid, opts = {})
+      data, _status_code, _headers = get_issues_uuid_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show issue detail
+    # Show issue detail
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers
+    def get_issues_uuid_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_uuid ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling IssuesApi.get_issues_uuid"
+      end
+      # resource path
+      local_var_path = "/issues/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IssueDetail')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: IssuesApi#get_issues_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

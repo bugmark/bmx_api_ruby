@@ -82,7 +82,8 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::ContractsApi* | [**get_contracts**](docs/ContractsApi.md#get_contracts) | **GET** /contracts | Return all contracts
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
 *BmxApiRuby::EventsApi* | [**put_events**](docs/EventsApi.md#put_events) | **PUT** /events | Update an event
-*BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | Return all bugs
+*BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
+*BmxApiRuby::IssuesApi* | [**get_issues_uuid**](docs/IssuesApi.md#get_issues_uuid) | **GET** /issues/{uuid} | Show issue detail
 *BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | Return all offers
 *BmxApiRuby::PingApi* | [**get_ping**](docs/PingApi.md#get_ping) | **GET** /ping | Check server access
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | Return all positions
@@ -99,6 +100,8 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [BmxApiRuby::Event](docs/Event.md)
+ - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
+ - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)
  - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
  - [BmxApiRuby::RepoOverview](docs/RepoOverview.md)
  - [BmxApiRuby::Status](docs/Status.md)
