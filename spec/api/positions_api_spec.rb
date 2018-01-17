@@ -33,11 +33,23 @@ describe 'PositionsApi' do
   end
 
   # unit tests for get_positions
-  # Return all positions
-  # Return all positions
+  # List all positions
+  # List all positions
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [Array<PositionOverview>]
   describe 'get_positions test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_positions_uuid
+  # Show position detail
+  # Show position detail
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [PositionDetail]
+  describe 'get_positions_uuid test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

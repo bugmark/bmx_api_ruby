@@ -33,11 +33,23 @@ describe 'OffersApi' do
   end
 
   # unit tests for get_offers
-  # Return all offers
-  # Return all offers
+  # List all offers
+  # List all offers
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [Array<OfferOverview>]
   describe 'get_offers test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_offers_uuid
+  # Show offer detail
+  # Show offer detail
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [OfferDetail]
+  describe 'get_offers_uuid test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

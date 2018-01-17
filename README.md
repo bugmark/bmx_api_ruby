@@ -61,13 +61,14 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::AmendmentsApi.new
+api_instance = BmxApiRuby::ContractsApi.new
 
 begin
-  #Return all amendments
-  api_instance.get_amendments
+  #List all contracts
+  result = api_instance.get_contracts
+  p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling AmendmentsApi->get_amendments: #{e}"
+  puts "Exception when calling ContractsApi->get_contracts: #{e}"
 end
 
 ```
@@ -78,15 +79,17 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BmxApiRuby::AmendmentsApi* | [**get_amendments**](docs/AmendmentsApi.md#get_amendments) | **GET** /amendments | Return all amendments
-*BmxApiRuby::ContractsApi* | [**get_contracts**](docs/ContractsApi.md#get_contracts) | **GET** /contracts | Return all contracts
+*BmxApiRuby::ContractsApi* | [**get_contracts**](docs/ContractsApi.md#get_contracts) | **GET** /contracts | List all contracts
+*BmxApiRuby::ContractsApi* | [**get_contracts_uuid**](docs/ContractsApi.md#get_contracts_uuid) | **GET** /contracts/{uuid} | Show contract detail
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
 *BmxApiRuby::EventsApi* | [**put_events**](docs/EventsApi.md#put_events) | **PUT** /events | Update an event
 *BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
 *BmxApiRuby::IssuesApi* | [**get_issues_uuid**](docs/IssuesApi.md#get_issues_uuid) | **GET** /issues/{uuid} | Show issue detail
-*BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | Return all offers
+*BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
+*BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
 *BmxApiRuby::PingApi* | [**get_ping**](docs/PingApi.md#get_ping) | **GET** /ping | Check server access
-*BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | Return all positions
+*BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | List all positions
+*BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
 *BmxApiRuby::RebuildDateApi* | [**get_rebuild_date**](docs/RebuildDateApi.md#get_rebuild_date) | **GET** /rebuild_date | Return the system rebuild time
 *BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repos
 *BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
@@ -99,9 +102,15 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [BmxApiRuby::ContractDetail](docs/ContractDetail.md)
+ - [BmxApiRuby::ContractOverview](docs/ContractOverview.md)
  - [BmxApiRuby::Event](docs/Event.md)
  - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
  - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)
+ - [BmxApiRuby::OfferDetail](docs/OfferDetail.md)
+ - [BmxApiRuby::OfferOverview](docs/OfferOverview.md)
+ - [BmxApiRuby::PositionDetail](docs/PositionDetail.md)
+ - [BmxApiRuby::PositionOverview](docs/PositionOverview.md)
  - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
  - [BmxApiRuby::RepoOverview](docs/RepoOverview.md)
  - [BmxApiRuby::Status](docs/Status.md)

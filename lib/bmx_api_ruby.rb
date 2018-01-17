@@ -17,9 +17,15 @@ require 'bmx_api_ruby/version'
 require 'bmx_api_ruby/configuration'
 
 # Models
+require 'bmx_api_ruby/models/contract_detail'
+require 'bmx_api_ruby/models/contract_overview'
 require 'bmx_api_ruby/models/event'
 require 'bmx_api_ruby/models/issue_detail'
 require 'bmx_api_ruby/models/issue_overview'
+require 'bmx_api_ruby/models/offer_detail'
+require 'bmx_api_ruby/models/offer_overview'
+require 'bmx_api_ruby/models/position_detail'
+require 'bmx_api_ruby/models/position_overview'
 require 'bmx_api_ruby/models/repo_detail'
 require 'bmx_api_ruby/models/repo_overview'
 require 'bmx_api_ruby/models/status'
@@ -27,7 +33,6 @@ require 'bmx_api_ruby/models/user_detail'
 require 'bmx_api_ruby/models/user_overview'
 
 # APIs
-require 'bmx_api_ruby/api/amendments_api'
 require 'bmx_api_ruby/api/contracts_api'
 require 'bmx_api_ruby/api/events_api'
 require 'bmx_api_ruby/api/issues_api'

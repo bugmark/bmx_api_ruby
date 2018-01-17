@@ -20,19 +20,19 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # Return all offers
-    # Return all offers
+    # List all offers
+    # List all offers
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Array<OfferOverview>]
     def get_offers(opts = {})
-      get_offers_with_http_info(opts)
-      return nil
+      data, _status_code, _headers = get_offers_with_http_info(opts)
+      return data
     end
 
-    # Return all offers
-    # Return all offers
+    # List all offers
+    # List all offers
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Array<OfferOverview>, Fixnum, Hash)>] Array<OfferOverview> data, response status code and response headers
     def get_offers_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: OffersApi.get_offers ..."
@@ -59,9 +59,63 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Array<OfferOverview>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OffersApi#get_offers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show offer detail
+    # Show offer detail
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [OfferDetail]
+    def get_offers_uuid(uuid, opts = {})
+      data, _status_code, _headers = get_offers_uuid_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show offer detail
+    # Show offer detail
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OfferDetail, Fixnum, Hash)>] OfferDetail data, response status code and response headers
+    def get_offers_uuid_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: OffersApi.get_offers_uuid ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling OffersApi.get_offers_uuid"
+      end
+      # resource path
+      local_var_path = "/offers/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OfferDetail')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OffersApi#get_offers_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

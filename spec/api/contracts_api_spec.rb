@@ -33,11 +33,23 @@ describe 'ContractsApi' do
   end
 
   # unit tests for get_contracts
-  # Return all contracts
-  # Return all contracts
+  # List all contracts
+  # List all contracts
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [Array<ContractOverview>]
   describe 'get_contracts test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_contracts_uuid
+  # Show contract detail
+  # Show contract detail
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [ContractDetail]
+  describe 'get_contracts_uuid test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
