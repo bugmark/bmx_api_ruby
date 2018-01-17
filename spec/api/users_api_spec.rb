@@ -33,8 +33,8 @@ describe 'UsersApi' do
   end
 
   # unit tests for get_users
-  # List users
-  # List users
+  # List all users
+  # List all users
   # @param [Hash] opts the optional parameters
   # @return [Array<UserOverview>]
   describe 'get_users test' do
@@ -63,6 +63,31 @@ describe 'UsersApi' do
   # @param [Hash] opts the optional parameters
   # @return [Status]
   describe 'post_users test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_users_uuid_deposit
+  # Deposit funds
+  # Deposit funds
+  # @param amount 
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [Status]
+  describe 'put_users_uuid_deposit test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_users_uuid_withdraw
+  # Withdraw funds
+  # Withdraw funds
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'put_users_uuid_withdraw test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -87,15 +87,20 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::PingApi* | [**get_ping**](docs/PingApi.md#get_ping) | **GET** /ping | Check server access
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | Return all positions
 *BmxApiRuby::RebuildDateApi* | [**get_rebuild_date**](docs/RebuildDateApi.md#get_rebuild_date) | **GET** /rebuild_date | Return the system rebuild time
-*BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | Return all repos
-*BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List users
+*BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repos
+*BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
+*BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all users
 *BmxApiRuby::UsersApi* | [**get_users_usermail**](docs/UsersApi.md#get_users_usermail) | **GET** /users/{usermail} | Show user detail
 *BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user
+*BmxApiRuby::UsersApi* | [**put_users_uuid_deposit**](docs/UsersApi.md#put_users_uuid_deposit) | **PUT** /users/{uuid}/deposit | Deposit funds
+*BmxApiRuby::UsersApi* | [**put_users_uuid_withdraw**](docs/UsersApi.md#put_users_uuid_withdraw) | **PUT** /users/{uuid}/withdraw | Withdraw funds
 
 
 ## Documentation for Models
 
  - [BmxApiRuby::Event](docs/Event.md)
+ - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
+ - [BmxApiRuby::RepoOverview](docs/RepoOverview.md)
  - [BmxApiRuby::Status](docs/Status.md)
  - [BmxApiRuby::UserDetail](docs/UserDetail.md)
  - [BmxApiRuby::UserOverview](docs/UserOverview.md)

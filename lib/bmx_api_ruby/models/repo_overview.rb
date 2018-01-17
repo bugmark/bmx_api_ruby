@@ -13,28 +13,28 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Deposit funds
-  class Status
-    # Status
-    attr_accessor :status
+  # List all repos
+  class RepoOverview
+    # Repo UUID
+    attr_accessor :uuid
 
-    # Message
-    attr_accessor :message
+    # Repo Name
+    attr_accessor :name
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'status' => :'status',
-        :'message' => :'message'
+        :'uuid' => :'uuid',
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'status' => :'String',
-        :'message' => :'String'
+        :'uuid' => :'String',
+        :'name' => :'String'
       }
     end
 
@@ -46,12 +46,12 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.has_key?(:'uuid')
+        self.uuid = attributes[:'uuid']
       end
 
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
     end
@@ -74,8 +74,8 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          status == o.status &&
-          message == o.message
+          uuid == o.uuid &&
+          name == o.name
     end
 
     # @see the `==` method
@@ -87,7 +87,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, message].hash
+      [uuid, name].hash
     end
 
     # Builds the object from hash

@@ -33,11 +33,23 @@ describe 'ReposApi' do
   end
 
   # unit tests for get_repos
-  # Return all repos
-  # Return all repos
+  # List all repos
+  # List all repos
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [Array<RepoOverview>]
   describe 'get_repos test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_repos_uuid
+  # Show repo detail
+  # Show repo detail
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [RepoDetail]
+  describe 'get_repos_uuid test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

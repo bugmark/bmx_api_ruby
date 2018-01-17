@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-rm -rf gemdir
 rm -rf docs
 rm -rf lib
 rm -rf spec

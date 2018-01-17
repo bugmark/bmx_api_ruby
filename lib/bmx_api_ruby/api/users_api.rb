@@ -20,8 +20,8 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # List users
-    # List users
+    # List all users
+    # List all users
     # @param [Hash] opts the optional parameters
     # @return [Array<UserOverview>]
     def get_users(opts = {})
@@ -29,8 +29,8 @@ module BmxApiRuby
       return data
     end
 
-    # List users
-    # List users
+    # List all users
+    # List all users
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<UserOverview>, Fixnum, Hash)>] Array<UserOverview> data, response status code and response headers
     def get_users_with_http_info(opts = {})
@@ -179,6 +179,122 @@ module BmxApiRuby
         :return_type => 'Status')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#post_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Deposit funds
+    # Deposit funds
+    # @param amount 
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Status]
+    def put_users_uuid_deposit(amount, uuid, opts = {})
+      data, _status_code, _headers = put_users_uuid_deposit_with_http_info(amount, uuid, opts)
+      return data
+    end
+
+    # Deposit funds
+    # Deposit funds
+    # @param amount 
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_users_uuid_deposit_with_http_info(amount, uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.put_users_uuid_deposit ..."
+      end
+      # verify the required parameter 'amount' is set
+      if @api_client.config.client_side_validation && amount.nil?
+        fail ArgumentError, "Missing the required parameter 'amount' when calling UsersApi.put_users_uuid_deposit"
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling UsersApi.put_users_uuid_deposit"
+      end
+      # resource path
+      local_var_path = "/users/{uuid}/deposit".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+      form_params["amount"] = amount
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#put_users_uuid_deposit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Withdraw funds
+    # Withdraw funds
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def put_users_uuid_withdraw(uuid, opts = {})
+      put_users_uuid_withdraw_with_http_info(uuid, opts)
+      return nil
+    end
+
+    # Withdraw funds
+    # Withdraw funds
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def put_users_uuid_withdraw_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.put_users_uuid_withdraw ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling UsersApi.put_users_uuid_withdraw"
+      end
+      # resource path
+      local_var_path = "/users/{uuid}/withdraw".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#put_users_uuid_withdraw\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -20,19 +20,19 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # Return all repos
-    # Return all repos
+    # List all repos
+    # List all repos
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Array<RepoOverview>]
     def get_repos(opts = {})
-      get_repos_with_http_info(opts)
-      return nil
+      data, _status_code, _headers = get_repos_with_http_info(opts)
+      return data
     end
 
-    # Return all repos
-    # Return all repos
+    # List all repos
+    # List all repos
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Array<RepoOverview>, Fixnum, Hash)>] Array<RepoOverview> data, response status code and response headers
     def get_repos_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReposApi.get_repos ..."
@@ -59,9 +59,63 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Array<RepoOverview>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReposApi#get_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show repo detail
+    # Show repo detail
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [RepoDetail]
+    def get_repos_uuid(uuid, opts = {})
+      data, _status_code, _headers = get_repos_uuid_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show repo detail
+    # Show repo detail
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(RepoDetail, Fixnum, Hash)>] RepoDetail data, response status code and response headers
+    def get_repos_uuid_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReposApi.get_repos_uuid ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ReposApi.get_repos_uuid"
+      end
+      # resource path
+      local_var_path = "/repos/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'RepoDetail')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReposApi#get_repos_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
