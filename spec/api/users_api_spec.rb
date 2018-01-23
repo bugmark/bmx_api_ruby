@@ -84,6 +84,7 @@ describe 'UsersApi' do
   # unit tests for put_users_uuid_withdraw
   # Withdraw funds
   # Withdraw funds
+  # @param amount 
   # @param uuid 
   # @param [Hash] opts the optional parameters
   # @return [nil]

@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 
 # **put_users_uuid_withdraw**
-> put_users_uuid_withdraw(uuid)
+> put_users_uuid_withdraw(amount, uuid)
 
 Withdraw funds
 
@@ -243,12 +243,14 @@ end
 
 api_instance = BmxApiRuby::UsersApi.new
 
+amount = 3.4 # Float | 
+
 uuid = 56 # Integer | 
 
 
 begin
   #Withdraw funds
-  api_instance.put_users_uuid_withdraw(uuid)
+  api_instance.put_users_uuid_withdraw(amount, uuid)
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling UsersApi->put_users_uuid_withdraw: #{e}"
 end
@@ -258,6 +260,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **amount** | **Float**|  | 
  **uuid** | **Integer**|  | 
 
 ### Return type

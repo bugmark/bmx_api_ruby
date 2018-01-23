@@ -247,22 +247,28 @@ module BmxApiRuby
 
     # Withdraw funds
     # Withdraw funds
+    # @param amount 
     # @param uuid 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def put_users_uuid_withdraw(uuid, opts = {})
-      put_users_uuid_withdraw_with_http_info(uuid, opts)
+    def put_users_uuid_withdraw(amount, uuid, opts = {})
+      put_users_uuid_withdraw_with_http_info(amount, uuid, opts)
       return nil
     end
 
     # Withdraw funds
     # Withdraw funds
+    # @param amount 
     # @param uuid 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def put_users_uuid_withdraw_with_http_info(uuid, opts = {})
+    def put_users_uuid_withdraw_with_http_info(amount, uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.put_users_uuid_withdraw ..."
+      end
+      # verify the required parameter 'amount' is set
+      if @api_client.config.client_side_validation && amount.nil?
+        fail ArgumentError, "Missing the required parameter 'amount' when calling UsersApi.put_users_uuid_withdraw"
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
@@ -283,6 +289,7 @@ module BmxApiRuby
 
       # form parameters
       form_params = {}
+      form_params["amount"] = amount
 
       # http body (model)
       post_body = nil
