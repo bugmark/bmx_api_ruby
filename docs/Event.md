@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cmd_uuid** | **String** | Command UUID | [optional] 
 **local_hash** | **String** | Local Hash | [optional] 
 **chain_hash** | **String** | Blockchain Hash | [optional] 
+**jfields** | **Object** | JSON Fields | [optional] 
 **payload** | **Object** | Event Payload | [optional] 
 **user_uuids** | **Array&lt;String&gt;** | User UUIDs | [optional] 
 

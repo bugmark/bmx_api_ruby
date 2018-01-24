@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
+# have to install swagger-codegen for this to work
+
 JAR1=~/.codegen/swagger-codegen/modules
 JAR2=swagger-codegen-cli/target/swagger-codegen-cli.jar 
 
 production=https://bugmark.net/api/v1/docs
 development=http://localhost:3000/api/v1/docs
 
+# user/pass - test1@bugmark.net / bugmark
+# generator - https://www.blitter.se/utils/basic-authentication-header-generator
+
 java -jar $JAR1/$JAR2 generate \
      -i $development \
-     -a "Basic" \
+     -a "Authorization:Basic dGVzdDFAYnVnbWFyay5uZXQ6YnVnbWFyaw==" \
      -l ruby \
      -c script/_config.json
 

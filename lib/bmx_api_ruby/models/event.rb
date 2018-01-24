@@ -36,6 +36,9 @@ module BmxApiRuby
     # Blockchain Hash
     attr_accessor :chain_hash
 
+    # JSON Fields
+    attr_accessor :jfields
+
     # Event Payload
     attr_accessor :payload
 
@@ -53,6 +56,7 @@ module BmxApiRuby
         :'cmd_uuid' => :'cmd_uuid',
         :'local_hash' => :'local_hash',
         :'chain_hash' => :'chain_hash',
+        :'jfields' => :'jfields',
         :'payload' => :'payload',
         :'user_uuids' => :'user_uuids'
       }
@@ -68,6 +72,7 @@ module BmxApiRuby
         :'cmd_uuid' => :'String',
         :'local_hash' => :'String',
         :'chain_hash' => :'String',
+        :'jfields' => :'Object',
         :'payload' => :'Object',
         :'user_uuids' => :'Array<String>'
       }
@@ -109,6 +114,10 @@ module BmxApiRuby
         self.chain_hash = attributes[:'chain_hash']
       end
 
+      if attributes.has_key?(:'jfields')
+        self.jfields = attributes[:'jfields']
+      end
+
       if attributes.has_key?(:'payload')
         self.payload = attributes[:'payload']
       end
@@ -146,6 +155,7 @@ module BmxApiRuby
           cmd_uuid == o.cmd_uuid &&
           local_hash == o.local_hash &&
           chain_hash == o.chain_hash &&
+          jfields == o.jfields &&
           payload == o.payload &&
           user_uuids == o.user_uuids
     end
@@ -159,7 +169,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, event_type, event_uuid, cmd_type, cmd_uuid, local_hash, chain_hash, payload, user_uuids].hash
+      [id, event_type, event_uuid, cmd_type, cmd_uuid, local_hash, chain_hash, jfields, payload, user_uuids].hash
     end
 
     # Builds the object from hash
