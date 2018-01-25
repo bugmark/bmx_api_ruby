@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 
 # **post_offers_buy**
-> Status post_offers_buy(side, volume, price, issue, maturation, expiration, opts)
+> Status post_offers_buy(side, volume, price, issue, opts)
 
 Create a buy offer
 
@@ -129,25 +129,23 @@ end
 
 api_instance = BmxApiRuby::OffersApi.new
 
-side = "side_example" # String | TBD
+side = "side_example" # String | fixed or unfixed
 
-volume = 56 # Integer | TBD
+volume = 56 # Integer | number of positions
 
-price = 3.4 # Float | TBD
+price = 3.4 # Float | between 0.0 and 1.0
 
-issue = "issue_example" # String | TBD
-
-maturation = "maturation_example" # String | TBD
-
-expiration = "expiration_example" # String | TBD
+issue = "issue_example" # String | issue UUID
 
 opts = { 
-  aon: true # BOOLEAN | TBD
+  maturation: "maturation_example", # String | YYMMDD_HHMM (default now + 1.week)
+  expiration: "expiration_example", # String | YYMMDD_HHMM (default now + 1.day)
+  aon: true # BOOLEAN | all-or-none (default false)
 }
 
 begin
   #Create a buy offer
-  result = api_instance.post_offers_buy(side, volume, price, issue, maturation, expiration, opts)
+  result = api_instance.post_offers_buy(side, volume, price, issue, opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling OffersApi->post_offers_buy: #{e}"
@@ -158,13 +156,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **side** | **String**| TBD | 
- **volume** | **Integer**| TBD | 
- **price** | **Float**| TBD | 
- **issue** | **String**| TBD | 
- **maturation** | **String**| TBD | 
- **expiration** | **String**| TBD | 
- **aon** | **BOOLEAN**| TBD | [optional] 
+ **side** | **String**| fixed or unfixed | 
+ **volume** | **Integer**| number of positions | 
+ **price** | **Float**| between 0.0 and 1.0 | 
+ **issue** | **String**| issue UUID | 
+ **maturation** | **String**| YYMMDD_HHMM (default now + 1.week) | [optional] 
+ **expiration** | **String**| YYMMDD_HHMM (default now + 1.day) | [optional] 
+ **aon** | **BOOLEAN**| all-or-none (default false) | [optional] 
 
 ### Return type
 

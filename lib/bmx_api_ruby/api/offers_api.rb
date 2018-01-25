@@ -122,32 +122,32 @@ module BmxApiRuby
 
     # Create a buy offer
     # Create a buy offer
-    # @param side TBD
-    # @param volume TBD
-    # @param price TBD
-    # @param issue TBD
-    # @param maturation TBD
-    # @param expiration TBD
+    # @param side fixed or unfixed
+    # @param volume number of positions
+    # @param price between 0.0 and 1.0
+    # @param issue issue UUID
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :aon TBD
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+    # @option opts [BOOLEAN] :aon all-or-none (default false)
     # @return [Status]
-    def post_offers_buy(side, volume, price, issue, maturation, expiration, opts = {})
-      data, _status_code, _headers = post_offers_buy_with_http_info(side, volume, price, issue, maturation, expiration, opts)
+    def post_offers_buy(side, volume, price, issue, opts = {})
+      data, _status_code, _headers = post_offers_buy_with_http_info(side, volume, price, issue, opts)
       return data
     end
 
     # Create a buy offer
     # Create a buy offer
-    # @param side TBD
-    # @param volume TBD
-    # @param price TBD
-    # @param issue TBD
-    # @param maturation TBD
-    # @param expiration TBD
+    # @param side fixed or unfixed
+    # @param volume number of positions
+    # @param price between 0.0 and 1.0
+    # @param issue issue UUID
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :aon TBD
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+    # @option opts [BOOLEAN] :aon all-or-none (default false)
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
-    def post_offers_buy_with_http_info(side, volume, price, issue, maturation, expiration, opts = {})
+    def post_offers_buy_with_http_info(side, volume, price, issue, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: OffersApi.post_offers_buy ..."
       end
@@ -166,14 +166,6 @@ module BmxApiRuby
       # verify the required parameter 'issue' is set
       if @api_client.config.client_side_validation && issue.nil?
         fail ArgumentError, "Missing the required parameter 'issue' when calling OffersApi.post_offers_buy"
-      end
-      # verify the required parameter 'maturation' is set
-      if @api_client.config.client_side_validation && maturation.nil?
-        fail ArgumentError, "Missing the required parameter 'maturation' when calling OffersApi.post_offers_buy"
-      end
-      # verify the required parameter 'expiration' is set
-      if @api_client.config.client_side_validation && expiration.nil?
-        fail ArgumentError, "Missing the required parameter 'expiration' when calling OffersApi.post_offers_buy"
       end
       # resource path
       local_var_path = "/offers/buy"
@@ -194,8 +186,8 @@ module BmxApiRuby
       form_params["volume"] = volume
       form_params["price"] = price
       form_params["issue"] = issue
-      form_params["maturation"] = maturation
-      form_params["expiration"] = expiration
+      form_params["maturation"] = opts[:'maturation'] if !opts[:'maturation'].nil?
+      form_params["expiration"] = opts[:'expiration'] if !opts[:'expiration'].nil?
       form_params["aon"] = opts[:'aon'] if !opts[:'aon'].nil?
 
       # http body (model)

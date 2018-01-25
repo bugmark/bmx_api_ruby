@@ -58,14 +58,14 @@ describe 'OffersApi' do
   # unit tests for post_offers_buy
   # Create a buy offer
   # Create a buy offer
-  # @param side TBD
-  # @param volume TBD
-  # @param price TBD
-  # @param issue TBD
-  # @param maturation TBD
-  # @param expiration TBD
+  # @param side fixed or unfixed
+  # @param volume number of positions
+  # @param price between 0.0 and 1.0
+  # @param issue issue UUID
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :aon TBD
+  # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+  # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+  # @option opts [BOOLEAN] :aon all-or-none (default false)
   # @return [Status]
   describe 'post_offers_buy test' do
     it "should work" do
