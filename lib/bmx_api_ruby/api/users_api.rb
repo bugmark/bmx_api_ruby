@@ -69,8 +69,10 @@ module BmxApiRuby
 
     # Show user detail
     # Show user detail
-    # @param usermail 
+    # @param usermail user email address
     # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :offers include open offers
+    # @option opts [BOOLEAN] :positions include open positions
     # @return [UserDetail]
     def get_users_usermail(usermail, opts = {})
       data, _status_code, _headers = get_users_usermail_with_http_info(usermail, opts)
@@ -79,8 +81,10 @@ module BmxApiRuby
 
     # Show user detail
     # Show user detail
-    # @param usermail 
+    # @param usermail user email address
     # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :offers include open offers
+    # @option opts [BOOLEAN] :positions include open positions
     # @return [Array<(UserDetail, Fixnum, Hash)>] UserDetail data, response status code and response headers
     def get_users_usermail_with_http_info(usermail, opts = {})
       if @api_client.config.debugging
@@ -95,6 +99,8 @@ module BmxApiRuby
 
       # query parameters
       query_params = {}
+      query_params[:'offers'] = opts[:'offers'] if !opts[:'offers'].nil?
+      query_params[:'positions'] = opts[:'positions'] if !opts[:'positions'].nil?
 
       # header parameters
       header_params = {}

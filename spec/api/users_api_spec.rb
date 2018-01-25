@@ -46,8 +46,10 @@ describe 'UsersApi' do
   # unit tests for get_users_usermail
   # Show user detail
   # Show user detail
-  # @param usermail 
+  # @param usermail user email address
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :offers include open offers
+  # @option opts [BOOLEAN] :positions include open positions
   # @return [UserDetail]
   describe 'get_users_usermail test' do
     it "should work" do

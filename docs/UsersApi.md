@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 
 # **get_users_usermail**
-> UserDetail get_users_usermail(usermail)
+> UserDetail get_users_usermail(usermail, opts)
 
 Show user detail
 
@@ -78,12 +78,16 @@ end
 
 api_instance = BmxApiRuby::UsersApi.new
 
-usermail = 56 # Integer | 
+usermail = "usermail_example" # String | user email address
 
+opts = { 
+  offers: true, # BOOLEAN | include open offers
+  positions: true # BOOLEAN | include open positions
+}
 
 begin
   #Show user detail
-  result = api_instance.get_users_usermail(usermail)
+  result = api_instance.get_users_usermail(usermail, opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling UsersApi->get_users_usermail: #{e}"
@@ -94,7 +98,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usermail** | **Integer**|  | 
+ **usermail** | **String**| user email address | 
+ **offers** | **BOOLEAN**| include open offers | [optional] 
+ **positions** | **BOOLEAN**| include open positions | [optional] 
 
 ### Return type
 
