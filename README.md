@@ -91,9 +91,13 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::PingApi* | [**get_ping**](docs/PingApi.md#get_ping) | **GET** /ping | Check server access
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | List all positions
 *BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
-*BmxApiRuby::RebuildDateApi* | [**get_rebuild_date**](docs/RebuildDateApi.md#get_rebuild_date) | **GET** /rebuild_date | Return the system rebuild time
 *BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repos
 *BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
+*BmxApiRuby::TimeApi* | [**get_time_day_offset**](docs/TimeApi.md#get_time_day_offset) | **GET** /time/day_offset | day offset
+*BmxApiRuby::TimeApi* | [**get_time_future_week_ends**](docs/TimeApi.md#get_time_future_week_ends) | **GET** /time/future_week_ends | future week-ends
+*BmxApiRuby::TimeApi* | [**get_time_now**](docs/TimeApi.md#get_time_now) | **GET** /time/now | current exchange time
+*BmxApiRuby::TimeApi* | [**get_time_rebuild_date**](docs/TimeApi.md#get_time_rebuild_date) | **GET** /time/rebuild_date | system rebuild real-time
+*BmxApiRuby::TimeApi* | [**put_time_increment_days**](docs/TimeApi.md#put_time_increment_days) | **PUT** /time/increment_days | increment day offset
 *BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all users
 *BmxApiRuby::UsersApi* | [**get_users_usermail**](docs/UsersApi.md#get_users_usermail) | **GET** /users/{usermail} | Show user detail
 *BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user

@@ -39,8 +39,8 @@ require 'bmx_api_ruby/api/issues_api'
 require 'bmx_api_ruby/api/offers_api'
 require 'bmx_api_ruby/api/ping_api'
 require 'bmx_api_ruby/api/positions_api'
-require 'bmx_api_ruby/api/rebuild_date_api'
 require 'bmx_api_ruby/api/repos_api'
+require 'bmx_api_ruby/api/time_api'
 require 'bmx_api_ruby/api/users_api'
 
 module BmxApiRuby
