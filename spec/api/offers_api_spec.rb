@@ -55,4 +55,22 @@ describe 'OffersApi' do
     end
   end
 
+  # unit tests for post_offers_buy
+  # Create a buy offer
+  # Create a buy offer
+  # @param side TBD
+  # @param volume TBD
+  # @param price TBD
+  # @param issue TBD
+  # @param maturation TBD
+  # @param expiration TBD
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :aon TBD
+  # @return [Status]
+  describe 'post_offers_buy test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

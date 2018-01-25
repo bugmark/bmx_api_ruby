@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Deposit funds
+  # Create a buy offer
   class Status
     # Status
     attr_accessor :status

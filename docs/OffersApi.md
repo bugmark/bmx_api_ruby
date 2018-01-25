@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_offers**](OffersApi.md#get_offers) | **GET** /offers | List all offers
 [**get_offers_uuid**](OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
+[**post_offers_buy**](OffersApi.md#post_offers_buy) | **POST** /offers/buy | Create a buy offer
 
 
 # **get_offers**
@@ -104,6 +105,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **post_offers_buy**
+> Status post_offers_buy(side, volume, price, issue, maturation, expiration, opts)
+
+Create a buy offer
+
+Create a buy offer
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::OffersApi.new
+
+side = "side_example" # String | TBD
+
+volume = 56 # Integer | TBD
+
+price = 3.4 # Float | TBD
+
+issue = "issue_example" # String | TBD
+
+maturation = "maturation_example" # String | TBD
+
+expiration = "expiration_example" # String | TBD
+
+opts = { 
+  aon: true # BOOLEAN | TBD
+}
+
+begin
+  #Create a buy offer
+  result = api_instance.post_offers_buy(side, volume, price, issue, maturation, expiration, opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling OffersApi->post_offers_buy: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **side** | **String**| TBD | 
+ **volume** | **Integer**| TBD | 
+ **price** | **Float**| TBD | 
+ **issue** | **String**| TBD | 
+ **maturation** | **String**| TBD | 
+ **expiration** | **String**| TBD | 
+ **aon** | **BOOLEAN**| TBD | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

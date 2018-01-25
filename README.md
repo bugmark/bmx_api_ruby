@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::IssuesApi* | [**get_issues_uuid**](docs/IssuesApi.md#get_issues_uuid) | **GET** /issues/{uuid} | Show issue detail
 *BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
 *BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
+*BmxApiRuby::OffersApi* | [**post_offers_buy**](docs/OffersApi.md#post_offers_buy) | **POST** /offers/buy | Create a buy offer
 *BmxApiRuby::PingApi* | [**get_ping**](docs/PingApi.md#get_ping) | **GET** /ping | Check server access
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | List all positions
 *BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
