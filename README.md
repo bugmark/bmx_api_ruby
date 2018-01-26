@@ -97,7 +97,7 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::TimeApi* | [**get_time_future_week_ends**](docs/TimeApi.md#get_time_future_week_ends) | **GET** /time/future_week_ends | future week-ends
 *BmxApiRuby::TimeApi* | [**get_time_now**](docs/TimeApi.md#get_time_now) | **GET** /time/now | current exchange time
 *BmxApiRuby::TimeApi* | [**get_time_rebuild_date**](docs/TimeApi.md#get_time_rebuild_date) | **GET** /time/rebuild_date | system rebuild real-time
-*BmxApiRuby::TimeApi* | [**put_time_increment_days**](docs/TimeApi.md#put_time_increment_days) | **PUT** /time/increment_days | increment day offset
+*BmxApiRuby::TimeApi* | [**put_time_increment_day_offset**](docs/TimeApi.md#put_time_increment_day_offset) | **PUT** /time/increment_day_offset | increment day offset
 *BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all users
 *BmxApiRuby::UsersApi* | [**get_users_usermail**](docs/UsersApi.md#get_users_usermail) | **GET** /users/{usermail} | Show user detail
 *BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user
