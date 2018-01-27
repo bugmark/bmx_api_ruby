@@ -140,7 +140,8 @@ issue = "issue_example" # String | issue UUID
 opts = { 
   maturation: "maturation_example", # String | YYMMDD_HHMM (default now + 1.week)
   expiration: "expiration_example", # String | YYMMDD_HHMM (default now + 1.day)
-  aon: true # BOOLEAN | all-or-none (default false)
+  poolable: true, # BOOLEAN | poolable? (default false)
+  aon: true # BOOLEAN | all-or-none? (default false)
 }
 
 begin
@@ -162,7 +163,8 @@ Name | Type | Description  | Notes
  **issue** | **String**| issue UUID | 
  **maturation** | **String**| YYMMDD_HHMM (default now + 1.week) | [optional] 
  **expiration** | **String**| YYMMDD_HHMM (default now + 1.day) | [optional] 
- **aon** | **BOOLEAN**| all-or-none (default false) | [optional] 
+ **poolable** | **BOOLEAN**| poolable? (default false) | [optional] 
+ **aon** | **BOOLEAN**| all-or-none? (default false) | [optional] 
 
 ### Return type
 

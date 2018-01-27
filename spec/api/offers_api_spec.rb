@@ -65,7 +65,8 @@ describe 'OffersApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
   # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
-  # @option opts [BOOLEAN] :aon all-or-none (default false)
+  # @option opts [BOOLEAN] :poolable poolable? (default false)
+  # @option opts [BOOLEAN] :aon all-or-none? (default false)
   # @return [Status]
   describe 'post_offers_buy test' do
     it "should work" do

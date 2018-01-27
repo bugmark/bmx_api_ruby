@@ -29,6 +29,8 @@ require 'bmx_api_ruby/models/position_overview'
 require 'bmx_api_ruby/models/repo_detail'
 require 'bmx_api_ruby/models/repo_overview'
 require 'bmx_api_ruby/models/status'
+require 'bmx_api_ruby/models/time_now'
+require 'bmx_api_ruby/models/time_week_ends'
 require 'bmx_api_ruby/models/user_detail'
 require 'bmx_api_ruby/models/user_overview'
 

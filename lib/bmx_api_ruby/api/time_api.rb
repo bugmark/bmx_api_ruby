@@ -20,67 +20,21 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # day offset
-    # day offset
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def get_time_day_offset(opts = {})
-      get_time_day_offset_with_http_info(opts)
-      return nil
-    end
-
-    # day offset
-    # day offset
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def get_time_day_offset_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TimeApi.get_time_day_offset ..."
-      end
-      # resource path
-      local_var_path = "/time/day_offset"
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['base']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TimeApi#get_time_day_offset\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # future week-ends
     # future week-ends
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 4)
-    # @return [nil]
+    # @return [Array<TimeWeekEnds>]
     def get_time_future_week_ends(opts = {})
-      get_time_future_week_ends_with_http_info(opts)
-      return nil
+      data, _status_code, _headers = get_time_future_week_ends_with_http_info(opts)
+      return data
     end
 
     # future week-ends
     # future week-ends
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 4)
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Array<TimeWeekEnds>, Fixnum, Hash)>] Array<TimeWeekEnds> data, response status code and response headers
     def get_time_future_week_ends_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: TimeApi.get_time_future_week_ends ..."
@@ -108,7 +62,8 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Array<TimeWeekEnds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TimeApi#get_time_future_week_ends\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -118,16 +73,16 @@ module BmxApiRuby
     # current exchange time
     # current exchange time
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [TimeNow]
     def get_time_now(opts = {})
-      get_time_now_with_http_info(opts)
-      return nil
+      data, _status_code, _headers = get_time_now_with_http_info(opts)
+      return data
     end
 
     # current exchange time
     # current exchange time
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(TimeNow, Fixnum, Hash)>] TimeNow data, response status code and response headers
     def get_time_now_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: TimeApi.get_time_now ..."
@@ -154,7 +109,8 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'TimeNow')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TimeApi#get_time_now\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

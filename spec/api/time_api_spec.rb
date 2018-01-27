@@ -32,23 +32,12 @@ describe 'TimeApi' do
     end
   end
 
-  # unit tests for get_time_day_offset
-  # day offset
-  # day offset
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'get_time_day_offset test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_time_future_week_ends
   # future week-ends
   # future week-ends
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :count count (default 4)
-  # @return [nil]
+  # @return [Array<TimeWeekEnds>]
   describe 'get_time_future_week_ends test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -59,7 +48,7 @@ describe 'TimeApi' do
   # current exchange time
   # current exchange time
   # @param [Hash] opts the optional parameters
-  # @return [nil]
+  # @return [TimeNow]
   describe 'get_time_now test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

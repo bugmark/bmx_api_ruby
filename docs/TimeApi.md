@@ -4,61 +4,14 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_time_day_offset**](TimeApi.md#get_time_day_offset) | **GET** /time/day_offset | day offset
 [**get_time_future_week_ends**](TimeApi.md#get_time_future_week_ends) | **GET** /time/future_week_ends | future week-ends
 [**get_time_now**](TimeApi.md#get_time_now) | **GET** /time/now | current exchange time
 [**get_time_rebuild_date**](TimeApi.md#get_time_rebuild_date) | **GET** /time/rebuild_date | system rebuild real-time
 [**put_time_increment_day_offset**](TimeApi.md#put_time_increment_day_offset) | **PUT** /time/increment_day_offset | increment day offset
 
 
-# **get_time_day_offset**
-> get_time_day_offset
-
-day offset
-
-day offset
-
-### Example
-```ruby
-# load the gem
-require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = BmxApiRuby::TimeApi.new
-
-begin
-  #day offset
-  api_instance.get_time_day_offset
-rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling TimeApi->get_time_day_offset: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[base](../README.md#base)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
 # **get_time_future_week_ends**
-> get_time_future_week_ends(opts)
+> Array&lt;TimeWeekEnds&gt; get_time_future_week_ends(opts)
 
 future week-ends
 
@@ -83,7 +36,8 @@ opts = {
 
 begin
   #future week-ends
-  api_instance.get_time_future_week_ends(opts)
+  result = api_instance.get_time_future_week_ends(opts)
+  p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling TimeApi->get_time_future_week_ends: #{e}"
 end
@@ -97,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**Array&lt;TimeWeekEnds&gt;**](TimeWeekEnds.md)
 
 ### Authorization
 
@@ -111,7 +65,7 @@ nil (empty response body)
 
 
 # **get_time_now**
-> get_time_now
+> TimeNow get_time_now
 
 current exchange time
 
@@ -132,7 +86,8 @@ api_instance = BmxApiRuby::TimeApi.new
 
 begin
   #current exchange time
-  api_instance.get_time_now
+  result = api_instance.get_time_now
+  p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling TimeApi->get_time_now: #{e}"
 end
@@ -143,7 +98,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-nil (empty response body)
+[**TimeNow**](TimeNow.md)
 
 ### Authorization
 
