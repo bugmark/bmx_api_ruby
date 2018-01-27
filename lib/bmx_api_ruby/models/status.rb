@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Create a buy offer
+  # increment day offset
   class Status
     # Status
     attr_accessor :status

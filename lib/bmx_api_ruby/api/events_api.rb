@@ -70,6 +70,59 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Show event record
+    # Show event record
+    # @param event_uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Event]
+    def get_events_event_uuid(event_uuid, opts = {})
+      data, _status_code, _headers = get_events_event_uuid_with_http_info(event_uuid, opts)
+      return data
+    end
+
+    # Show event record
+    # Show event record
+    # @param event_uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Event, Fixnum, Hash)>] Event data, response status code and response headers
+    def get_events_event_uuid_with_http_info(event_uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: EventsApi.get_events_event_uuid ..."
+      end
+      # verify the required parameter 'event_uuid' is set
+      if @api_client.config.client_side_validation && event_uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'event_uuid' when calling EventsApi.get_events_event_uuid"
+      end
+      # resource path
+      local_var_path = "/events/{event_uuid}".sub('{' + 'event_uuid' + '}', event_uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Event')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EventsApi#get_events_event_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Update an event
     # Update an event
     # @param id 

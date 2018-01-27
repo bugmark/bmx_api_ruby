@@ -1,20 +1,20 @@
-# BmxApiRuby::EventsApi
+# BmxApiRuby::ContractApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_events**](EventsApi.md#get_events) | **GET** /events | Return events
-[**get_events_event_uuid**](EventsApi.md#get_events_event_uuid) | **GET** /events/{event_uuid} | Show event record
-[**put_events**](EventsApi.md#put_events) | **PUT** /events | Update an event
+[**get_contract**](ContractApi.md#get_contract) | **GET** /contract | List all contracts
+[**get_contract_uuid**](ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
+[**post_contract_offer_uuid**](ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
 
 
-# **get_events**
-> Array&lt;Event&gt; get_events(opts)
+# **get_contract**
+> Array&lt;ContractOverview&gt; get_contract
 
-Return events
+List all contracts
 
-Return events
+List all contracts
 
 ### Example
 ```ruby
@@ -27,30 +27,23 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::EventsApi.new
-
-opts = { 
-  after: 56 # Integer | <cursor> an event-ID
-}
+api_instance = BmxApiRuby::ContractApi.new
 
 begin
-  #Return events
-  result = api_instance.get_events(opts)
+  #List all contracts
+  result = api_instance.get_contract
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling EventsApi->get_events: #{e}"
+  puts "Exception when calling ContractApi->get_contract: #{e}"
 end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **after** | **Integer**| &lt;cursor&gt; an event-ID | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;Event&gt;**](Event.md)
+[**Array&lt;ContractOverview&gt;**](ContractOverview.md)
 
 ### Authorization
 
@@ -63,12 +56,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_events_event_uuid**
-> Event get_events_event_uuid(event_uuid)
+# **get_contract_uuid**
+> ContractDetail get_contract_uuid(uuid)
 
-Show event record
+Show contract detail
 
-Show event record
+Show contract detail
 
 ### Example
 ```ruby
@@ -81,17 +74,17 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::EventsApi.new
+api_instance = BmxApiRuby::ContractApi.new
 
-event_uuid = 56 # Integer | 
+uuid = 56 # Integer | 
 
 
 begin
-  #Show event record
-  result = api_instance.get_events_event_uuid(event_uuid)
+  #Show contract detail
+  result = api_instance.get_contract_uuid(uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling EventsApi->get_events_event_uuid: #{e}"
+  puts "Exception when calling ContractApi->get_contract_uuid: #{e}"
 end
 ```
 
@@ -99,11 +92,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_uuid** | **Integer**|  | 
+ **uuid** | **Integer**|  | 
 
 ### Return type
 
-[**Event**](Event.md)
+[**ContractDetail**](ContractDetail.md)
 
 ### Authorization
 
@@ -116,12 +109,12 @@ Name | Type | Description  | Notes
 
 
 
-# **put_events**
-> Event put_events(id, etherscan_url)
+# **post_contract_offer_uuid**
+> Status post_contract_offer_uuid(commit_type, offer_uuid)
 
-Update an event
+Cross offer
 
-Update an event
+Cross offer
 
 ### Example
 ```ruby
@@ -134,19 +127,19 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::EventsApi.new
+api_instance = BmxApiRuby::ContractApi.new
 
-id = 56 # Integer | 
+commit_type = "commit_type_example" # String | expand, transfer or reduce
 
-etherscan_url = "etherscan_url_example" # String | 
+offer_uuid = 56 # Integer | 
 
 
 begin
-  #Update an event
-  result = api_instance.put_events(id, etherscan_url)
+  #Cross offer
+  result = api_instance.post_contract_offer_uuid(commit_type, offer_uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling EventsApi->put_events: #{e}"
+  puts "Exception when calling ContractApi->post_contract_offer_uuid: #{e}"
 end
 ```
 
@@ -154,12 +147,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
- **etherscan_url** | **String**|  | 
+ **commit_type** | **String**| expand, transfer or reduce | 
+ **offer_uuid** | **Integer**|  | 
 
 ### Return type
 
-[**Event**](Event.md)
+[**Status**](Status.md)
 
 ### Authorization
 

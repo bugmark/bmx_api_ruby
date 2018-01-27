@@ -43,13 +43,13 @@ describe 'IssuesApi' do
     end
   end
 
-  # unit tests for get_issues_uuid
+  # unit tests for get_issues_issue_uuid
   # Show issue detail
   # Show issue detail
-  # @param uuid 
+  # @param issue_uuid issue uuid
   # @param [Hash] opts the optional parameters
   # @return [IssueDetail]
-  describe 'get_issues_uuid test' do
+  describe 'get_issues_issue_uuid test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

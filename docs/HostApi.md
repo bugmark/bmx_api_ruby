@@ -1,21 +1,21 @@
-# BmxApiRuby::TimeApi
+# BmxApiRuby::HostApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_time_future_week_ends**](TimeApi.md#get_time_future_week_ends) | **GET** /time/future_week_ends | future week-ends
-[**get_time_now**](TimeApi.md#get_time_now) | **GET** /time/now | current exchange time
-[**get_time_rebuild_date**](TimeApi.md#get_time_rebuild_date) | **GET** /time/rebuild_date | system rebuild real-time
-[**put_time_increment_day_offset**](TimeApi.md#put_time_increment_day_offset) | **PUT** /time/increment_day_offset | increment day offset
+[**get_host_info**](HostApi.md#get_host_info) | **GET** /host/info | info
+[**get_host_next_week_ends**](HostApi.md#get_host_next_week_ends) | **GET** /host/next_week_ends | next week-ends
+[**get_host_rebuild**](HostApi.md#get_host_rebuild) | **GET** /host/rebuild | rebuild
+[**put_host_increment_day_offset**](HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 
 
-# **get_time_future_week_ends**
-> Array&lt;TimeWeekEnds&gt; get_time_future_week_ends(opts)
+# **get_host_info**
+> HostInfo get_host_info
 
-future week-ends
+info
 
-future week-ends
+info
 
 ### Example
 ```ruby
@@ -28,18 +28,65 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::TimeApi.new
+api_instance = BmxApiRuby::HostApi.new
+
+begin
+  #info
+  result = api_instance.get_host_info
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->get_host_info: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**HostInfo**](HostInfo.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_host_next_week_ends**
+> Array&lt;TimeWeekEnds&gt; get_host_next_week_ends(opts)
+
+next week-ends
+
+next week-ends
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
 
 opts = { 
   count: 56 # Integer | count (default 4)
 }
 
 begin
-  #future week-ends
-  result = api_instance.get_time_future_week_ends(opts)
+  #next week-ends
+  result = api_instance.get_host_next_week_ends(opts)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling TimeApi->get_time_future_week_ends: #{e}"
+  puts "Exception when calling HostApi->get_host_next_week_ends: #{e}"
 end
 ```
 
@@ -64,59 +111,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_time_now**
-> TimeNow get_time_now
+# **get_host_rebuild**
+> get_host_rebuild
 
-current exchange time
+rebuild
 
-current exchange time
-
-### Example
-```ruby
-# load the gem
-require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = BmxApiRuby::TimeApi.new
-
-begin
-  #current exchange time
-  result = api_instance.get_time_now
-  p result
-rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling TimeApi->get_time_now: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**TimeNow**](TimeNow.md)
-
-### Authorization
-
-[base](../README.md#base)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **get_time_rebuild_date**
-> get_time_rebuild_date
-
-system rebuild real-time
-
-system rebuild real-time
+rebuild
 
 ### Example
 ```ruby
@@ -129,13 +129,13 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::TimeApi.new
+api_instance = BmxApiRuby::HostApi.new
 
 begin
-  #system rebuild real-time
-  api_instance.get_time_rebuild_date
+  #rebuild
+  api_instance.get_host_rebuild
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling TimeApi->get_time_rebuild_date: #{e}"
+  puts "Exception when calling HostApi->get_host_rebuild: #{e}"
 end
 ```
 
@@ -157,8 +157,8 @@ nil (empty response body)
 
 
 
-# **put_time_increment_day_offset**
-> Status put_time_increment_day_offset(opts)
+# **put_host_increment_day_offset**
+> Status put_host_increment_day_offset(opts)
 
 increment day offset
 
@@ -175,7 +175,7 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::TimeApi.new
+api_instance = BmxApiRuby::HostApi.new
 
 opts = { 
   count: 56 # Integer | count (default 1)
@@ -183,10 +183,10 @@ opts = {
 
 begin
   #increment day offset
-  result = api_instance.put_time_increment_day_offset(opts)
+  result = api_instance.put_host_increment_day_offset(opts)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling TimeApi->put_time_increment_day_offset: #{e}"
+  puts "Exception when calling HostApi->put_host_increment_day_offset: #{e}"
 end
 ```
 

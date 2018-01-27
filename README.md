@@ -61,14 +61,14 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::ContractsApi.new
+api_instance = BmxApiRuby::ContractApi.new
 
 begin
   #List all contracts
-  result = api_instance.get_contracts
+  result = api_instance.get_contract
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ContractsApi->get_contracts: #{e}"
+  puts "Exception when calling ContractApi->get_contract: #{e}"
 end
 
 ```
@@ -79,12 +79,18 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BmxApiRuby::ContractsApi* | [**get_contracts**](docs/ContractsApi.md#get_contracts) | **GET** /contracts | List all contracts
-*BmxApiRuby::ContractsApi* | [**get_contracts_uuid**](docs/ContractsApi.md#get_contracts_uuid) | **GET** /contracts/{uuid} | Show contract detail
+*BmxApiRuby::ContractApi* | [**get_contract**](docs/ContractApi.md#get_contract) | **GET** /contract | List all contracts
+*BmxApiRuby::ContractApi* | [**get_contract_uuid**](docs/ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
+*BmxApiRuby::ContractApi* | [**post_contract_offer_uuid**](docs/ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
+*BmxApiRuby::EventsApi* | [**get_events_event_uuid**](docs/EventsApi.md#get_events_event_uuid) | **GET** /events/{event_uuid} | Show event record
 *BmxApiRuby::EventsApi* | [**put_events**](docs/EventsApi.md#put_events) | **PUT** /events | Update an event
+*BmxApiRuby::HostApi* | [**get_host_info**](docs/HostApi.md#get_host_info) | **GET** /host/info | info
+*BmxApiRuby::HostApi* | [**get_host_next_week_ends**](docs/HostApi.md#get_host_next_week_ends) | **GET** /host/next_week_ends | next week-ends
+*BmxApiRuby::HostApi* | [**get_host_rebuild**](docs/HostApi.md#get_host_rebuild) | **GET** /host/rebuild | rebuild
+*BmxApiRuby::HostApi* | [**put_host_increment_day_offset**](docs/HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 *BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
-*BmxApiRuby::IssuesApi* | [**get_issues_uuid**](docs/IssuesApi.md#get_issues_uuid) | **GET** /issues/{uuid} | Show issue detail
+*BmxApiRuby::IssuesApi* | [**get_issues_issue_uuid**](docs/IssuesApi.md#get_issues_issue_uuid) | **GET** /issues/{issue_uuid} | Show issue detail
 *BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
 *BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
 *BmxApiRuby::OffersApi* | [**post_offers_buy**](docs/OffersApi.md#post_offers_buy) | **POST** /offers/buy | Create a buy offer
@@ -93,10 +99,6 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
 *BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repos
 *BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
-*BmxApiRuby::TimeApi* | [**get_time_future_week_ends**](docs/TimeApi.md#get_time_future_week_ends) | **GET** /time/future_week_ends | future week-ends
-*BmxApiRuby::TimeApi* | [**get_time_now**](docs/TimeApi.md#get_time_now) | **GET** /time/now | current exchange time
-*BmxApiRuby::TimeApi* | [**get_time_rebuild_date**](docs/TimeApi.md#get_time_rebuild_date) | **GET** /time/rebuild_date | system rebuild real-time
-*BmxApiRuby::TimeApi* | [**put_time_increment_day_offset**](docs/TimeApi.md#put_time_increment_day_offset) | **PUT** /time/increment_day_offset | increment day offset
 *BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all users
 *BmxApiRuby::UsersApi* | [**get_users_usermail**](docs/UsersApi.md#get_users_usermail) | **GET** /users/{usermail} | Show user detail
 *BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user
@@ -109,6 +111,7 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::ContractDetail](docs/ContractDetail.md)
  - [BmxApiRuby::ContractOverview](docs/ContractOverview.md)
  - [BmxApiRuby::Event](docs/Event.md)
+ - [BmxApiRuby::HostInfo](docs/HostInfo.md)
  - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
  - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)
  - [BmxApiRuby::OfferDetail](docs/OfferDetail.md)
@@ -118,7 +121,6 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
  - [BmxApiRuby::RepoOverview](docs/RepoOverview.md)
  - [BmxApiRuby::Status](docs/Status.md)
- - [BmxApiRuby::TimeNow](docs/TimeNow.md)
  - [BmxApiRuby::TimeWeekEnds](docs/TimeWeekEnds.md)
  - [BmxApiRuby::UserDetail](docs/UserDetail.md)
  - [BmxApiRuby::UserOverview](docs/UserOverview.md)

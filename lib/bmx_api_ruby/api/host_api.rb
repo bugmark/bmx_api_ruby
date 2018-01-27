@@ -13,34 +13,81 @@ Swagger Codegen version: 2.3.0
 require "uri"
 
 module BmxApiRuby
-  class TimeApi
+  class HostApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
 
-    # future week-ends
-    # future week-ends
+    # info
+    # info
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :count count (default 4)
-    # @return [Array<TimeWeekEnds>]
-    def get_time_future_week_ends(opts = {})
-      data, _status_code, _headers = get_time_future_week_ends_with_http_info(opts)
+    # @return [HostInfo]
+    def get_host_info(opts = {})
+      data, _status_code, _headers = get_host_info_with_http_info(opts)
       return data
     end
 
-    # future week-ends
-    # future week-ends
+    # info
+    # info
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(HostInfo, Fixnum, Hash)>] HostInfo data, response status code and response headers
+    def get_host_info_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HostApi.get_host_info ..."
+      end
+      # resource path
+      local_var_path = "/host/info"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'HostInfo')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HostApi#get_host_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # next week-ends
+    # next week-ends
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 4)
+    # @return [Array<TimeWeekEnds>]
+    def get_host_next_week_ends(opts = {})
+      data, _status_code, _headers = get_host_next_week_ends_with_http_info(opts)
+      return data
+    end
+
+    # next week-ends
+    # next week-ends
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 4)
     # @return [Array<(Array<TimeWeekEnds>, Fixnum, Hash)>] Array<TimeWeekEnds> data, response status code and response headers
-    def get_time_future_week_ends_with_http_info(opts = {})
+    def get_host_next_week_ends_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TimeApi.get_time_future_week_ends ..."
+        @api_client.config.logger.debug "Calling API: HostApi.get_host_next_week_ends ..."
       end
       # resource path
-      local_var_path = "/time/future_week_ends"
+      local_var_path = "/host/next_week_ends"
 
       # query parameters
       query_params = {}
@@ -65,77 +112,30 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'Array<TimeWeekEnds>')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TimeApi#get_time_future_week_ends\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HostApi#get_host_next_week_ends\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # current exchange time
-    # current exchange time
-    # @param [Hash] opts the optional parameters
-    # @return [TimeNow]
-    def get_time_now(opts = {})
-      data, _status_code, _headers = get_time_now_with_http_info(opts)
-      return data
-    end
-
-    # current exchange time
-    # current exchange time
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(TimeNow, Fixnum, Hash)>] TimeNow data, response status code and response headers
-    def get_time_now_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TimeApi.get_time_now ..."
-      end
-      # resource path
-      local_var_path = "/time/now"
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['base']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TimeNow')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TimeApi#get_time_now\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # system rebuild real-time
-    # system rebuild real-time
+    # rebuild
+    # rebuild
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def get_time_rebuild_date(opts = {})
-      get_time_rebuild_date_with_http_info(opts)
+    def get_host_rebuild(opts = {})
+      get_host_rebuild_with_http_info(opts)
       return nil
     end
 
-    # system rebuild real-time
-    # system rebuild real-time
+    # rebuild
+    # rebuild
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def get_time_rebuild_date_with_http_info(opts = {})
+    def get_host_rebuild_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TimeApi.get_time_rebuild_date ..."
+        @api_client.config.logger.debug "Calling API: HostApi.get_host_rebuild ..."
       end
       # resource path
-      local_var_path = "/time/rebuild_date"
+      local_var_path = "/host/rebuild"
 
       # query parameters
       query_params = {}
@@ -158,7 +158,7 @@ module BmxApiRuby
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TimeApi#get_time_rebuild_date\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HostApi#get_host_rebuild\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -168,8 +168,8 @@ module BmxApiRuby
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 1)
     # @return [Status]
-    def put_time_increment_day_offset(opts = {})
-      data, _status_code, _headers = put_time_increment_day_offset_with_http_info(opts)
+    def put_host_increment_day_offset(opts = {})
+      data, _status_code, _headers = put_host_increment_day_offset_with_http_info(opts)
       return data
     end
 
@@ -178,12 +178,12 @@ module BmxApiRuby
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 1)
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
-    def put_time_increment_day_offset_with_http_info(opts = {})
+    def put_host_increment_day_offset_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TimeApi.put_time_increment_day_offset ..."
+        @api_client.config.logger.debug "Calling API: HostApi.put_host_increment_day_offset ..."
       end
       # resource path
-      local_var_path = "/time/increment_day_offset"
+      local_var_path = "/host/increment_day_offset"
 
       # query parameters
       query_params = {}
@@ -210,7 +210,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'Status')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TimeApi#put_time_increment_day_offset\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HostApi#put_host_increment_day_offset\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost:3000/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_issues**](IssuesApi.md#get_issues) | **GET** /issues | List all issues
-[**get_issues_uuid**](IssuesApi.md#get_issues_uuid) | **GET** /issues/{uuid} | Show issue detail
+[**get_issues_issue_uuid**](IssuesApi.md#get_issues_issue_uuid) | **GET** /issues/{issue_uuid} | Show issue detail
 
 
 # **get_issues**
@@ -55,8 +55,8 @@ This endpoint does not need any parameter.
 
 
 
-# **get_issues_uuid**
-> IssueDetail get_issues_uuid(uuid)
+# **get_issues_issue_uuid**
+> IssueDetail get_issues_issue_uuid(issue_uuid)
 
 Show issue detail
 
@@ -75,15 +75,15 @@ end
 
 api_instance = BmxApiRuby::IssuesApi.new
 
-uuid = 56 # Integer | 
+issue_uuid = "issue_uuid_example" # String | issue uuid
 
 
 begin
   #Show issue detail
-  result = api_instance.get_issues_uuid(uuid)
+  result = api_instance.get_issues_issue_uuid(issue_uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling IssuesApi->get_issues_uuid: #{e}"
+  puts "Exception when calling IssuesApi->get_issues_issue_uuid: #{e}"
 end
 ```
 
@@ -91,7 +91,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **Integer**|  | 
+ **issue_uuid** | **String**| issue uuid | 
 
 ### Return type
 

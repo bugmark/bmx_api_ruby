@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # future week-ends
+  # next week-ends
   class TimeWeekEnds
     # Week end
     attr_accessor :week_end

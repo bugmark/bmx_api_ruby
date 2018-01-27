@@ -69,29 +69,29 @@ module BmxApiRuby
 
     # Show issue detail
     # Show issue detail
-    # @param uuid 
+    # @param issue_uuid issue uuid
     # @param [Hash] opts the optional parameters
     # @return [IssueDetail]
-    def get_issues_uuid(uuid, opts = {})
-      data, _status_code, _headers = get_issues_uuid_with_http_info(uuid, opts)
+    def get_issues_issue_uuid(issue_uuid, opts = {})
+      data, _status_code, _headers = get_issues_issue_uuid_with_http_info(issue_uuid, opts)
       return data
     end
 
     # Show issue detail
     # Show issue detail
-    # @param uuid 
+    # @param issue_uuid issue uuid
     # @param [Hash] opts the optional parameters
     # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers
-    def get_issues_uuid_with_http_info(uuid, opts = {})
+    def get_issues_issue_uuid_with_http_info(issue_uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_uuid ..."
+        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_issue_uuid ..."
       end
-      # verify the required parameter 'uuid' is set
-      if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling IssuesApi.get_issues_uuid"
+      # verify the required parameter 'issue_uuid' is set
+      if @api_client.config.client_side_validation && issue_uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'issue_uuid' when calling IssuesApi.get_issues_issue_uuid"
       end
       # resource path
-      local_var_path = "/issues/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
+      local_var_path = "/issues/{issue_uuid}".sub('{' + 'issue_uuid' + '}', issue_uuid.to_s)
 
       # query parameters
       query_params = {}
@@ -115,7 +115,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'IssueDetail')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: IssuesApi#get_issues_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: IssuesApi#get_issues_issue_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -13,28 +13,43 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # current exchange time
-  class TimeNow
+  # info
+  class HostInfo
+    # Bugmark Hostname
+    attr_accessor :host_name
+
     # Current Bugmark Time
-    attr_accessor :bugmark_time
+    attr_accessor :host_time
 
     # Day Offset from Realtime
     attr_accessor :day_offset
+
+    # permanent | mutable
+    attr_accessor :datastore
+
+    # last release date
+    attr_accessor :released_at
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'bugmark_time' => :'bugmark_time',
-        :'day_offset' => :'day_offset'
+        :'host_name' => :'host_name',
+        :'host_time' => :'host_time',
+        :'day_offset' => :'day_offset',
+        :'datastore' => :'datastore',
+        :'released_at' => :'released_at'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'bugmark_time' => :'String',
-        :'day_offset' => :'Integer'
+        :'host_name' => :'String',
+        :'host_time' => :'String',
+        :'day_offset' => :'Integer',
+        :'datastore' => :'String',
+        :'released_at' => :'String'
       }
     end
 
@@ -46,12 +61,24 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'bugmark_time')
-        self.bugmark_time = attributes[:'bugmark_time']
+      if attributes.has_key?(:'host_name')
+        self.host_name = attributes[:'host_name']
+      end
+
+      if attributes.has_key?(:'host_time')
+        self.host_time = attributes[:'host_time']
       end
 
       if attributes.has_key?(:'day_offset')
         self.day_offset = attributes[:'day_offset']
+      end
+
+      if attributes.has_key?(:'datastore')
+        self.datastore = attributes[:'datastore']
+      end
+
+      if attributes.has_key?(:'released_at')
+        self.released_at = attributes[:'released_at']
       end
 
     end
@@ -74,8 +101,11 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          bugmark_time == o.bugmark_time &&
-          day_offset == o.day_offset
+          host_name == o.host_name &&
+          host_time == o.host_time &&
+          day_offset == o.day_offset &&
+          datastore == o.datastore &&
+          released_at == o.released_at
     end
 
     # @see the `==` method
@@ -87,7 +117,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [bugmark_time, day_offset].hash
+      [host_name, host_time, day_offset, datastore, released_at].hash
     end
 
     # Builds the object from hash

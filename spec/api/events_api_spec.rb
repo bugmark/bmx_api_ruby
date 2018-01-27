@@ -44,6 +44,18 @@ describe 'EventsApi' do
     end
   end
 
+  # unit tests for get_events_event_uuid
+  # Show event record
+  # Show event record
+  # @param event_uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [Event]
+  describe 'get_events_event_uuid test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for put_events
   # Update an event
   # Update an event
