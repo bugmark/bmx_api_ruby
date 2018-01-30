@@ -69,33 +69,33 @@ module BmxApiRuby
 
     # Show user detail
     # Show user detail
-    # @param usermail user email address
+    # @param email user email address
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :offers include open offers
     # @option opts [BOOLEAN] :positions include open positions
     # @return [UserDetail]
-    def get_users_usermail(usermail, opts = {})
-      data, _status_code, _headers = get_users_usermail_with_http_info(usermail, opts)
+    def get_users_email(email, opts = {})
+      data, _status_code, _headers = get_users_email_with_http_info(email, opts)
       return data
     end
 
     # Show user detail
     # Show user detail
-    # @param usermail user email address
+    # @param email user email address
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :offers include open offers
     # @option opts [BOOLEAN] :positions include open positions
     # @return [Array<(UserDetail, Fixnum, Hash)>] UserDetail data, response status code and response headers
-    def get_users_usermail_with_http_info(usermail, opts = {})
+    def get_users_email_with_http_info(email, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UsersApi.get_users_usermail ..."
+        @api_client.config.logger.debug "Calling API: UsersApi.get_users_email ..."
       end
-      # verify the required parameter 'usermail' is set
-      if @api_client.config.client_side_validation && usermail.nil?
-        fail ArgumentError, "Missing the required parameter 'usermail' when calling UsersApi.get_users_usermail"
+      # verify the required parameter 'email' is set
+      if @api_client.config.client_side_validation && email.nil?
+        fail ArgumentError, "Missing the required parameter 'email' when calling UsersApi.get_users_email"
       end
       # resource path
-      local_var_path = "/users/{usermail}".sub('{' + 'usermail' + '}', usermail.to_s)
+      local_var_path = "/users/{email}".sub('{' + 'email' + '}', email.to_s)
 
       # query parameters
       query_params = {}
@@ -121,16 +121,17 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'UserDetail')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UsersApi#get_users_usermail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UsersApi#get_users_email\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Create a user
-    # Create a user
-    # @param usermail 
-    # @param password 
+    # Create a user.  Supply an optional opening balance.  (Default 0.0) 
+    # @param usermail user email
+    # @param password user password
     # @param [Hash] opts the optional parameters
+    # @option opts [Float] :balance opening balance
     # @return [Status]
     def post_users(usermail, password, opts = {})
       data, _status_code, _headers = post_users_with_http_info(usermail, password, opts)
@@ -138,10 +139,11 @@ module BmxApiRuby
     end
 
     # Create a user
-    # Create a user
-    # @param usermail 
-    # @param password 
+    # Create a user.  Supply an optional opening balance.  (Default 0.0) 
+    # @param usermail user email
+    # @param password user password
     # @param [Hash] opts the optional parameters
+    # @option opts [Float] :balance opening balance
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
     def post_users_with_http_info(usermail, password, opts = {})
       if @api_client.config.debugging
@@ -172,6 +174,7 @@ module BmxApiRuby
       form_params = {}
       form_params["usermail"] = usermail
       form_params["password"] = password
+      form_params["balance"] = opts[:'balance'] if !opts[:'balance'].nil?
 
       # http body (model)
       post_body = nil
@@ -256,10 +259,10 @@ module BmxApiRuby
     # @param amount 
     # @param uuid 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Status]
     def put_users_uuid_withdraw(amount, uuid, opts = {})
-      put_users_uuid_withdraw_with_http_info(amount, uuid, opts)
-      return nil
+      data, _status_code, _headers = put_users_uuid_withdraw_with_http_info(amount, uuid, opts)
+      return data
     end
 
     # Withdraw funds
@@ -267,7 +270,7 @@ module BmxApiRuby
     # @param amount 
     # @param uuid 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
     def put_users_uuid_withdraw_with_http_info(amount, uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.put_users_uuid_withdraw ..."
@@ -305,7 +308,8 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'Status')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#put_users_uuid_withdraw\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -85,22 +85,25 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
 *BmxApiRuby::EventsApi* | [**get_events_event_uuid**](docs/EventsApi.md#get_events_event_uuid) | **GET** /events/{event_uuid} | Show event record
 *BmxApiRuby::EventsApi* | [**put_events**](docs/EventsApi.md#put_events) | **PUT** /events | Update an event
-*BmxApiRuby::HostApi* | [**get_host_info**](docs/HostApi.md#get_host_info) | **GET** /host/info | info
+*BmxApiRuby::HostApi* | [**get_host_counts**](docs/HostApi.md#get_host_counts) | **GET** /host/counts | counts
+*BmxApiRuby::HostApi* | [**get_host_info**](docs/HostApi.md#get_host_info) | **GET** /host/info | get host info
 *BmxApiRuby::HostApi* | [**get_host_next_week_ends**](docs/HostApi.md#get_host_next_week_ends) | **GET** /host/next_week_ends | next week-ends
-*BmxApiRuby::HostApi* | [**get_host_rebuild**](docs/HostApi.md#get_host_rebuild) | **GET** /host/rebuild | rebuild
+*BmxApiRuby::HostApi* | [**get_host_ping**](docs/HostApi.md#get_host_ping) | **GET** /host/ping | check server access
+*BmxApiRuby::HostApi* | [**post_host_rebuild**](docs/HostApi.md#post_host_rebuild) | **POST** /host/rebuild | rebuild
 *BmxApiRuby::HostApi* | [**put_host_increment_day_offset**](docs/HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 *BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
 *BmxApiRuby::IssuesApi* | [**get_issues_issue_uuid**](docs/IssuesApi.md#get_issues_issue_uuid) | **GET** /issues/{issue_uuid} | Show issue detail
 *BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
 *BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
 *BmxApiRuby::OffersApi* | [**post_offers_buy**](docs/OffersApi.md#post_offers_buy) | **POST** /offers/buy | Create a buy offer
-*BmxApiRuby::PingApi* | [**get_ping**](docs/PingApi.md#get_ping) | **GET** /ping | Check server access
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | List all positions
 *BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
 *BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repos
 *BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
+*BmxApiRuby::ReposApi* | [**post_repos**](docs/ReposApi.md#post_repos) | **POST** /repos | Create a repo
+*BmxApiRuby::ReposApi* | [**put_repos**](docs/ReposApi.md#put_repos) | **PUT** /repos | Sync a repo
 *BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all users
-*BmxApiRuby::UsersApi* | [**get_users_usermail**](docs/UsersApi.md#get_users_usermail) | **GET** /users/{usermail} | Show user detail
+*BmxApiRuby::UsersApi* | [**get_users_email**](docs/UsersApi.md#get_users_email) | **GET** /users/{email} | Show user detail
 *BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user
 *BmxApiRuby::UsersApi* | [**put_users_uuid_deposit**](docs/UsersApi.md#put_users_uuid_deposit) | **PUT** /users/{uuid}/deposit | Deposit funds
 *BmxApiRuby::UsersApi* | [**put_users_uuid_withdraw**](docs/UsersApi.md#put_users_uuid_withdraw) | **PUT** /users/{uuid}/withdraw | Withdraw funds
@@ -111,6 +114,7 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::ContractDetail](docs/ContractDetail.md)
  - [BmxApiRuby::ContractOverview](docs/ContractOverview.md)
  - [BmxApiRuby::Event](docs/Event.md)
+ - [BmxApiRuby::HostCount](docs/HostCount.md)
  - [BmxApiRuby::HostInfo](docs/HostInfo.md)
  - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
  - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)

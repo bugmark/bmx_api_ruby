@@ -4,18 +4,20 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_host_info**](HostApi.md#get_host_info) | **GET** /host/info | info
+[**get_host_counts**](HostApi.md#get_host_counts) | **GET** /host/counts | counts
+[**get_host_info**](HostApi.md#get_host_info) | **GET** /host/info | get host info
 [**get_host_next_week_ends**](HostApi.md#get_host_next_week_ends) | **GET** /host/next_week_ends | next week-ends
-[**get_host_rebuild**](HostApi.md#get_host_rebuild) | **GET** /host/rebuild | rebuild
+[**get_host_ping**](HostApi.md#get_host_ping) | **GET** /host/ping | check server access
+[**post_host_rebuild**](HostApi.md#post_host_rebuild) | **POST** /host/rebuild | rebuild
 [**put_host_increment_day_offset**](HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 
 
-# **get_host_info**
-> HostInfo get_host_info
+# **get_host_counts**
+> HostCount get_host_counts
 
-info
+counts
 
-info
+Show host object counts: number of users, offers, contracts, etc. 
 
 ### Example
 ```ruby
@@ -31,7 +33,54 @@ end
 api_instance = BmxApiRuby::HostApi.new
 
 begin
-  #info
+  #counts
+  result = api_instance.get_host_counts
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->get_host_counts: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**HostCount**](HostCount.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_host_info**
+> HostInfo get_host_info
+
+get host info
+
+Show host info: host-time, day offset, datastore type, etc. 
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+begin
+  #get host info
   result = api_instance.get_host_info
   p result
 rescue BmxApiRuby::ApiError => e
@@ -111,12 +160,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_host_rebuild**
-> get_host_rebuild
+# **get_host_ping**
+> Status get_host_ping
 
-rebuild
+check server access
 
-rebuild
+check server access
 
 ### Example
 ```ruby
@@ -132,10 +181,11 @@ end
 api_instance = BmxApiRuby::HostApi.new
 
 begin
-  #rebuild
-  api_instance.get_host_rebuild
+  #check server access
+  result = api_instance.get_host_ping
+  p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling HostApi->get_host_rebuild: #{e}"
+  puts "Exception when calling HostApi->get_host_ping: #{e}"
 end
 ```
 
@@ -144,7 +194,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-nil (empty response body)
+[**Status**](Status.md)
 
 ### Authorization
 
@@ -153,6 +203,59 @@ nil (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **post_host_rebuild**
+> Status post_host_rebuild(affirm)
+
+rebuild
+
+Destroy all data and rebuild the system. The rebuilt system  will have one user: `user/pass` = `admin@bugmark.net/bugmark`.  To run this command, you must post a confirmation parameter: `/host/rebuild?confirm=destroy_all_data`  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with `mutable` datastores, and will fail for hosts with `permanent` datastores.  View the datastore setting with the `/hosts/info` command. 
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+affirm = "affirm_example" # String | confirmation
+
+
+begin
+  #rebuild
+  result = api_instance.post_host_rebuild(affirm)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->post_host_rebuild: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **affirm** | **String**| confirmation | 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

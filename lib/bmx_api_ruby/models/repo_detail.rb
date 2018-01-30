@@ -24,13 +24,21 @@ module BmxApiRuby
     # Repo Name
     attr_accessor :name
 
+    # # open issues
+    attr_accessor :issue_count
+
+    # issue UUIDs
+    attr_accessor :issues
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'type' => :'type',
         :'uuid' => :'uuid',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'issue_count' => :'issue_count',
+        :'issues' => :'issues'
       }
     end
 
@@ -39,7 +47,9 @@ module BmxApiRuby
       {
         :'type' => :'String',
         :'uuid' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'issue_count' => :'Integer',
+        :'issues' => :'Array<String>'
       }
     end
 
@@ -61,6 +71,16 @@ module BmxApiRuby
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'issue_count')
+        self.issue_count = attributes[:'issue_count']
+      end
+
+      if attributes.has_key?(:'issues')
+        if (value = attributes[:'issues']).is_a?(Array)
+          self.issues = value
+        end
       end
 
     end
@@ -85,7 +105,9 @@ module BmxApiRuby
       self.class == o.class &&
           type == o.type &&
           uuid == o.uuid &&
-          name == o.name
+          name == o.name &&
+          issue_count == o.issue_count &&
+          issues == o.issues
     end
 
     # @see the `==` method
@@ -97,7 +119,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid, name].hash
+      [type, uuid, name, issue_count, issues].hash
     end
 
     # Builds the object from hash

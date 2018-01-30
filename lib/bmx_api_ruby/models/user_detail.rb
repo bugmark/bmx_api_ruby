@@ -19,15 +19,15 @@ module BmxApiRuby
     attr_accessor :uuid
 
     # eMail Address
-    attr_accessor :usermail
+    attr_accessor :email
 
     # Balance
     attr_accessor :balance
 
-    # Open Offers
+    # offer UUIDs
     attr_accessor :offers
 
-    # Open Positions
+    # posistion UUID, 
     attr_accessor :positions
 
 
@@ -35,7 +35,7 @@ module BmxApiRuby
     def self.attribute_map
       {
         :'uuid' => :'uuid',
-        :'usermail' => :'usermail',
+        :'email' => :'email',
         :'balance' => :'balance',
         :'offers' => :'offers',
         :'positions' => :'positions'
@@ -46,7 +46,7 @@ module BmxApiRuby
     def self.swagger_types
       {
         :'uuid' => :'String',
-        :'usermail' => :'String',
+        :'email' => :'String',
         :'balance' => :'Float',
         :'offers' => :'Array<String>',
         :'positions' => :'Array<String>'
@@ -65,8 +65,8 @@ module BmxApiRuby
         self.uuid = attributes[:'uuid']
       end
 
-      if attributes.has_key?(:'usermail')
-        self.usermail = attributes[:'usermail']
+      if attributes.has_key?(:'email')
+        self.email = attributes[:'email']
       end
 
       if attributes.has_key?(:'balance')
@@ -106,7 +106,7 @@ module BmxApiRuby
       return true if self.equal?(o)
       self.class == o.class &&
           uuid == o.uuid &&
-          usermail == o.usermail &&
+          email == o.email &&
           balance == o.balance &&
           offers == o.offers &&
           positions == o.positions
@@ -121,7 +121,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, usermail, balance, offers, positions].hash
+      [uuid, email, balance, offers, positions].hash
     end
 
     # Builds the object from hash

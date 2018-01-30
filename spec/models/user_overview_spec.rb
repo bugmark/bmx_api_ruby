@@ -38,7 +38,13 @@ describe 'UserOverview' do
     end
   end
 
-  describe 'test attribute "usermail"' do
+  describe 'test attribute "email"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "balance"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

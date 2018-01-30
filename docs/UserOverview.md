@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **String** | UUID | [optional] 
-**usermail** | **String** | eMail Address | [optional] 
+**email** | **String** | eMail address | [optional] 
+**balance** | **Float** | account balance | [optional] 
 
 

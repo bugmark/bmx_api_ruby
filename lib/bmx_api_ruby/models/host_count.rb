@@ -13,33 +13,73 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # List all users
-  class UserOverview
-    # UUID
-    attr_accessor :uuid
+  # Show host object counts: number of users, offers, contracts, etc. 
+  class HostCount
+    # Bugmark Hostname
+    attr_accessor :host_name
 
-    # eMail address
-    attr_accessor :email
+    # System Time
+    attr_accessor :host_time
 
-    # account balance
-    attr_accessor :balance
+    # Number of Users
+    attr_accessor :num_users
+
+    # Number of Repos
+    attr_accessor :num_repos
+
+    # Number of Issues
+    attr_accessor :num_issues
+
+    # Number of Offers to Buy Fixed
+    attr_accessor :bu_offers
+
+    # Number of Offers to Buy Unfixed
+    attr_accessor :bf_offers
+
+    # Number of Contracts
+    attr_accessor :contracts
+
+    # Number of Positions
+    attr_accessor :positions
+
+    # Number of Escrows
+    attr_accessor :escrows
+
+    # Number of Amendments
+    attr_accessor :amendments
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'uuid' => :'uuid',
-        :'email' => :'email',
-        :'balance' => :'balance'
+        :'host_name' => :'host_name',
+        :'host_time' => :'host_time',
+        :'num_users' => :'num_users',
+        :'num_repos' => :'num_repos',
+        :'num_issues' => :'num_issues',
+        :'bu_offers' => :'bu_offers',
+        :'bf_offers' => :'bf_offers',
+        :'contracts' => :'contracts',
+        :'positions' => :'positions',
+        :'escrows' => :'escrows',
+        :'amendments' => :'amendments'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'uuid' => :'String',
-        :'email' => :'String',
-        :'balance' => :'Float'
+        :'host_name' => :'String',
+        :'host_time' => :'String',
+        :'num_users' => :'Integer',
+        :'num_repos' => :'Integer',
+        :'num_issues' => :'Integer',
+        :'bu_offers' => :'Integer',
+        :'bf_offers' => :'Integer',
+        :'contracts' => :'Integer',
+        :'positions' => :'Integer',
+        :'escrows' => :'Integer',
+        :'amendments' => :'Integer'
       }
     end
 
@@ -51,16 +91,48 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'uuid')
-        self.uuid = attributes[:'uuid']
+      if attributes.has_key?(:'host_name')
+        self.host_name = attributes[:'host_name']
       end
 
-      if attributes.has_key?(:'email')
-        self.email = attributes[:'email']
+      if attributes.has_key?(:'host_time')
+        self.host_time = attributes[:'host_time']
       end
 
-      if attributes.has_key?(:'balance')
-        self.balance = attributes[:'balance']
+      if attributes.has_key?(:'num_users')
+        self.num_users = attributes[:'num_users']
+      end
+
+      if attributes.has_key?(:'num_repos')
+        self.num_repos = attributes[:'num_repos']
+      end
+
+      if attributes.has_key?(:'num_issues')
+        self.num_issues = attributes[:'num_issues']
+      end
+
+      if attributes.has_key?(:'bu_offers')
+        self.bu_offers = attributes[:'bu_offers']
+      end
+
+      if attributes.has_key?(:'bf_offers')
+        self.bf_offers = attributes[:'bf_offers']
+      end
+
+      if attributes.has_key?(:'contracts')
+        self.contracts = attributes[:'contracts']
+      end
+
+      if attributes.has_key?(:'positions')
+        self.positions = attributes[:'positions']
+      end
+
+      if attributes.has_key?(:'escrows')
+        self.escrows = attributes[:'escrows']
+      end
+
+      if attributes.has_key?(:'amendments')
+        self.amendments = attributes[:'amendments']
       end
 
     end
@@ -83,9 +155,17 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          uuid == o.uuid &&
-          email == o.email &&
-          balance == o.balance
+          host_name == o.host_name &&
+          host_time == o.host_time &&
+          num_users == o.num_users &&
+          num_repos == o.num_repos &&
+          num_issues == o.num_issues &&
+          bu_offers == o.bu_offers &&
+          bf_offers == o.bf_offers &&
+          contracts == o.contracts &&
+          positions == o.positions &&
+          escrows == o.escrows &&
+          amendments == o.amendments
     end
 
     # @see the `==` method
@@ -97,7 +177,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, email, balance].hash
+      [host_name, host_time, num_users, num_repos, num_issues, bu_offers, bf_offers, contracts, positions, escrows, amendments].hash
     end
 
     # Builds the object from hash

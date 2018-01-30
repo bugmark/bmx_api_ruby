@@ -46,10 +46,36 @@ describe 'ReposApi' do
   # unit tests for get_repos_uuid
   # Show repo detail
   # Show repo detail
-  # @param uuid 
+  # @param uuid repo UUID
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :issues include issues
   # @return [RepoDetail]
   describe 'get_repos_uuid test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_repos
+  # Create a repo
+  # Create a GitHub repo. 
+  # @param name repo name
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :sync sync on create
+  # @return [Status]
+  describe 'post_repos test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_repos
+  # Sync a repo
+  # Sync a GitHub repo. 
+  # @param uuid repo uuid
+  # @param [Hash] opts the optional parameters
+  # @return [Status]
+  describe 'put_repos test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

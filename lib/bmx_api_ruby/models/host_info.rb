@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # info
+  # Show host info: host-time, day offset, datastore type, etc. 
   class HostInfo
     # Bugmark Hostname
     attr_accessor :host_name

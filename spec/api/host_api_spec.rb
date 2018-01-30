@@ -32,9 +32,20 @@ describe 'HostApi' do
     end
   end
 
+  # unit tests for get_host_counts
+  # counts
+  # Show host object counts: number of users, offers, contracts, etc. 
+  # @param [Hash] opts the optional parameters
+  # @return [HostCount]
+  describe 'get_host_counts test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_host_info
-  # info
-  # info
+  # get host info
+  # Show host info: host-time, day offset, datastore type, etc. 
   # @param [Hash] opts the optional parameters
   # @return [HostInfo]
   describe 'get_host_info test' do
@@ -55,12 +66,24 @@ describe 'HostApi' do
     end
   end
 
-  # unit tests for get_host_rebuild
-  # rebuild
-  # rebuild
+  # unit tests for get_host_ping
+  # check server access
+  # check server access
   # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'get_host_rebuild test' do
+  # @return [Status]
+  describe 'get_host_ping test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_host_rebuild
+  # rebuild
+  # Destroy all data and rebuild the system. The rebuilt system  will have one user: &#x60;user/pass&#x60; &#x3D; &#x60;admin@bugmark.net/bugmark&#x60;.  To run this command, you must post a confirmation parameter: &#x60;/host/rebuild?confirm&#x3D;destroy_all_data&#x60;  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with &#x60;mutable&#x60; datastores, and will fail for hosts with &#x60;permanent&#x60; datastores.  View the datastore setting with the &#x60;/hosts/info&#x60; command. 
+  # @param affirm confirmation
+  # @param [Hash] opts the optional parameters
+  # @return [Status]
+  describe 'post_host_rebuild test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
