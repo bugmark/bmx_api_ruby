@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # List all users
+  # Create a user.  Supply an optional opening balance.  (Default 0.0) 
   class UserOverview
     # UUID
     attr_accessor :uuid

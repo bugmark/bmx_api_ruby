@@ -106,7 +106,7 @@ No authorization required
 
 
 # **post_users**
-> Status post_users(usermail, password, opts)
+> UserOverview post_users(usermail, password, opts)
 
 Create a user
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Status**](Status.md)
+[**UserOverview**](UserOverview.md)
 
 ### Authorization
 

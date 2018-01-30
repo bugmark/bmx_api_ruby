@@ -48,6 +48,9 @@ module BmxApiRuby
     # Number of Amendments
     attr_accessor :amendments
 
+    # Number of Events
+    attr_accessor :events
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -62,7 +65,8 @@ module BmxApiRuby
         :'contracts' => :'contracts',
         :'positions' => :'positions',
         :'escrows' => :'escrows',
-        :'amendments' => :'amendments'
+        :'amendments' => :'amendments',
+        :'events' => :'events'
       }
     end
 
@@ -79,7 +83,8 @@ module BmxApiRuby
         :'contracts' => :'Integer',
         :'positions' => :'Integer',
         :'escrows' => :'Integer',
-        :'amendments' => :'Integer'
+        :'amendments' => :'Integer',
+        :'events' => :'Integer'
       }
     end
 
@@ -135,6 +140,10 @@ module BmxApiRuby
         self.amendments = attributes[:'amendments']
       end
 
+      if attributes.has_key?(:'events')
+        self.events = attributes[:'events']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -165,7 +174,8 @@ module BmxApiRuby
           contracts == o.contracts &&
           positions == o.positions &&
           escrows == o.escrows &&
-          amendments == o.amendments
+          amendments == o.amendments &&
+          events == o.events
     end
 
     # @see the `==` method
@@ -177,7 +187,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host_name, host_time, num_users, num_repos, num_issues, bu_offers, bf_offers, contracts, positions, escrows, amendments].hash
+      [host_name, host_time, num_users, num_repos, num_issues, bu_offers, bf_offers, contracts, positions, escrows, amendments, events].hash
     end
 
     # Builds the object from hash

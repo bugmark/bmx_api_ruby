@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **positions** | **Integer** | Number of Positions | [optional] 
 **escrows** | **Integer** | Number of Escrows | [optional] 
 **amendments** | **Integer** | Number of Amendments | [optional] 
+**events** | **Integer** | Number of Events | [optional] 
 
 

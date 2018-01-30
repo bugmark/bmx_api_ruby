@@ -64,7 +64,7 @@ describe 'UsersApi' do
   # @param password user password
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :balance opening balance
-  # @return [Status]
+  # @return [UserOverview]
   describe 'post_users test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
