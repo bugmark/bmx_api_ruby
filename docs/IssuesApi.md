@@ -19,12 +19,6 @@ List all issues
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::IssuesApi.new
 
@@ -46,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -66,12 +60,6 @@ Show issue detail
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::IssuesApi.new
 
@@ -99,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 

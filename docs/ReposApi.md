@@ -21,12 +21,6 @@ List all repos
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::ReposApi.new
 
@@ -48,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -68,12 +62,6 @@ Show repo detail
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::ReposApi.new
 
@@ -105,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -125,12 +113,6 @@ Create a GitHub repo.
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::ReposApi.new
 
@@ -162,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -182,12 +164,6 @@ Sync a GitHub repo.
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::ReposApi.new
 
@@ -215,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 

@@ -20,12 +20,6 @@ Return events
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::EventsApi.new
 
@@ -54,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -74,12 +68,6 @@ Show event record
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::EventsApi.new
 
@@ -107,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -127,12 +115,6 @@ Update an event
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::EventsApi.new
 
@@ -163,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 

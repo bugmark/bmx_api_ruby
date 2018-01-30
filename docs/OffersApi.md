@@ -20,12 +20,6 @@ List all offers
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::OffersApi.new
 
@@ -47,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -67,12 +61,6 @@ Show offer detail
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::OffersApi.new
 
@@ -100,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
@@ -120,12 +108,6 @@ Create a buy offer
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
 
 api_instance = BmxApiRuby::OffersApi.new
 
@@ -172,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[base](../README.md#base)
+No authorization required
 
 ### HTTP request headers
 
