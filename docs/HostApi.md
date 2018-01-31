@@ -95,7 +95,7 @@ No authorization required
 
 
 # **get_host_next_week_ends**
-> Array&lt;TimeWeekEnds&gt; get_host_next_week_ends(opts)
+> NextWeekEnds get_host_next_week_ends(opts)
 
 next week-ends
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;TimeWeekEnds&gt;**](TimeWeekEnds.md)
+[**NextWeekEnds**](NextWeekEnds.md)
 
 ### Authorization
 

@@ -103,7 +103,7 @@ No authorization required
 
 
 # **post_repos**
-> Status post_repos(name, opts)
+> RepoOverview post_repos(name, opts)
 
 Create a repo
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Status**](Status.md)
+[**RepoOverview**](RepoOverview.md)
 
 ### Authorization
 

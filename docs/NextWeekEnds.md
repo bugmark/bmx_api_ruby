@@ -1,8 +1,8 @@
-# BmxApiRuby::TimeWeekEnds
+# BmxApiRuby::NextWeekEnds
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**week_end** | **String** | Week end | [optional] 
+**next_week_ends** | **Array&lt;DateTime&gt;** | Week end times | [optional] 
 
 

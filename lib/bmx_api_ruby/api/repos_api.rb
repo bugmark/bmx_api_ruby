@@ -128,7 +128,7 @@ module BmxApiRuby
     # @param name repo name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :sync sync on create
-    # @return [Status]
+    # @return [RepoOverview]
     def post_repos(name, opts = {})
       data, _status_code, _headers = post_repos_with_http_info(name, opts)
       return data
@@ -139,7 +139,7 @@ module BmxApiRuby
     # @param name repo name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :sync sync on create
-    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    # @return [Array<(RepoOverview, Fixnum, Hash)>] RepoOverview data, response status code and response headers
     def post_repos_with_http_info(name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReposApi.post_repos ..."
@@ -175,7 +175,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Status')
+        :return_type => 'RepoOverview')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReposApi#post_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

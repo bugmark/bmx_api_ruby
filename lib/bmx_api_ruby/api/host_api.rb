@@ -118,7 +118,7 @@ module BmxApiRuby
     # next week-ends
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 4)
-    # @return [Array<TimeWeekEnds>]
+    # @return [NextWeekEnds]
     def get_host_next_week_ends(opts = {})
       data, _status_code, _headers = get_host_next_week_ends_with_http_info(opts)
       return data
@@ -128,7 +128,7 @@ module BmxApiRuby
     # next week-ends
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count count (default 4)
-    # @return [Array<(Array<TimeWeekEnds>, Fixnum, Hash)>] Array<TimeWeekEnds> data, response status code and response headers
+    # @return [Array<(NextWeekEnds, Fixnum, Hash)>] NextWeekEnds data, response status code and response headers
     def get_host_next_week_ends_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: HostApi.get_host_next_week_ends ..."
@@ -157,7 +157,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<TimeWeekEnds>')
+        :return_type => 'NextWeekEnds')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: HostApi#get_host_next_week_ends\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

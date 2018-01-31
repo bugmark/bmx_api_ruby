@@ -23,6 +23,7 @@ module BmxApiRuby
     # List all issues
     # List all issues
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit count limit
     # @return [Array<IssueOverview>]
     def get_issues(opts = {})
       data, _status_code, _headers = get_issues_with_http_info(opts)
@@ -32,6 +33,7 @@ module BmxApiRuby
     # List all issues
     # List all issues
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit count limit
     # @return [Array<(Array<IssueOverview>, Fixnum, Hash)>] Array<IssueOverview> data, response status code and response headers
     def get_issues_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -42,6 +44,7 @@ module BmxApiRuby
 
       # query parameters
       query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = {}

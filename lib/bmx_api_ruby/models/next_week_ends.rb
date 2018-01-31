@@ -14,22 +14,22 @@ require 'date'
 
 module BmxApiRuby
   # next week-ends
-  class TimeWeekEnds
-    # Week end
-    attr_accessor :week_end
+  class NextWeekEnds
+    # Week end times
+    attr_accessor :next_week_ends
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'week_end' => :'week_end'
+        :'next_week_ends' => :'next_week_ends'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'week_end' => :'String'
+        :'next_week_ends' => :'Array<DateTime>'
       }
     end
 
@@ -41,8 +41,10 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'week_end')
-        self.week_end = attributes[:'week_end']
+      if attributes.has_key?(:'next_week_ends')
+        if (value = attributes[:'next_week_ends']).is_a?(Array)
+          self.next_week_ends = value
+        end
       end
 
     end
@@ -65,7 +67,7 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          week_end == o.week_end
+          next_week_ends == o.next_week_ends
     end
 
     # @see the `==` method
@@ -77,7 +79,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [week_end].hash
+      [next_week_ends].hash
     end
 
     # Builds the object from hash

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_issues**
-> Array&lt;IssueOverview&gt; get_issues
+> Array&lt;IssueOverview&gt; get_issues(opts)
 
 List all issues
 
@@ -22,9 +22,13 @@ require 'bmx_api_ruby'
 
 api_instance = BmxApiRuby::IssuesApi.new
 
+opts = { 
+  limit: 56 # Integer | count limit
+}
+
 begin
   #List all issues
-  result = api_instance.get_issues
+  result = api_instance.get_issues(opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling IssuesApi->get_issues: #{e}"
@@ -32,7 +36,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| count limit | [optional] 
 
 ### Return type
 

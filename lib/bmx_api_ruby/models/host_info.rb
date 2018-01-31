@@ -46,7 +46,7 @@ module BmxApiRuby
     def self.swagger_types
       {
         :'host_name' => :'String',
-        :'host_time' => :'String',
+        :'host_time' => :'DateTime',
         :'day_offset' => :'Integer',
         :'datastore' => :'String',
         :'released_at' => :'String'

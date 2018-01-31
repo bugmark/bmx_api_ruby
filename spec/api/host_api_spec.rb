@@ -59,7 +59,7 @@ describe 'HostApi' do
   # next week-ends
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :count count (default 4)
-  # @return [Array<TimeWeekEnds>]
+  # @return [NextWeekEnds]
   describe 'get_host_next_week_ends test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

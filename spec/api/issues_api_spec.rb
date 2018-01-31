@@ -36,6 +36,7 @@ describe 'IssuesApi' do
   # List all issues
   # List all issues
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit count limit
   # @return [Array<IssueOverview>]
   describe 'get_issues test' do
     it "should work" do

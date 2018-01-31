@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # List all repos
+  # Create a GitHub repo. 
   class RepoOverview
     # Repo UUID
     attr_accessor :uuid

@@ -111,6 +111,7 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::HostInfo](docs/HostInfo.md)
  - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
  - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)
+ - [BmxApiRuby::NextWeekEnds](docs/NextWeekEnds.md)
  - [BmxApiRuby::OfferDetail](docs/OfferDetail.md)
  - [BmxApiRuby::OfferOverview](docs/OfferOverview.md)
  - [BmxApiRuby::PositionDetail](docs/PositionDetail.md)
@@ -118,7 +119,6 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
  - [BmxApiRuby::RepoOverview](docs/RepoOverview.md)
  - [BmxApiRuby::Status](docs/Status.md)
- - [BmxApiRuby::TimeWeekEnds](docs/TimeWeekEnds.md)
  - [BmxApiRuby::UserDetail](docs/UserDetail.md)
  - [BmxApiRuby::UserOverview](docs/UserOverview.md)
 
