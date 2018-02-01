@@ -22,6 +22,12 @@ List all users
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::UsersApi.new
 
@@ -43,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -63,6 +69,12 @@ Show user detail
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::UsersApi.new
 
@@ -96,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -116,6 +128,12 @@ Create a user.  Supply an optional opening balance.  (Default 0.0)
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::UsersApi.new
 
@@ -150,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -170,6 +188,12 @@ Deposit funds
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::UsersApi.new
 
@@ -200,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -220,6 +244,12 @@ Withdraw funds
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::UsersApi.new
 
@@ -250,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 

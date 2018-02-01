@@ -23,6 +23,12 @@ Show host object counts: number of users, offers, contracts, etc.
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::HostApi.new
 
@@ -44,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -64,6 +70,12 @@ Show host info: host-time, day offset, datastore type, etc.
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::HostApi.new
 
@@ -85,7 +97,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -105,6 +117,12 @@ next week-ends
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::HostApi.new
 
@@ -133,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -153,6 +171,12 @@ check server access
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::HostApi.new
 
@@ -174,7 +198,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -194,6 +218,12 @@ Destroy all data and rebuild the system. The rebuilt system  will have one user:
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::HostApi.new
 
@@ -221,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -241,6 +271,12 @@ increment day offset
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::HostApi.new
 
@@ -269,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 

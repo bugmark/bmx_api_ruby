@@ -54,6 +54,13 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'bmx_api_ruby'
 
+# Setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
 api_instance = BmxApiRuby::ContractApi.new
 
 begin
@@ -112,6 +119,7 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
  - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)
  - [BmxApiRuby::NextWeekEnds](docs/NextWeekEnds.md)
+ - [BmxApiRuby::OfferCreated](docs/OfferCreated.md)
  - [BmxApiRuby::OfferDetail](docs/OfferDetail.md)
  - [BmxApiRuby::OfferOverview](docs/OfferOverview.md)
  - [BmxApiRuby::PositionDetail](docs/PositionDetail.md)
@@ -125,5 +133,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
- All endpoints do not require authorization.
+
+### base
+
+- **Type**: HTTP basic authentication
 

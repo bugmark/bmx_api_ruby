@@ -36,6 +36,9 @@ describe 'OffersApi' do
   # List all offers
   # List all offers
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :type type
+  # @option opts [String] :status status
+  # @option opts [Integer] :limit limit
   # @return [Array<OfferOverview>]
   describe 'get_offers test' do
     it "should work" do
@@ -67,7 +70,7 @@ describe 'OffersApi' do
   # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
   # @option opts [BOOLEAN] :poolable poolable? (default false)
   # @option opts [BOOLEAN] :aon all-or-none? (default false)
-  # @return [Status]
+  # @return [OfferCreated]
   describe 'post_offers_buy test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

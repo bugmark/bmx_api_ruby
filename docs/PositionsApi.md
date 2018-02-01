@@ -19,6 +19,12 @@ List all positions
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::PositionsApi.new
 
@@ -40,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -60,6 +66,12 @@ Show position detail
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::PositionsApi.new
 
@@ -87,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 

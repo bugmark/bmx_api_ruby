@@ -20,6 +20,12 @@ List all contracts
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::ContractApi.new
 
@@ -41,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -61,6 +67,12 @@ Show contract detail
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::ContractApi.new
 
@@ -88,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
@@ -108,6 +120,12 @@ Cross offer
 ```ruby
 # load the gem
 require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
 
 api_instance = BmxApiRuby::ContractApi.new
 
@@ -138,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[base](../README.md#base)
 
 ### HTTP request headers
 
