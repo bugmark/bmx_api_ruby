@@ -24,6 +24,7 @@ module BmxApiRuby
     # Return events
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :after &lt;cursor&gt; an event-ID
+    # @option opts [Integer] :limit max # of records
     # @return [Array<Event>]
     def get_events(opts = {})
       data, _status_code, _headers = get_events_with_http_info(opts)
@@ -34,6 +35,7 @@ module BmxApiRuby
     # Return events
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :after &lt;cursor&gt; an event-ID
+    # @option opts [Integer] :limit max # of records
     # @return [Array<(Array<Event>, Fixnum, Hash)>] Array<Event> data, response status code and response headers
     def get_events_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -45,6 +47,7 @@ module BmxApiRuby
       # query parameters
       query_params = {}
       query_params[:'after'] = opts[:'after'] if !opts[:'after'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = {}

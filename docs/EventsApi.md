@@ -30,7 +30,8 @@ end
 api_instance = BmxApiRuby::EventsApi.new
 
 opts = { 
-  after: 56 # Integer | <cursor> an event-ID
+  after: 56, # Integer | <cursor> an event-ID
+  limit: 56 # Integer | max # of records
 }
 
 begin
@@ -47,6 +48,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **Integer**| &lt;cursor&gt; an event-ID | [optional] 
+ **limit** | **Integer**| max # of records | [optional] 
 
 ### Return type
 

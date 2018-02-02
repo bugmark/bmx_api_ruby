@@ -37,6 +37,7 @@ describe 'EventsApi' do
   # Return events
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :after &lt;cursor&gt; an event-ID
+  # @option opts [Integer] :limit max # of records
   # @return [Array<Event>]
   describe 'get_events test' do
     it "should work" do
