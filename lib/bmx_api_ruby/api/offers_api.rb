@@ -23,8 +23,8 @@ module BmxApiRuby
     # List all offers
     # List all offers
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :type type
-    # @option opts [String] :status status
+    # @option opts [String] :with_type type filter
+    # @option opts [String] :with_status status filter
     # @option opts [Integer] :limit limit
     # @return [Array<OfferOverview>]
     def get_offers(opts = {})
@@ -35,8 +35,8 @@ module BmxApiRuby
     # List all offers
     # List all offers
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :type type
-    # @option opts [String] :status status
+    # @option opts [String] :with_type type filter
+    # @option opts [String] :with_status status filter
     # @option opts [Integer] :limit limit
     # @return [Array<(Array<OfferOverview>, Fixnum, Hash)>] Array<OfferOverview> data, response status code and response headers
     def get_offers_with_http_info(opts = {})
@@ -48,8 +48,8 @@ module BmxApiRuby
 
       # query parameters
       query_params = {}
-      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
-      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+      query_params[:'with_type'] = opts[:'with_type'] if !opts[:'with_type'].nil?
+      query_params[:'with_status'] = opts[:'with_status'] if !opts[:'with_status'].nil?
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters

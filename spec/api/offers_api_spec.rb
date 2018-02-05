@@ -36,8 +36,8 @@ describe 'OffersApi' do
   # List all offers
   # List all offers
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :type type
-  # @option opts [String] :status status
+  # @option opts [String] :with_type type filter
+  # @option opts [String] :with_status status filter
   # @option opts [Integer] :limit limit
   # @return [Array<OfferOverview>]
   describe 'get_offers test' do

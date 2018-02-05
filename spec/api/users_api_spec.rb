@@ -36,6 +36,7 @@ describe 'UsersApi' do
   # List all users
   # List all users
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :with_email email filter
   # @return [Array<UserOverview>]
   describe 'get_users test' do
     it "should work" do

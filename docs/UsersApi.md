@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **get_users**
-> Array&lt;UserOverview&gt; get_users
+> Array&lt;UserOverview&gt; get_users(opts)
 
 List all users
 
@@ -31,9 +31,13 @@ end
 
 api_instance = BmxApiRuby::UsersApi.new
 
+opts = { 
+  with_email: "with_email_example" # String | email filter
+}
+
 begin
   #List all users
-  result = api_instance.get_users
+  result = api_instance.get_users(opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling UsersApi->get_users: #{e}"
@@ -41,7 +45,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **with_email** | **String**| email filter | [optional] 
 
 ### Return type
 

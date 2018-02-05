@@ -23,6 +23,7 @@ module BmxApiRuby
     # List all users
     # List all users
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :with_email email filter
     # @return [Array<UserOverview>]
     def get_users(opts = {})
       data, _status_code, _headers = get_users_with_http_info(opts)
@@ -32,6 +33,7 @@ module BmxApiRuby
     # List all users
     # List all users
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :with_email email filter
     # @return [Array<(Array<UserOverview>, Fixnum, Hash)>] Array<UserOverview> data, response status code and response headers
     def get_users_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -42,6 +44,7 @@ module BmxApiRuby
 
       # query parameters
       query_params = {}
+      query_params[:'with_email'] = opts[:'with_email'] if !opts[:'with_email'].nil?
 
       # header parameters
       header_params = {}

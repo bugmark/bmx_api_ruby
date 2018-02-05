@@ -30,8 +30,8 @@ end
 api_instance = BmxApiRuby::OffersApi.new
 
 opts = { 
-  type: "type_example", # String | type
-  status: "status_example", # String | status
+  with_type: "with_type_example", # String | type filter
+  with_status: "with_status_example", # String | status filter
   limit: 56 # Integer | limit
 }
 
@@ -48,8 +48,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| type | [optional] 
- **status** | **String**| status | [optional] 
+ **with_type** | **String**| type filter | [optional] 
+ **with_status** | **String**| status filter | [optional] 
  **limit** | **Integer**| limit | [optional] 
 
 ### Return type
