@@ -56,4 +56,24 @@ describe 'IssuesApi' do
     end
   end
 
+  # unit tests for post_issues_exid
+  # Sync
+  # Sync
+  # @param exid issue exid
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :type issue type
+  # @option opts [String] :repo_uuid repo uuid
+  # @option opts [String] :issue_uuid issue uuid
+  # @option opts [String] :title TBD
+  # @option opts [String] :status TBD
+  # @option opts [String] :labels TBD
+  # @option opts [String] :xfields TBD
+  # @option opts [String] :jfields TBD
+  # @return [IssueDetail]
+  describe 'post_issues_exid test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

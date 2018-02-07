@@ -15,21 +15,31 @@ require 'date'
 module BmxApiRuby
   # List all issues
   class IssueOverview
+    # type
+    attr_accessor :type
+
     # UUID
     attr_accessor :uuid
+
+    # external ID
+    attr_accessor :exid
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'uuid' => :'uuid'
+        :'type' => :'type',
+        :'uuid' => :'uuid',
+        :'exid' => :'exid'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'uuid' => :'String'
+        :'type' => :'String',
+        :'uuid' => :'String',
+        :'exid' => :'String'
       }
     end
 
@@ -41,8 +51,16 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      end
+
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
+      end
+
+      if attributes.has_key?(:'exid')
+        self.exid = attributes[:'exid']
       end
 
     end
@@ -65,7 +83,9 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          uuid == o.uuid
+          type == o.type &&
+          uuid == o.uuid &&
+          exid == o.exid
     end
 
     # @see the `==` method
@@ -77,7 +97,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid].hash
+      [type, uuid, exid].hash
     end
 
     # Builds the object from hash

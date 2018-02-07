@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_issues**](IssuesApi.md#get_issues) | **GET** /issues | List all issues
 [**get_issues_issue_uuid**](IssuesApi.md#get_issues_issue_uuid) | **GET** /issues/{issue_uuid} | Show issue detail
+[**post_issues_exid**](IssuesApi.md#post_issues_exid) | **POST** /issues/{exid} | Sync
 
 
 # **get_issues**
@@ -111,6 +112,77 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **post_issues_exid**
+> IssueDetail post_issues_exid(exid, opts)
+
+Sync
+
+Sync
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::IssuesApi.new
+
+exid = "exid_example" # String | issue exid
+
+opts = { 
+  type: "type_example", # String | issue type
+  repo_uuid: "repo_uuid_example", # String | repo uuid
+  issue_uuid: "issue_uuid_example", # String | issue uuid
+  title: "title_example", # String | TBD
+  status: "status_example", # String | TBD
+  labels: "labels_example", # String | TBD
+  xfields: "xfields_example", # String | TBD
+  jfields: "jfields_example" # String | TBD
+}
+
+begin
+  #Sync
+  result = api_instance.post_issues_exid(exid, opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling IssuesApi->post_issues_exid: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exid** | **String**| issue exid | 
+ **type** | **String**| issue type | [optional] 
+ **repo_uuid** | **String**| repo uuid | [optional] 
+ **issue_uuid** | **String**| issue uuid | [optional] 
+ **title** | **String**| TBD | [optional] 
+ **status** | **String**| TBD | [optional] 
+ **labels** | **String**| TBD | [optional] 
+ **xfields** | **String**| TBD | [optional] 
+ **jfields** | **String**| TBD | [optional] 
+
+### Return type
+
+[**IssueDetail**](IssueDetail.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

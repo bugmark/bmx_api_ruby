@@ -122,5 +122,87 @@ module BmxApiRuby
       end
       return data, status_code, headers
     end
+
+    # Sync
+    # Sync
+    # @param exid issue exid
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :type issue type
+    # @option opts [String] :repo_uuid repo uuid
+    # @option opts [String] :issue_uuid issue uuid
+    # @option opts [String] :title TBD
+    # @option opts [String] :status TBD
+    # @option opts [String] :labels TBD
+    # @option opts [String] :xfields TBD
+    # @option opts [String] :jfields TBD
+    # @return [IssueDetail]
+    def post_issues_exid(exid, opts = {})
+      data, _status_code, _headers = post_issues_exid_with_http_info(exid, opts)
+      return data
+    end
+
+    # Sync
+    # Sync
+    # @param exid issue exid
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :type issue type
+    # @option opts [String] :repo_uuid repo uuid
+    # @option opts [String] :issue_uuid issue uuid
+    # @option opts [String] :title TBD
+    # @option opts [String] :status TBD
+    # @option opts [String] :labels TBD
+    # @option opts [String] :xfields TBD
+    # @option opts [String] :jfields TBD
+    # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers
+    def post_issues_exid_with_http_info(exid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: IssuesApi.post_issues_exid ..."
+      end
+      # verify the required parameter 'exid' is set
+      if @api_client.config.client_side_validation && exid.nil?
+        fail ArgumentError, "Missing the required parameter 'exid' when calling IssuesApi.post_issues_exid"
+      end
+      if @api_client.config.client_side_validation && opts[:'type'] && !['Test', 'GitHub'].include?(opts[:'type'])
+        fail ArgumentError, 'invalid value for "type", must be one of Test, GitHub'
+      end
+      # resource path
+      local_var_path = "/issues/{exid}".sub('{' + 'exid' + '}', exid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["type"] = opts[:'type'] if !opts[:'type'].nil?
+      form_params["repo_uuid"] = opts[:'repo_uuid'] if !opts[:'repo_uuid'].nil?
+      form_params["issue_uuid"] = opts[:'issue_uuid'] if !opts[:'issue_uuid'].nil?
+      form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
+      form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
+      form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
+      form_params["xfields"] = opts[:'xfields'] if !opts[:'xfields'].nil?
+      form_params["jfields"] = opts[:'jfields'] if !opts[:'jfields'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IssueDetail')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: IssuesApi#post_issues_exid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end

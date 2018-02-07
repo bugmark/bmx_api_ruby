@@ -125,24 +125,34 @@ module BmxApiRuby
 
     # Create a repo
     # Create a GitHub repo. 
+    # @param type repo type
     # @param name repo name
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :sync sync on create
+    # @option opts [BOOLEAN] :ghsync GH sync on create
     # @return [RepoOverview]
-    def post_repos(name, opts = {})
-      data, _status_code, _headers = post_repos_with_http_info(name, opts)
+    def post_repos(type, name, opts = {})
+      data, _status_code, _headers = post_repos_with_http_info(type, name, opts)
       return data
     end
 
     # Create a repo
     # Create a GitHub repo. 
+    # @param type repo type
     # @param name repo name
     # @param [Hash] opts the optional parameters
-    # @option opts [BOOLEAN] :sync sync on create
+    # @option opts [BOOLEAN] :ghsync GH sync on create
     # @return [Array<(RepoOverview, Fixnum, Hash)>] RepoOverview data, response status code and response headers
-    def post_repos_with_http_info(name, opts = {})
+    def post_repos_with_http_info(type, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReposApi.post_repos ..."
+      end
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling ReposApi.post_repos"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['GitHub', 'Test'].include?(type)
+        fail ArgumentError, "invalid value for 'type', must be one of GitHub, Test"
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && name.nil?
@@ -163,8 +173,9 @@ module BmxApiRuby
 
       # form parameters
       form_params = {}
+      form_params["type"] = type
       form_params["name"] = name
-      form_params["sync"] = opts[:'sync'] if !opts[:'sync'].nil?
+      form_params["ghsync"] = opts[:'ghsync'] if !opts[:'ghsync'].nil?
 
       # http body (model)
       post_body = nil

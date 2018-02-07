@@ -59,9 +59,10 @@ describe 'ReposApi' do
   # unit tests for post_repos
   # Create a repo
   # Create a GitHub repo. 
+  # @param type repo type
   # @param name repo name
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :sync sync on create
+  # @option opts [BOOLEAN] :ghsync GH sync on create
   # @return [RepoOverview]
   describe 'post_repos test' do
     it "should work" do

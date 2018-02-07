@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Show issue detail
+  # Sync
   class IssueDetail
     # Issue Type
     attr_accessor :type
@@ -21,12 +21,44 @@ module BmxApiRuby
     # Issue UUID
     attr_accessor :uuid
 
+    # TBD
+    attr_accessor :exid
+
+    # TBD
+    attr_accessor :stm_repo_uuid
+
+    # TBD
+    attr_accessor :stm_issue_uuid
+
+    # TBD
+    attr_accessor :stm_title
+
+    # TBD
+    attr_accessor :stm_status
+
+    # TBD
+    attr_accessor :stm_labels
+
+    # TBD
+    attr_accessor :xfields
+
+    # TBD
+    attr_accessor :jfields
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'type' => :'type',
-        :'uuid' => :'uuid'
+        :'uuid' => :'uuid',
+        :'exid' => :'exid',
+        :'stm_repo_uuid' => :'stm_repo_uuid',
+        :'stm_issue_uuid' => :'stm_issue_uuid',
+        :'stm_title' => :'stm_title',
+        :'stm_status' => :'stm_status',
+        :'stm_labels' => :'stm_labels',
+        :'xfields' => :'xfields',
+        :'jfields' => :'jfields'
       }
     end
 
@@ -34,7 +66,15 @@ module BmxApiRuby
     def self.swagger_types
       {
         :'type' => :'String',
-        :'uuid' => :'String'
+        :'uuid' => :'String',
+        :'exid' => :'String',
+        :'stm_repo_uuid' => :'String',
+        :'stm_issue_uuid' => :'String',
+        :'stm_title' => :'String',
+        :'stm_status' => :'String',
+        :'stm_labels' => :'String',
+        :'xfields' => :'String',
+        :'jfields' => :'String'
       }
     end
 
@@ -52,6 +92,38 @@ module BmxApiRuby
 
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
+      end
+
+      if attributes.has_key?(:'exid')
+        self.exid = attributes[:'exid']
+      end
+
+      if attributes.has_key?(:'stm_repo_uuid')
+        self.stm_repo_uuid = attributes[:'stm_repo_uuid']
+      end
+
+      if attributes.has_key?(:'stm_issue_uuid')
+        self.stm_issue_uuid = attributes[:'stm_issue_uuid']
+      end
+
+      if attributes.has_key?(:'stm_title')
+        self.stm_title = attributes[:'stm_title']
+      end
+
+      if attributes.has_key?(:'stm_status')
+        self.stm_status = attributes[:'stm_status']
+      end
+
+      if attributes.has_key?(:'stm_labels')
+        self.stm_labels = attributes[:'stm_labels']
+      end
+
+      if attributes.has_key?(:'xfields')
+        self.xfields = attributes[:'xfields']
+      end
+
+      if attributes.has_key?(:'jfields')
+        self.jfields = attributes[:'jfields']
       end
 
     end
@@ -75,7 +147,15 @@ module BmxApiRuby
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          uuid == o.uuid
+          uuid == o.uuid &&
+          exid == o.exid &&
+          stm_repo_uuid == o.stm_repo_uuid &&
+          stm_issue_uuid == o.stm_issue_uuid &&
+          stm_title == o.stm_title &&
+          stm_status == o.stm_status &&
+          stm_labels == o.stm_labels &&
+          xfields == o.xfields &&
+          jfields == o.jfields
     end
 
     # @see the `==` method
@@ -87,7 +167,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid].hash
+      [type, uuid, exid, stm_repo_uuid, stm_issue_uuid, stm_title, stm_status, stm_labels, xfields, jfields].hash
     end
 
     # Builds the object from hash

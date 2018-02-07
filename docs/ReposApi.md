@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 
 # **post_repos**
-> RepoOverview post_repos(name, opts)
+> RepoOverview post_repos(type, name, opts)
 
 Create a repo
 
@@ -134,15 +134,17 @@ end
 
 api_instance = BmxApiRuby::ReposApi.new
 
+type = "type_example" # String | repo type
+
 name = "name_example" # String | repo name
 
 opts = { 
-  sync: true # BOOLEAN | sync on create
+  ghsync: true # BOOLEAN | GH sync on create
 }
 
 begin
   #Create a repo
-  result = api_instance.post_repos(name, opts)
+  result = api_instance.post_repos(type, name, opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling ReposApi->post_repos: #{e}"
@@ -153,8 +155,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **type** | **String**| repo type | 
  **name** | **String**| repo name | 
- **sync** | **BOOLEAN**| sync on create | [optional] 
+ **ghsync** | **BOOLEAN**| GH sync on create | [optional] 
 
 ### Return type
 

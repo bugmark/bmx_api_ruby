@@ -21,6 +21,9 @@ module BmxApiRuby
     # Repo Name
     attr_accessor :name
 
+    # Repo Type
+    attr_accessor :type
+
     # # open issues
     attr_accessor :issue_count
 
@@ -30,6 +33,7 @@ module BmxApiRuby
       {
         :'uuid' => :'uuid',
         :'name' => :'name',
+        :'type' => :'type',
         :'issue_count' => :'issue_count'
       }
     end
@@ -39,6 +43,7 @@ module BmxApiRuby
       {
         :'uuid' => :'String',
         :'name' => :'String',
+        :'type' => :'String',
         :'issue_count' => :'Integer'
       }
     end
@@ -57,6 +62,10 @@ module BmxApiRuby
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'issue_count')
@@ -85,6 +94,7 @@ module BmxApiRuby
       self.class == o.class &&
           uuid == o.uuid &&
           name == o.name &&
+          type == o.type &&
           issue_count == o.issue_count
     end
 
@@ -97,7 +107,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, name, issue_count].hash
+      [uuid, name, type, issue_count].hash
     end
 
     # Builds the object from hash
