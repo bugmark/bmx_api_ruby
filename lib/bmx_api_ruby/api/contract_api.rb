@@ -120,6 +120,168 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Show price and volume history
+    # Show price and volume history
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :show_series include all contract series
+    # @return [Status]
+    def get_contract_uuid_history(uuid, opts = {})
+      data, _status_code, _headers = get_contract_uuid_history_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show price and volume history
+    # Show price and volume history
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :show_series include all contract series
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def get_contract_uuid_history_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.get_contract_uuid_history ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ContractApi.get_contract_uuid_history"
+      end
+      # resource path
+      local_var_path = "/contract/{uuid}/history".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'show_series'] = opts[:'show_series'] if !opts[:'show_series'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#get_contract_uuid_history\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show contract open_offers
+    # Show contract open_offers
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Status]
+    def get_contract_uuid_open_offers(uuid, opts = {})
+      data, _status_code, _headers = get_contract_uuid_open_offers_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show contract open_offers
+    # Show contract open_offers
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def get_contract_uuid_open_offers_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.get_contract_uuid_open_offers ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ContractApi.get_contract_uuid_open_offers"
+      end
+      # resource path
+      local_var_path = "/contract/{uuid}/open_offers".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#get_contract_uuid_open_offers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show contract series
+    # Show contract series
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Status]
+    def get_contract_uuid_series(uuid, opts = {})
+      data, _status_code, _headers = get_contract_uuid_series_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show contract series
+    # Show contract series
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def get_contract_uuid_series_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.get_contract_uuid_series ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ContractApi.get_contract_uuid_series"
+      end
+      # resource path
+      local_var_path = "/contract/{uuid}/series".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#get_contract_uuid_series\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Cross offer
     # Cross offer
     # @param commit_type expand, transfer or reduce

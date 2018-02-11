@@ -6,6 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_contract**](ContractApi.md#get_contract) | **GET** /contract | List all contracts
 [**get_contract_uuid**](ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
+[**get_contract_uuid_history**](ContractApi.md#get_contract_uuid_history) | **GET** /contract/{uuid}/history | Show price and volume history
+[**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
+[**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 [**post_contract_offer_uuid**](ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
 
 
@@ -97,6 +100,169 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ContractDetail**](ContractDetail.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_contract_uuid_history**
+> Status get_contract_uuid_history(uuid, opts)
+
+Show price and volume history
+
+Show price and volume history
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+uuid = 56 # Integer | 
+
+opts = { 
+  show_series: true # BOOLEAN | include all contract series
+}
+
+begin
+  #Show price and volume history
+  result = api_instance.get_contract_uuid_history(uuid, opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->get_contract_uuid_history: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **Integer**|  | 
+ **show_series** | **BOOLEAN**| include all contract series | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_contract_uuid_open_offers**
+> Status get_contract_uuid_open_offers(uuid)
+
+Show contract open_offers
+
+Show contract open_offers
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+uuid = 56 # Integer | 
+
+
+begin
+  #Show contract open_offers
+  result = api_instance.get_contract_uuid_open_offers(uuid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->get_contract_uuid_open_offers: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **Integer**|  | 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_contract_uuid_series**
+> Status get_contract_uuid_series(uuid)
+
+Show contract series
+
+Show contract series
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+uuid = 56 # Integer | 
+
+
+begin
+  #Show contract series
+  result = api_instance.get_contract_uuid_series(uuid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->get_contract_uuid_series: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **Integer**|  | 
+
+### Return type
+
+[**Status**](Status.md)
 
 ### Authorization
 

@@ -81,6 +81,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BmxApiRuby::ContractApi* | [**get_contract**](docs/ContractApi.md#get_contract) | **GET** /contract | List all contracts
 *BmxApiRuby::ContractApi* | [**get_contract_uuid**](docs/ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
+*BmxApiRuby::ContractApi* | [**get_contract_uuid_history**](docs/ContractApi.md#get_contract_uuid_history) | **GET** /contract/{uuid}/history | Show price and volume history
+*BmxApiRuby::ContractApi* | [**get_contract_uuid_open_offers**](docs/ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
+*BmxApiRuby::ContractApi* | [**get_contract_uuid_series**](docs/ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 *BmxApiRuby::ContractApi* | [**post_contract_offer_uuid**](docs/ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
 *BmxApiRuby::EventsApi* | [**get_events_event_uuid**](docs/EventsApi.md#get_events_event_uuid) | **GET** /events/{event_uuid} | Show event record
@@ -91,6 +94,8 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::HostApi* | [**get_host_ping**](docs/HostApi.md#get_host_ping) | **GET** /host/ping | check server access
 *BmxApiRuby::HostApi* | [**post_host_rebuild**](docs/HostApi.md#post_host_rebuild) | **POST** /host/rebuild | rebuild
 *BmxApiRuby::HostApi* | [**put_host_increment_day_offset**](docs/HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
+*BmxApiRuby::HostApi* | [**put_host_increment_hour_offset**](docs/HostApi.md#put_host_increment_hour_offset) | **PUT** /host/increment_hour_offset | increment hour offset
+*BmxApiRuby::HostApi* | [**put_host_set_current_time**](docs/HostApi.md#put_host_set_current_time) | **PUT** /host/set_current_time | set current time
 *BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
 *BmxApiRuby::IssuesApi* | [**get_issues_issue_uuid**](docs/IssuesApi.md#get_issues_issue_uuid) | **GET** /issues/{issue_uuid} | Show issue detail
 *BmxApiRuby::IssuesApi* | [**post_issues_exid**](docs/IssuesApi.md#post_issues_exid) | **POST** /issues/{exid} | Sync

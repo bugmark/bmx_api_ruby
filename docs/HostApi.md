@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**get_host_ping**](HostApi.md#get_host_ping) | **GET** /host/ping | check server access
 [**post_host_rebuild**](HostApi.md#post_host_rebuild) | **POST** /host/rebuild | rebuild
 [**put_host_increment_day_offset**](HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
+[**put_host_increment_hour_offset**](HostApi.md#put_host_increment_hour_offset) | **PUT** /host/increment_hour_offset | increment hour offset
+[**put_host_set_current_time**](HostApi.md#put_host_set_current_time) | **PUT** /host/set_current_time | set current time
 
 
 # **get_host_counts**
@@ -208,11 +210,11 @@ This endpoint does not need any parameter.
 
 
 # **post_host_rebuild**
-> Status post_host_rebuild(affirm)
+> Status post_host_rebuild(affirm, opts)
 
 rebuild
 
-Destroy all data and rebuild the system. The rebuilt system  will have one user: `user/pass` = `admin@bugmark.net/bugmark`.  To run this command, you must post a confirmation parameter: `/host/rebuild?confirm=destroy_all_data`  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with `mutable` datastores, and will fail for hosts with `permanent` datastores.  View the datastore setting with the `/hosts/info` command. 
+Destroy all data and rebuild the system. The rebuilt system  will have one user: `user/pass` = `admin@bugmark.net/bugmark`.  To run this command, you must post a confirmation parameter:  `/host/rebuild?confirm=destroy_all_data`  Optionally, you can use the 'with_day_offset' param to set the start  date for your system.  This can be used for simulations where you want to use historical data:  `host/rebuild?confirm=destroy_all_data&with_day_offset=-90`  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with `mutable` datastores, and will fail for hosts with `permanent` datastores.  View the datastore setting with the `/hosts/info` command. 
 
 ### Example
 ```ruby
@@ -229,10 +231,13 @@ api_instance = BmxApiRuby::HostApi.new
 
 affirm = "affirm_example" # String | confirmation
 
+opts = { 
+  with_day_offset: 56 # Integer | initial day offset
+}
 
 begin
   #rebuild
-  result = api_instance.post_host_rebuild(affirm)
+  result = api_instance.post_host_rebuild(affirm, opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling HostApi->post_host_rebuild: #{e}"
@@ -244,6 +249,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **affirm** | **String**| confirmation | 
+ **with_day_offset** | **Integer**| initial day offset | [optional] 
 
 ### Return type
 
@@ -310,6 +316,107 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **put_host_increment_hour_offset**
+> Status put_host_increment_hour_offset(opts)
+
+increment hour offset
+
+increment hour offset
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+opts = { 
+  count: 56 # Integer | count (default 1)
+}
+
+begin
+  #increment hour offset
+  result = api_instance.put_host_increment_hour_offset(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->put_host_increment_hour_offset: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **count** | **Integer**| count (default 1) | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **put_host_set_current_time**
+> Status put_host_set_current_time
+
+set current time
+
+set current time
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+begin
+  #set current time
+  result = api_instance.put_host_set_current_time
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->put_host_set_current_time: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

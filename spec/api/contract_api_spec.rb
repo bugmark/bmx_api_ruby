@@ -55,6 +55,43 @@ describe 'ContractApi' do
     end
   end
 
+  # unit tests for get_contract_uuid_history
+  # Show price and volume history
+  # Show price and volume history
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :show_series include all contract series
+  # @return [Status]
+  describe 'get_contract_uuid_history test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_contract_uuid_open_offers
+  # Show contract open_offers
+  # Show contract open_offers
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [Status]
+  describe 'get_contract_uuid_open_offers test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_contract_uuid_series
+  # Show contract series
+  # Show contract series
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [Status]
+  describe 'get_contract_uuid_series test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_contract_offer_uuid
   # Cross offer
   # Cross offer

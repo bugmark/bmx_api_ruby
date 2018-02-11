@@ -79,9 +79,10 @@ describe 'HostApi' do
 
   # unit tests for post_host_rebuild
   # rebuild
-  # Destroy all data and rebuild the system. The rebuilt system  will have one user: &#x60;user/pass&#x60; &#x3D; &#x60;admin@bugmark.net/bugmark&#x60;.  To run this command, you must post a confirmation parameter: &#x60;/host/rebuild?confirm&#x3D;destroy_all_data&#x60;  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with &#x60;mutable&#x60; datastores, and will fail for hosts with &#x60;permanent&#x60; datastores.  View the datastore setting with the &#x60;/hosts/info&#x60; command. 
+  # Destroy all data and rebuild the system. The rebuilt system  will have one user: &#x60;user/pass&#x60; &#x3D; &#x60;admin@bugmark.net/bugmark&#x60;.  To run this command, you must post a confirmation parameter:  &#x60;/host/rebuild?confirm&#x3D;destroy_all_data&#x60;  Optionally, you can use the &#39;with_day_offset&#39; param to set the start  date for your system.  This can be used for simulations where you want to use historical data:  &#x60;host/rebuild?confirm&#x3D;destroy_all_data&amp;with_day_offset&#x3D;-90&#x60;  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with &#x60;mutable&#x60; datastores, and will fail for hosts with &#x60;permanent&#x60; datastores.  View the datastore setting with the &#x60;/hosts/info&#x60; command. 
   # @param affirm confirmation
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :with_day_offset initial day offset
   # @return [Status]
   describe 'post_host_rebuild test' do
     it "should work" do
@@ -96,6 +97,29 @@ describe 'HostApi' do
   # @option opts [Integer] :count count (default 1)
   # @return [Status]
   describe 'put_host_increment_day_offset test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_host_increment_hour_offset
+  # increment hour offset
+  # increment hour offset
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :count count (default 1)
+  # @return [Status]
+  describe 'put_host_increment_hour_offset test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_host_set_current_time
+  # set current time
+  # set current time
+  # @param [Hash] opts the optional parameters
+  # @return [Status]
+  describe 'put_host_set_current_time test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

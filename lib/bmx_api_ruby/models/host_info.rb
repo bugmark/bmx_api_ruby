@@ -24,6 +24,9 @@ module BmxApiRuby
     # day offset from realtime
     attr_accessor :day_offset
 
+    # hour offset from realtime
+    attr_accessor :hour_offset
+
     # current user email
     attr_accessor :usermail
 
@@ -40,6 +43,7 @@ module BmxApiRuby
         :'host_name' => :'host_name',
         :'host_time' => :'host_time',
         :'day_offset' => :'day_offset',
+        :'hour_offset' => :'hour_offset',
         :'usermail' => :'usermail',
         :'datastore' => :'datastore',
         :'released_at' => :'released_at'
@@ -52,6 +56,7 @@ module BmxApiRuby
         :'host_name' => :'String',
         :'host_time' => :'DateTime',
         :'day_offset' => :'Integer',
+        :'hour_offset' => :'Integer',
         :'usermail' => :'String',
         :'datastore' => :'String',
         :'released_at' => :'String'
@@ -76,6 +81,10 @@ module BmxApiRuby
 
       if attributes.has_key?(:'day_offset')
         self.day_offset = attributes[:'day_offset']
+      end
+
+      if attributes.has_key?(:'hour_offset')
+        self.hour_offset = attributes[:'hour_offset']
       end
 
       if attributes.has_key?(:'usermail')
@@ -113,6 +122,7 @@ module BmxApiRuby
           host_name == o.host_name &&
           host_time == o.host_time &&
           day_offset == o.day_offset &&
+          hour_offset == o.hour_offset &&
           usermail == o.usermail &&
           datastore == o.datastore &&
           released_at == o.released_at
@@ -127,7 +137,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host_name, host_time, day_offset, usermail, datastore, released_at].hash
+      [host_name, host_time, day_offset, hour_offset, usermail, datastore, released_at].hash
     end
 
     # Builds the object from hash

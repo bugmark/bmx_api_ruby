@@ -212,9 +212,10 @@ module BmxApiRuby
     end
 
     # rebuild
-    # Destroy all data and rebuild the system. The rebuilt system  will have one user: `user/pass` = `admin@bugmark.net/bugmark`.  To run this command, you must post a confirmation parameter: `/host/rebuild?confirm=destroy_all_data`  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with `mutable` datastores, and will fail for hosts with `permanent` datastores.  View the datastore setting with the `/hosts/info` command. 
+    # Destroy all data and rebuild the system. The rebuilt system  will have one user: `user/pass` = `admin@bugmark.net/bugmark`.  To run this command, you must post a confirmation parameter:  `/host/rebuild?confirm=destroy_all_data`  Optionally, you can use the 'with_day_offset' param to set the start  date for your system.  This can be used for simulations where you want to use historical data:  `host/rebuild?confirm=destroy_all_data&with_day_offset=-90`  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with `mutable` datastores, and will fail for hosts with `permanent` datastores.  View the datastore setting with the `/hosts/info` command. 
     # @param affirm confirmation
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :with_day_offset initial day offset
     # @return [Status]
     def post_host_rebuild(affirm, opts = {})
       data, _status_code, _headers = post_host_rebuild_with_http_info(affirm, opts)
@@ -222,9 +223,10 @@ module BmxApiRuby
     end
 
     # rebuild
-    # Destroy all data and rebuild the system. The rebuilt system  will have one user: &#x60;user/pass&#x60; &#x3D; &#x60;admin@bugmark.net/bugmark&#x60;.  To run this command, you must post a confirmation parameter: &#x60;/host/rebuild?confirm&#x3D;destroy_all_data&#x60;  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with &#x60;mutable&#x60; datastores, and will fail for hosts with &#x60;permanent&#x60; datastores.  View the datastore setting with the &#x60;/hosts/info&#x60; command. 
+    # Destroy all data and rebuild the system. The rebuilt system  will have one user: &#x60;user/pass&#x60; &#x3D; &#x60;admin@bugmark.net/bugmark&#x60;.  To run this command, you must post a confirmation parameter:  &#x60;/host/rebuild?confirm&#x3D;destroy_all_data&#x60;  Optionally, you can use the &#39;with_day_offset&#39; param to set the start  date for your system.  This can be used for simulations where you want to use historical data:  &#x60;host/rebuild?confirm&#x3D;destroy_all_data&amp;with_day_offset&#x3D;-90&#x60;  The rebuild command is intended for use on hosts dedicated for  research and testing. (and not production!)  The rebuild command will work for hosts with &#x60;mutable&#x60; datastores, and will fail for hosts with &#x60;permanent&#x60; datastores.  View the datastore setting with the &#x60;/hosts/info&#x60; command. 
     # @param affirm confirmation
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :with_day_offset initial day offset
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
     def post_host_rebuild_with_http_info(affirm, opts = {})
       if @api_client.config.debugging
@@ -254,6 +256,7 @@ module BmxApiRuby
       # form parameters
       form_params = {}
       form_params["affirm"] = affirm
+      form_params["with_day_offset"] = opts[:'with_day_offset'] if !opts[:'with_day_offset'].nil?
 
       # http body (model)
       post_body = nil
@@ -319,6 +322,107 @@ module BmxApiRuby
         :return_type => 'Status')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: HostApi#put_host_increment_day_offset\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # increment hour offset
+    # increment hour offset
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Status]
+    def put_host_increment_hour_offset(opts = {})
+      data, _status_code, _headers = put_host_increment_hour_offset_with_http_info(opts)
+      return data
+    end
+
+    # increment hour offset
+    # increment hour offset
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_host_increment_hour_offset_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HostApi.put_host_increment_hour_offset ..."
+      end
+      # resource path
+      local_var_path = "/host/increment_hour_offset"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["count"] = opts[:'count'] if !opts[:'count'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HostApi#put_host_increment_hour_offset\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # set current time
+    # set current time
+    # @param [Hash] opts the optional parameters
+    # @return [Status]
+    def put_host_set_current_time(opts = {})
+      data, _status_code, _headers = put_host_set_current_time_with_http_info(opts)
+      return data
+    end
+
+    # set current time
+    # set current time
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_host_set_current_time_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HostApi.put_host_set_current_time ..."
+      end
+      # resource path
+      local_var_path = "/host/set_current_time"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HostApi#put_host_set_current_time\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
