@@ -126,35 +126,35 @@ module BmxApiRuby
     # Sync
     # Sync
     # @param exid issue exid
+    # @param type issue type
+    # @param repo_uuid repo uuid
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :type issue type
-    # @option opts [String] :repo_uuid repo uuid
     # @option opts [String] :issue_uuid issue uuid
-    # @option opts [String] :title TBD
-    # @option opts [String] :status TBD
+    # @option opts [String] :title issue title
+    # @option opts [String] :status issue status
     # @option opts [String] :labels TBD
     # @option opts [String] :xfields TBD
     # @option opts [String] :jfields TBD
     # @return [IssueDetail]
-    def post_issues_exid(exid, opts = {})
-      data, _status_code, _headers = post_issues_exid_with_http_info(exid, opts)
+    def post_issues_exid(exid, type, repo_uuid, opts = {})
+      data, _status_code, _headers = post_issues_exid_with_http_info(exid, type, repo_uuid, opts)
       return data
     end
 
     # Sync
     # Sync
     # @param exid issue exid
+    # @param type issue type
+    # @param repo_uuid repo uuid
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :type issue type
-    # @option opts [String] :repo_uuid repo uuid
     # @option opts [String] :issue_uuid issue uuid
-    # @option opts [String] :title TBD
-    # @option opts [String] :status TBD
+    # @option opts [String] :title issue title
+    # @option opts [String] :status issue status
     # @option opts [String] :labels TBD
     # @option opts [String] :xfields TBD
     # @option opts [String] :jfields TBD
     # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers
-    def post_issues_exid_with_http_info(exid, opts = {})
+    def post_issues_exid_with_http_info(exid, type, repo_uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: IssuesApi.post_issues_exid ..."
       end
@@ -162,8 +162,20 @@ module BmxApiRuby
       if @api_client.config.client_side_validation && exid.nil?
         fail ArgumentError, "Missing the required parameter 'exid' when calling IssuesApi.post_issues_exid"
       end
-      if @api_client.config.client_side_validation && opts[:'type'] && !['Test', 'GitHub'].include?(opts[:'type'])
-        fail ArgumentError, 'invalid value for "type", must be one of Test, GitHub'
+      # verify the required parameter 'type' is set
+      if @api_client.config.client_side_validation && type.nil?
+        fail ArgumentError, "Missing the required parameter 'type' when calling IssuesApi.post_issues_exid"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Test', 'GitHub'].include?(type)
+        fail ArgumentError, "invalid value for 'type', must be one of Test, GitHub"
+      end
+      # verify the required parameter 'repo_uuid' is set
+      if @api_client.config.client_side_validation && repo_uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'repo_uuid' when calling IssuesApi.post_issues_exid"
+      end
+      if @api_client.config.client_side_validation && opts[:'status'] && !['open', 'closed'].include?(opts[:'status'])
+        fail ArgumentError, 'invalid value for "status", must be one of open, closed'
       end
       # resource path
       local_var_path = "/issues/{exid}".sub('{' + 'exid' + '}', exid.to_s)
@@ -180,8 +192,8 @@ module BmxApiRuby
 
       # form parameters
       form_params = {}
-      form_params["type"] = opts[:'type'] if !opts[:'type'].nil?
-      form_params["repo_uuid"] = opts[:'repo_uuid'] if !opts[:'repo_uuid'].nil?
+      form_params["type"] = type
+      form_params["repo_uuid"] = repo_uuid
       form_params["issue_uuid"] = opts[:'issue_uuid'] if !opts[:'issue_uuid'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
