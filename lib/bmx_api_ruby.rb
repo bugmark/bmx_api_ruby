@@ -19,6 +19,7 @@ require 'bmx_api_ruby/configuration'
 # Models
 require 'bmx_api_ruby/models/contract_detail'
 require 'bmx_api_ruby/models/contract_overview'
+require 'bmx_api_ruby/models/escrow_detail'
 require 'bmx_api_ruby/models/event'
 require 'bmx_api_ruby/models/host_count'
 require 'bmx_api_ruby/models/host_info'

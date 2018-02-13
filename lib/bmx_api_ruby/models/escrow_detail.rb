@@ -13,98 +13,28 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Show contract open_offers
-  class OfferDetail
-    # offer UUID
-    attr_accessor :uuid
-
-    # offer type
+  # Show contract escrows
+  class EscrowDetail
+    # Escrow Type
     attr_accessor :type
 
-    # offer side
-    attr_accessor :side
-
-    # offer intent
-    attr_accessor :intent
-
-    # offer status
-    attr_accessor :status
-
-    # offer volume
-    attr_accessor :volume
-
-    # offer price
-    attr_accessor :price
-
-    # offer value
-    attr_accessor :value
-
-    # offer poolable
-    attr_accessor :poolable
-
-    # offer aon
-    attr_accessor :aon
-
-    # stm_repo_uuid
-    attr_accessor :stm_repo_uuid
-
-    # stm_title
-    attr_accessor :stm_title
-
-    # stm_status
-    attr_accessor :stm_status
-
-    # expiration
-    attr_accessor :expiration
-
-    # maturation_beg
-    attr_accessor :maturation_beg
-
-    # maturation_end
-    attr_accessor :maturation_end
+    # Escrow UUID
+    attr_accessor :uuid
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'uuid' => :'uuid',
         :'type' => :'type',
-        :'side' => :'side',
-        :'intent' => :'intent',
-        :'status' => :'status',
-        :'volume' => :'volume',
-        :'price' => :'price',
-        :'value' => :'value',
-        :'poolable' => :'poolable',
-        :'aon' => :'aon',
-        :'stm_repo_uuid' => :'stm_repo_uuid',
-        :'stm_title' => :'stm_title',
-        :'stm_status' => :'stm_status',
-        :'expiration' => :'expiration',
-        :'maturation_beg' => :'maturation_beg',
-        :'maturation_end' => :'maturation_end'
+        :'uuid' => :'uuid'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'uuid' => :'String',
         :'type' => :'String',
-        :'side' => :'String',
-        :'intent' => :'String',
-        :'status' => :'String',
-        :'volume' => :'Integer',
-        :'price' => :'Float',
-        :'value' => :'Float',
-        :'poolable' => :'String',
-        :'aon' => :'String',
-        :'stm_repo_uuid' => :'String',
-        :'stm_title' => :'String',
-        :'stm_status' => :'String',
-        :'expiration' => :'DateTime',
-        :'maturation_beg' => :'DateTime',
-        :'maturation_end' => :'DateTime'
+        :'uuid' => :'String'
       }
     end
 
@@ -116,68 +46,12 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'uuid')
-        self.uuid = attributes[:'uuid']
-      end
-
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
       end
 
-      if attributes.has_key?(:'side')
-        self.side = attributes[:'side']
-      end
-
-      if attributes.has_key?(:'intent')
-        self.intent = attributes[:'intent']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'volume')
-        self.volume = attributes[:'volume']
-      end
-
-      if attributes.has_key?(:'price')
-        self.price = attributes[:'price']
-      end
-
-      if attributes.has_key?(:'value')
-        self.value = attributes[:'value']
-      end
-
-      if attributes.has_key?(:'poolable')
-        self.poolable = attributes[:'poolable']
-      end
-
-      if attributes.has_key?(:'aon')
-        self.aon = attributes[:'aon']
-      end
-
-      if attributes.has_key?(:'stm_repo_uuid')
-        self.stm_repo_uuid = attributes[:'stm_repo_uuid']
-      end
-
-      if attributes.has_key?(:'stm_title')
-        self.stm_title = attributes[:'stm_title']
-      end
-
-      if attributes.has_key?(:'stm_status')
-        self.stm_status = attributes[:'stm_status']
-      end
-
-      if attributes.has_key?(:'expiration')
-        self.expiration = attributes[:'expiration']
-      end
-
-      if attributes.has_key?(:'maturation_beg')
-        self.maturation_beg = attributes[:'maturation_beg']
-      end
-
-      if attributes.has_key?(:'maturation_end')
-        self.maturation_end = attributes[:'maturation_end']
+      if attributes.has_key?(:'uuid')
+        self.uuid = attributes[:'uuid']
       end
 
     end
@@ -200,22 +74,8 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          uuid == o.uuid &&
           type == o.type &&
-          side == o.side &&
-          intent == o.intent &&
-          status == o.status &&
-          volume == o.volume &&
-          price == o.price &&
-          value == o.value &&
-          poolable == o.poolable &&
-          aon == o.aon &&
-          stm_repo_uuid == o.stm_repo_uuid &&
-          stm_title == o.stm_title &&
-          stm_status == o.stm_status &&
-          expiration == o.expiration &&
-          maturation_beg == o.maturation_beg &&
-          maturation_end == o.maturation_end
+          uuid == o.uuid
     end
 
     # @see the `==` method
@@ -227,7 +87,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, type, side, intent, status, volume, price, value, poolable, aon, stm_repo_uuid, stm_title, stm_status, expiration, maturation_beg, maturation_end].hash
+      [type, uuid].hash
     end
 
     # Builds the object from hash

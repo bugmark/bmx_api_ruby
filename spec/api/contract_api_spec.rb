@@ -55,14 +55,13 @@ describe 'ContractApi' do
     end
   end
 
-  # unit tests for get_contract_uuid_history
-  # Show price and volume history
-  # Show price and volume history
+  # unit tests for get_contract_uuid_escrows
+  # Show contract escrows
+  # Show contract escrows
   # @param uuid 
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :show_series include all contract series
-  # @return [Status]
-  describe 'get_contract_uuid_history test' do
+  # @return [Array<EscrowDetail>]
+  describe 'get_contract_uuid_escrows test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -73,7 +72,7 @@ describe 'ContractApi' do
   # Show contract open_offers
   # @param uuid 
   # @param [Hash] opts the optional parameters
-  # @return [Status]
+  # @return [Array<OfferDetail>]
   describe 'get_contract_uuid_open_offers test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

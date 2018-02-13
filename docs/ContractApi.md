@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_contract**](ContractApi.md#get_contract) | **GET** /contract | List all contracts
 [**get_contract_uuid**](ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
-[**get_contract_uuid_history**](ContractApi.md#get_contract_uuid_history) | **GET** /contract/{uuid}/history | Show price and volume history
+[**get_contract_uuid_escrows**](ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 [**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 [**post_contract_offer_uuid**](ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
@@ -112,12 +112,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_contract_uuid_history**
-> Status get_contract_uuid_history(uuid, opts)
+# **get_contract_uuid_escrows**
+> Array&lt;EscrowDetail&gt; get_contract_uuid_escrows(uuid)
 
-Show price and volume history
+Show contract escrows
 
-Show price and volume history
+Show contract escrows
 
 ### Example
 ```ruby
@@ -134,16 +134,13 @@ api_instance = BmxApiRuby::ContractApi.new
 
 uuid = 56 # Integer | 
 
-opts = { 
-  show_series: true # BOOLEAN | include all contract series
-}
 
 begin
-  #Show price and volume history
-  result = api_instance.get_contract_uuid_history(uuid, opts)
+  #Show contract escrows
+  result = api_instance.get_contract_uuid_escrows(uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ContractApi->get_contract_uuid_history: #{e}"
+  puts "Exception when calling ContractApi->get_contract_uuid_escrows: #{e}"
 end
 ```
 
@@ -152,11 +149,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | **Integer**|  | 
- **show_series** | **BOOLEAN**| include all contract series | [optional] 
 
 ### Return type
 
-[**Status**](Status.md)
+[**Array&lt;EscrowDetail&gt;**](EscrowDetail.md)
 
 ### Authorization
 
@@ -170,7 +166,7 @@ Name | Type | Description  | Notes
 
 
 # **get_contract_uuid_open_offers**
-> Status get_contract_uuid_open_offers(uuid)
+> Array&lt;OfferDetail&gt; get_contract_uuid_open_offers(uuid)
 
 Show contract open_offers
 
@@ -209,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Status**](Status.md)
+[**Array&lt;OfferDetail&gt;**](OfferDetail.md)
 
 ### Authorization
 

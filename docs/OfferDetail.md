@@ -3,7 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Offer Type | [optional] 
-**uuid** | **String** | Offer UUID | [optional] 
+**uuid** | **String** | offer UUID | [optional] 
+**type** | **String** | offer type | [optional] 
+**side** | **String** | offer side | [optional] 
+**intent** | **String** | offer intent | [optional] 
+**status** | **String** | offer status | [optional] 
+**volume** | **Integer** | offer volume | [optional] 
+**price** | **Float** | offer price | [optional] 
+**value** | **Float** | offer value | [optional] 
+**poolable** | **String** | offer poolable | [optional] 
+**aon** | **String** | offer aon | [optional] 
+**stm_repo_uuid** | **String** | stm_repo_uuid | [optional] 
+**stm_title** | **String** | stm_title | [optional] 
+**stm_status** | **String** | stm_status | [optional] 
+**expiration** | **DateTime** | expiration | [optional] 
+**maturation_beg** | **DateTime** | maturation_beg | [optional] 
+**maturation_end** | **DateTime** | maturation_end | [optional] 
 
 

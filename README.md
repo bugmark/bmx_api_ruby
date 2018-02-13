@@ -81,7 +81,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BmxApiRuby::ContractApi* | [**get_contract**](docs/ContractApi.md#get_contract) | **GET** /contract | List all contracts
 *BmxApiRuby::ContractApi* | [**get_contract_uuid**](docs/ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
-*BmxApiRuby::ContractApi* | [**get_contract_uuid_history**](docs/ContractApi.md#get_contract_uuid_history) | **GET** /contract/{uuid}/history | Show price and volume history
+*BmxApiRuby::ContractApi* | [**get_contract_uuid_escrows**](docs/ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_open_offers**](docs/ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_series**](docs/ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 *BmxApiRuby::ContractApi* | [**post_contract_offer_uuid**](docs/ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
 
  - [BmxApiRuby::ContractDetail](docs/ContractDetail.md)
  - [BmxApiRuby::ContractOverview](docs/ContractOverview.md)
+ - [BmxApiRuby::EscrowDetail](docs/EscrowDetail.md)
  - [BmxApiRuby::Event](docs/Event.md)
  - [BmxApiRuby::HostCount](docs/HostCount.md)
  - [BmxApiRuby::HostInfo](docs/HostInfo.md)
