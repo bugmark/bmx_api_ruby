@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 [**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 [**post_contract_offer_uuid**](ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
+[**put_contract_contract_uuid**](ContractApi.md#put_contract_contract_uuid) | **PUT** /contract/{contract_uuid} | Resolve contract
 
 
 # **get_contract**
@@ -311,6 +312,59 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commit_type** | **String**| expand, transfer or reduce | 
  **offer_uuid** | **Integer**|  | 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **put_contract_contract_uuid**
+> Status put_contract_contract_uuid(contract_uuid)
+
+Resolve contract
+
+Resolve contract
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+contract_uuid = 56 # Integer | 
+
+
+begin
+  #Resolve contract
+  result = api_instance.put_contract_contract_uuid(contract_uuid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->put_contract_contract_uuid: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract_uuid** | **Integer**|  | 
 
 ### Return type
 

@@ -344,5 +344,60 @@ module BmxApiRuby
       end
       return data, status_code, headers
     end
+
+    # Resolve contract
+    # Resolve contract
+    # @param contract_uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Status]
+    def put_contract_contract_uuid(contract_uuid, opts = {})
+      data, _status_code, _headers = put_contract_contract_uuid_with_http_info(contract_uuid, opts)
+      return data
+    end
+
+    # Resolve contract
+    # Resolve contract
+    # @param contract_uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_contract_contract_uuid_with_http_info(contract_uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.put_contract_contract_uuid ..."
+      end
+      # verify the required parameter 'contract_uuid' is set
+      if @api_client.config.client_side_validation && contract_uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'contract_uuid' when calling ContractApi.put_contract_contract_uuid"
+      end
+      # resource path
+      local_var_path = "/contract/{contract_uuid}".sub('{' + 'contract_uuid' + '}', contract_uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#put_contract_contract_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end
