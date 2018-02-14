@@ -85,7 +85,7 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_open_offers**](docs/ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_series**](docs/ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 *BmxApiRuby::ContractApi* | [**post_contract_offer_uuid**](docs/ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
-*BmxApiRuby::ContractApi* | [**put_contract_contract_uuid**](docs/ContractApi.md#put_contract_contract_uuid) | **PUT** /contract/{contract_uuid} | Resolve contract
+*BmxApiRuby::ContractApi* | [**put_contract_uuid_resolve**](docs/ContractApi.md#put_contract_uuid_resolve) | **PUT** /contract/{uuid}/resolve | Resolve contract
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
 *BmxApiRuby::EventsApi* | [**get_events_event_uuid**](docs/EventsApi.md#get_events_event_uuid) | **GET** /events/{event_uuid} | Show event record
 *BmxApiRuby::EventsApi* | [**put_events**](docs/EventsApi.md#put_events) | **PUT** /events | Update an event

@@ -347,29 +347,29 @@ module BmxApiRuby
 
     # Resolve contract
     # Resolve contract
-    # @param contract_uuid 
+    # @param uuid 
     # @param [Hash] opts the optional parameters
     # @return [Status]
-    def put_contract_contract_uuid(contract_uuid, opts = {})
-      data, _status_code, _headers = put_contract_contract_uuid_with_http_info(contract_uuid, opts)
+    def put_contract_uuid_resolve(uuid, opts = {})
+      data, _status_code, _headers = put_contract_uuid_resolve_with_http_info(uuid, opts)
       return data
     end
 
     # Resolve contract
     # Resolve contract
-    # @param contract_uuid 
+    # @param uuid 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
-    def put_contract_contract_uuid_with_http_info(contract_uuid, opts = {})
+    def put_contract_uuid_resolve_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ContractApi.put_contract_contract_uuid ..."
+        @api_client.config.logger.debug "Calling API: ContractApi.put_contract_uuid_resolve ..."
       end
-      # verify the required parameter 'contract_uuid' is set
-      if @api_client.config.client_side_validation && contract_uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'contract_uuid' when calling ContractApi.put_contract_contract_uuid"
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ContractApi.put_contract_uuid_resolve"
       end
       # resource path
-      local_var_path = "/contract/{contract_uuid}".sub('{' + 'contract_uuid' + '}', contract_uuid.to_s)
+      local_var_path = "/contract/{uuid}/resolve".sub('{' + 'uuid' + '}', uuid.to_s)
 
       # query parameters
       query_params = {}
@@ -395,7 +395,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'Status')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ContractApi#put_contract_contract_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ContractApi#put_contract_uuid_resolve\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

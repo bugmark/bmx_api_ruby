@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 [**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 [**post_contract_offer_uuid**](ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
-[**put_contract_contract_uuid**](ContractApi.md#put_contract_contract_uuid) | **PUT** /contract/{contract_uuid} | Resolve contract
+[**put_contract_uuid_resolve**](ContractApi.md#put_contract_uuid_resolve) | **PUT** /contract/{uuid}/resolve | Resolve contract
 
 
 # **get_contract**
@@ -328,8 +328,8 @@ Name | Type | Description  | Notes
 
 
 
-# **put_contract_contract_uuid**
-> Status put_contract_contract_uuid(contract_uuid)
+# **put_contract_uuid_resolve**
+> Status put_contract_uuid_resolve(uuid)
 
 Resolve contract
 
@@ -348,15 +348,15 @@ end
 
 api_instance = BmxApiRuby::ContractApi.new
 
-contract_uuid = 56 # Integer | 
+uuid = 56 # Integer | 
 
 
 begin
   #Resolve contract
-  result = api_instance.put_contract_contract_uuid(contract_uuid)
+  result = api_instance.put_contract_uuid_resolve(uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ContractApi->put_contract_contract_uuid: #{e}"
+  puts "Exception when calling ContractApi->put_contract_uuid_resolve: #{e}"
 end
 ```
 
@@ -364,7 +364,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract_uuid** | **Integer**|  | 
+ **uuid** | **Integer**|  | 
 
 ### Return type
 
