@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 
 # **post_issues_exid**
-> IssueDetail post_issues_exid(exid, type, repo_uuid, opts)
+> IssueDetail post_issues_exid(exid, repo_uuid, opts)
 
 Sync
 
@@ -138,8 +138,6 @@ api_instance = BmxApiRuby::IssuesApi.new
 
 exid = "exid_example" # String | issue exid
 
-type = "type_example" # String | issue type
-
 repo_uuid = "repo_uuid_example" # String | repo uuid
 
 opts = { 
@@ -153,7 +151,7 @@ opts = {
 
 begin
   #Sync
-  result = api_instance.post_issues_exid(exid, type, repo_uuid, opts)
+  result = api_instance.post_issues_exid(exid, repo_uuid, opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling IssuesApi->post_issues_exid: #{e}"
@@ -165,7 +163,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exid** | **String**| issue exid | 
- **type** | **String**| issue type | 
  **repo_uuid** | **String**| repo uuid | 
  **issue_uuid** | **String**| issue uuid | [optional] 
  **title** | **String**| issue title | [optional] 

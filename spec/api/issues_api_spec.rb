@@ -60,7 +60,6 @@ describe 'IssuesApi' do
   # Sync
   # Sync
   # @param exid issue exid
-  # @param type issue type
   # @param repo_uuid repo uuid
   # @param [Hash] opts the optional parameters
   # @option opts [String] :issue_uuid issue uuid
