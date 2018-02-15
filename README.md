@@ -84,7 +84,8 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_escrows**](docs/ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_open_offers**](docs/ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_series**](docs/ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
-*BmxApiRuby::ContractApi* | [**post_contract_offer_uuid**](docs/ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
+*BmxApiRuby::ContractApi* | [**post_contract_create**](docs/ContractApi.md#post_contract_create) | **POST** /contract/create | Create contract
+*BmxApiRuby::ContractApi* | [**post_contract_offer_uuid_cross**](docs/ContractApi.md#post_contract_offer_uuid_cross) | **POST** /contract/{offer_uuid}/cross | Cross offer
 *BmxApiRuby::ContractApi* | [**put_contract_uuid_resolve**](docs/ContractApi.md#put_contract_uuid_resolve) | **PUT** /contract/{uuid}/resolve | Resolve contract
 *BmxApiRuby::EventsApi* | [**get_events**](docs/EventsApi.md#get_events) | **GET** /events | Return events
 *BmxApiRuby::EventsApi* | [**get_events_event_uuid**](docs/EventsApi.md#get_events_event_uuid) | **GET** /events/{event_uuid} | Show event record
@@ -98,7 +99,7 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::HostApi* | [**put_host_increment_hour_offset**](docs/HostApi.md#put_host_increment_hour_offset) | **PUT** /host/increment_hour_offset | increment hour offset
 *BmxApiRuby::HostApi* | [**put_host_set_current_time**](docs/HostApi.md#put_host_set_current_time) | **PUT** /host/set_current_time | set current time
 *BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
-*BmxApiRuby::IssuesApi* | [**get_issues_issue_uuid**](docs/IssuesApi.md#get_issues_issue_uuid) | **GET** /issues/{issue_uuid} | Show issue detail
+*BmxApiRuby::IssuesApi* | [**get_issues_issue_exid**](docs/IssuesApi.md#get_issues_issue_exid) | **GET** /issues/{issue_exid} | Show issue detail
 *BmxApiRuby::IssuesApi* | [**post_issues_exid**](docs/IssuesApi.md#post_issues_exid) | **POST** /issues/{exid} | Sync
 *BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
 *BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
@@ -118,6 +119,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [BmxApiRuby::ContractCreated](docs/ContractCreated.md)
  - [BmxApiRuby::ContractDetail](docs/ContractDetail.md)
  - [BmxApiRuby::ContractOverview](docs/ContractOverview.md)
  - [BmxApiRuby::EscrowDetail](docs/EscrowDetail.md)

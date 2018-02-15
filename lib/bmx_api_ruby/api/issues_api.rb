@@ -72,29 +72,29 @@ module BmxApiRuby
 
     # Show issue detail
     # Show issue detail
-    # @param issue_uuid issue uuid
+    # @param issue_exid issue exid
     # @param [Hash] opts the optional parameters
     # @return [IssueDetail]
-    def get_issues_issue_uuid(issue_uuid, opts = {})
-      data, _status_code, _headers = get_issues_issue_uuid_with_http_info(issue_uuid, opts)
+    def get_issues_issue_exid(issue_exid, opts = {})
+      data, _status_code, _headers = get_issues_issue_exid_with_http_info(issue_exid, opts)
       return data
     end
 
     # Show issue detail
     # Show issue detail
-    # @param issue_uuid issue uuid
+    # @param issue_exid issue exid
     # @param [Hash] opts the optional parameters
     # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers
-    def get_issues_issue_uuid_with_http_info(issue_uuid, opts = {})
+    def get_issues_issue_exid_with_http_info(issue_exid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_issue_uuid ..."
+        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_issue_exid ..."
       end
-      # verify the required parameter 'issue_uuid' is set
-      if @api_client.config.client_side_validation && issue_uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'issue_uuid' when calling IssuesApi.get_issues_issue_uuid"
+      # verify the required parameter 'issue_exid' is set
+      if @api_client.config.client_side_validation && issue_exid.nil?
+        fail ArgumentError, "Missing the required parameter 'issue_exid' when calling IssuesApi.get_issues_issue_exid"
       end
       # resource path
-      local_var_path = "/issues/{issue_uuid}".sub('{' + 'issue_uuid' + '}', issue_uuid.to_s)
+      local_var_path = "/issues/{issue_exid}".sub('{' + 'issue_exid' + '}', issue_exid.to_s)
 
       # query parameters
       query_params = {}
@@ -118,7 +118,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'IssueDetail')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: IssuesApi#get_issues_issue_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: IssuesApi#get_issues_issue_exid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -126,8 +126,8 @@ module BmxApiRuby
     # Sync
     # Sync
     # @param exid issue exid
-    # @param repo_uuid repo uuid
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :repo_uuid repo uuid
     # @option opts [String] :issue_uuid issue uuid
     # @option opts [String] :title issue title
     # @option opts [String] :status issue status
@@ -135,16 +135,16 @@ module BmxApiRuby
     # @option opts [String] :xfields TBD
     # @option opts [String] :jfields TBD
     # @return [IssueDetail]
-    def post_issues_exid(exid, repo_uuid, opts = {})
-      data, _status_code, _headers = post_issues_exid_with_http_info(exid, repo_uuid, opts)
+    def post_issues_exid(exid, opts = {})
+      data, _status_code, _headers = post_issues_exid_with_http_info(exid, opts)
       return data
     end
 
     # Sync
     # Sync
     # @param exid issue exid
-    # @param repo_uuid repo uuid
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :repo_uuid repo uuid
     # @option opts [String] :issue_uuid issue uuid
     # @option opts [String] :title issue title
     # @option opts [String] :status issue status
@@ -152,17 +152,13 @@ module BmxApiRuby
     # @option opts [String] :xfields TBD
     # @option opts [String] :jfields TBD
     # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers
-    def post_issues_exid_with_http_info(exid, repo_uuid, opts = {})
+    def post_issues_exid_with_http_info(exid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: IssuesApi.post_issues_exid ..."
       end
       # verify the required parameter 'exid' is set
       if @api_client.config.client_side_validation && exid.nil?
         fail ArgumentError, "Missing the required parameter 'exid' when calling IssuesApi.post_issues_exid"
-      end
-      # verify the required parameter 'repo_uuid' is set
-      if @api_client.config.client_side_validation && repo_uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'repo_uuid' when calling IssuesApi.post_issues_exid"
       end
       if @api_client.config.client_side_validation && opts[:'status'] && !['open', 'closed'].include?(opts[:'status'])
         fail ArgumentError, 'invalid value for "status", must be one of open, closed'
@@ -182,7 +178,7 @@ module BmxApiRuby
 
       # form parameters
       form_params = {}
-      form_params["repo_uuid"] = repo_uuid
+      form_params["repo_uuid"] = opts[:'repo_uuid'] if !opts[:'repo_uuid'].nil?
       form_params["issue_uuid"] = opts[:'issue_uuid'] if !opts[:'issue_uuid'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["status"] = opts[:'status'] if !opts[:'status'].nil?

@@ -279,14 +279,81 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Create contract
+    # Create contract
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :title title
+    # @option opts [String] :status status
+    # @option opts [String] :labels labels
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @return [ContractCreated]
+    def post_contract_create(opts = {})
+      data, _status_code, _headers = post_contract_create_with_http_info(opts)
+      return data
+    end
+
+    # Create contract
+    # Create contract
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :title title
+    # @option opts [String] :status status
+    # @option opts [String] :labels labels
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @return [Array<(ContractCreated, Fixnum, Hash)>] ContractCreated data, response status code and response headers
+    def post_contract_create_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.post_contract_create ..."
+      end
+      # resource path
+      local_var_path = "/contract/create"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
+      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
+      form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
+      form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
+      form_params["maturation"] = opts[:'maturation'] if !opts[:'maturation'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ContractCreated')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#post_contract_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Cross offer
     # Cross offer
     # @param commit_type expand, transfer or reduce
     # @param offer_uuid 
     # @param [Hash] opts the optional parameters
     # @return [Status]
-    def post_contract_offer_uuid(commit_type, offer_uuid, opts = {})
-      data, _status_code, _headers = post_contract_offer_uuid_with_http_info(commit_type, offer_uuid, opts)
+    def post_contract_offer_uuid_cross(commit_type, offer_uuid, opts = {})
+      data, _status_code, _headers = post_contract_offer_uuid_cross_with_http_info(commit_type, offer_uuid, opts)
       return data
     end
 
@@ -296,13 +363,13 @@ module BmxApiRuby
     # @param offer_uuid 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
-    def post_contract_offer_uuid_with_http_info(commit_type, offer_uuid, opts = {})
+    def post_contract_offer_uuid_cross_with_http_info(commit_type, offer_uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ContractApi.post_contract_offer_uuid ..."
+        @api_client.config.logger.debug "Calling API: ContractApi.post_contract_offer_uuid_cross ..."
       end
       # verify the required parameter 'commit_type' is set
       if @api_client.config.client_side_validation && commit_type.nil?
-        fail ArgumentError, "Missing the required parameter 'commit_type' when calling ContractApi.post_contract_offer_uuid"
+        fail ArgumentError, "Missing the required parameter 'commit_type' when calling ContractApi.post_contract_offer_uuid_cross"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['expand', 'transfer', 'reduce'].include?(commit_type)
@@ -310,10 +377,10 @@ module BmxApiRuby
       end
       # verify the required parameter 'offer_uuid' is set
       if @api_client.config.client_side_validation && offer_uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'offer_uuid' when calling ContractApi.post_contract_offer_uuid"
+        fail ArgumentError, "Missing the required parameter 'offer_uuid' when calling ContractApi.post_contract_offer_uuid_cross"
       end
       # resource path
-      local_var_path = "/contract/{offer_uuid}".sub('{' + 'offer_uuid' + '}', offer_uuid.to_s)
+      local_var_path = "/contract/{offer_uuid}/cross".sub('{' + 'offer_uuid' + '}', offer_uuid.to_s)
 
       # query parameters
       query_params = {}
@@ -340,7 +407,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'Status')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ContractApi#post_contract_offer_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ContractApi#post_contract_offer_uuid_cross\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

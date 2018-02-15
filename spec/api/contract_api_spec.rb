@@ -91,14 +91,31 @@ describe 'ContractApi' do
     end
   end
 
-  # unit tests for post_contract_offer_uuid
+  # unit tests for post_contract_create
+  # Create contract
+  # Create contract
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :issue issue UUID
+  # @option opts [String] :repo repo UUID
+  # @option opts [String] :title title
+  # @option opts [String] :status status
+  # @option opts [String] :labels labels
+  # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+  # @return [ContractCreated]
+  describe 'post_contract_create test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_contract_offer_uuid_cross
   # Cross offer
   # Cross offer
   # @param commit_type expand, transfer or reduce
   # @param offer_uuid 
   # @param [Hash] opts the optional parameters
   # @return [Status]
-  describe 'post_contract_offer_uuid test' do
+  describe 'post_contract_offer_uuid_cross test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

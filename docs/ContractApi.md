@@ -9,7 +9,8 @@ Method | HTTP request | Description
 [**get_contract_uuid_escrows**](ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 [**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
-[**post_contract_offer_uuid**](ContractApi.md#post_contract_offer_uuid) | **POST** /contract/{offer_uuid} | Cross offer
+[**post_contract_create**](ContractApi.md#post_contract_create) | **POST** /contract/create | Create contract
+[**post_contract_offer_uuid_cross**](ContractApi.md#post_contract_offer_uuid_cross) | **POST** /contract/{offer_uuid}/cross | Cross offer
 [**put_contract_uuid_resolve**](ContractApi.md#put_contract_uuid_resolve) | **PUT** /contract/{uuid}/resolve | Resolve contract
 
 
@@ -272,8 +273,72 @@ Name | Type | Description  | Notes
 
 
 
-# **post_contract_offer_uuid**
-> Status post_contract_offer_uuid(commit_type, offer_uuid)
+# **post_contract_create**
+> ContractCreated post_contract_create(opts)
+
+Create contract
+
+Create contract
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+opts = { 
+  issue: "issue_example", # String | issue UUID
+  repo: "repo_example", # String | repo UUID
+  title: "title_example", # String | title
+  status: "status_example", # String | status
+  labels: "labels_example", # String | labels
+  maturation: "maturation_example" # String | YYMMDD_HHMM (default now + 1.week)
+}
+
+begin
+  #Create contract
+  result = api_instance.post_contract_create(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->post_contract_create: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **issue** | **String**| issue UUID | [optional] 
+ **repo** | **String**| repo UUID | [optional] 
+ **title** | **String**| title | [optional] 
+ **status** | **String**| status | [optional] 
+ **labels** | **String**| labels | [optional] 
+ **maturation** | **String**| YYMMDD_HHMM (default now + 1.week) | [optional] 
+
+### Return type
+
+[**ContractCreated**](ContractCreated.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **post_contract_offer_uuid_cross**
+> Status post_contract_offer_uuid_cross(commit_type, offer_uuid)
 
 Cross offer
 
@@ -299,10 +364,10 @@ offer_uuid = 56 # Integer |
 
 begin
   #Cross offer
-  result = api_instance.post_contract_offer_uuid(commit_type, offer_uuid)
+  result = api_instance.post_contract_offer_uuid_cross(commit_type, offer_uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ContractApi->post_contract_offer_uuid: #{e}"
+  puts "Exception when calling ContractApi->post_contract_offer_uuid_cross: #{e}"
 end
 ```
 
