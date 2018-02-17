@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 
 # **post_offers_buy**
-> OfferCreated post_offers_buy(side, volume, price, issue, opts)
+> OfferCreated post_offers_buy(side, volume, price, repo, issue, title, labels, status, opts)
 
 Create a buy offer
 
@@ -146,7 +146,15 @@ volume = 56 # Integer | number of positions
 
 price = 3.4 # Float | between 0.0 and 1.0
 
+repo = "repo_example" # String | repo UUID
+
 issue = "issue_example" # String | issue UUID
+
+title = "title_example" # String | issue title
+
+labels = "labels_example" # String | issue labels
+
+status = "status_example" # String | issue status
 
 opts = { 
   maturation: "maturation_example", # String | YYMMDD_HHMM (default now + 1.week)
@@ -157,7 +165,7 @@ opts = {
 
 begin
   #Create a buy offer
-  result = api_instance.post_offers_buy(side, volume, price, issue, opts)
+  result = api_instance.post_offers_buy(side, volume, price, repo, issue, title, labels, status, opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling OffersApi->post_offers_buy: #{e}"
@@ -171,7 +179,11 @@ Name | Type | Description  | Notes
  **side** | **String**| fixed or unfixed | 
  **volume** | **Integer**| number of positions | 
  **price** | **Float**| between 0.0 and 1.0 | 
+ **repo** | **String**| repo UUID | 
  **issue** | **String**| issue UUID | 
+ **title** | **String**| issue title | 
+ **labels** | **String**| issue labels | 
+ **status** | **String**| issue status | 
  **maturation** | **String**| YYMMDD_HHMM (default now + 1.week) | [optional] 
  **expiration** | **String**| YYMMDD_HHMM (default now + 1.day) | [optional] 
  **poolable** | **BOOLEAN**| poolable? (default false) | [optional] 

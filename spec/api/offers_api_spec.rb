@@ -64,7 +64,11 @@ describe 'OffersApi' do
   # @param side fixed or unfixed
   # @param volume number of positions
   # @param price between 0.0 and 1.0
+  # @param repo repo UUID
   # @param issue issue UUID
+  # @param title issue title
+  # @param labels issue labels
+  # @param status issue status
   # @param [Hash] opts the optional parameters
   # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
   # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
