@@ -134,19 +134,19 @@ module BmxApiRuby
     # @param side fixed or unfixed
     # @param volume number of positions
     # @param price between 0.0 and 1.0
-    # @param repo repo UUID
-    # @param issue issue UUID
-    # @param title issue title
-    # @param labels issue labels
-    # @param status issue status
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :title issue title
+    # @option opts [String] :labels issue labels
+    # @option opts [String] :status issue status
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
     # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
     # @option opts [BOOLEAN] :poolable poolable? (default false)
     # @option opts [BOOLEAN] :aon all-or-none? (default false)
     # @return [OfferCreated]
-    def post_offers_buy(side, volume, price, repo, issue, title, labels, status, opts = {})
-      data, _status_code, _headers = post_offers_buy_with_http_info(side, volume, price, repo, issue, title, labels, status, opts)
+    def post_offers_buy(side, volume, price, opts = {})
+      data, _status_code, _headers = post_offers_buy_with_http_info(side, volume, price, opts)
       return data
     end
 
@@ -155,18 +155,18 @@ module BmxApiRuby
     # @param side fixed or unfixed
     # @param volume number of positions
     # @param price between 0.0 and 1.0
-    # @param repo repo UUID
-    # @param issue issue UUID
-    # @param title issue title
-    # @param labels issue labels
-    # @param status issue status
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :title issue title
+    # @option opts [String] :labels issue labels
+    # @option opts [String] :status issue status
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
     # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
     # @option opts [BOOLEAN] :poolable poolable? (default false)
     # @option opts [BOOLEAN] :aon all-or-none? (default false)
     # @return [Array<(OfferCreated, Fixnum, Hash)>] OfferCreated data, response status code and response headers
-    def post_offers_buy_with_http_info(side, volume, price, repo, issue, title, labels, status, opts = {})
+    def post_offers_buy_with_http_info(side, volume, price, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: OffersApi.post_offers_buy ..."
       end
@@ -186,29 +186,8 @@ module BmxApiRuby
       if @api_client.config.client_side_validation && price.nil?
         fail ArgumentError, "Missing the required parameter 'price' when calling OffersApi.post_offers_buy"
       end
-      # verify the required parameter 'repo' is set
-      if @api_client.config.client_side_validation && repo.nil?
-        fail ArgumentError, "Missing the required parameter 'repo' when calling OffersApi.post_offers_buy"
-      end
-      # verify the required parameter 'issue' is set
-      if @api_client.config.client_side_validation && issue.nil?
-        fail ArgumentError, "Missing the required parameter 'issue' when calling OffersApi.post_offers_buy"
-      end
-      # verify the required parameter 'title' is set
-      if @api_client.config.client_side_validation && title.nil?
-        fail ArgumentError, "Missing the required parameter 'title' when calling OffersApi.post_offers_buy"
-      end
-      # verify the required parameter 'labels' is set
-      if @api_client.config.client_side_validation && labels.nil?
-        fail ArgumentError, "Missing the required parameter 'labels' when calling OffersApi.post_offers_buy"
-      end
-      # verify the required parameter 'status' is set
-      if @api_client.config.client_side_validation && status.nil?
-        fail ArgumentError, "Missing the required parameter 'status' when calling OffersApi.post_offers_buy"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['open', 'closed'].include?(status)
-        fail ArgumentError, "invalid value for 'status', must be one of open, closed"
+      if @api_client.config.client_side_validation && opts[:'status'] && !['open', 'closed'].include?(opts[:'status'])
+        fail ArgumentError, 'invalid value for "status", must be one of open, closed'
       end
       # resource path
       local_var_path = "/offers/buy"
@@ -228,11 +207,11 @@ module BmxApiRuby
       form_params["side"] = side
       form_params["volume"] = volume
       form_params["price"] = price
-      form_params["repo"] = repo
-      form_params["issue"] = issue
-      form_params["title"] = title
-      form_params["labels"] = labels
-      form_params["status"] = status
+      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
+      form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
+      form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
+      form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
       form_params["maturation"] = opts[:'maturation'] if !opts[:'maturation'].nil?
       form_params["expiration"] = opts[:'expiration'] if !opts[:'expiration'].nil?
       form_params["poolable"] = opts[:'poolable'] if !opts[:'poolable'].nil?
