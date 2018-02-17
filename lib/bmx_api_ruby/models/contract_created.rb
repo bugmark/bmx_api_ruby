@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Create contract
+  # Cancel contract
   class ContractCreated
     # status
     attr_accessor :status

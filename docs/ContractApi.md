@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**get_contract_uuid_escrows**](ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 [**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
+[**post_contract_contract_uuid_cancel**](ContractApi.md#post_contract_contract_uuid_cancel) | **POST** /contract/{contract_uuid}/cancel | Cancel contract
+[**post_contract_contract_uuid_clone**](ContractApi.md#post_contract_contract_uuid_clone) | **POST** /contract/{contract_uuid}/clone | Clone contract
 [**post_contract_create**](ContractApi.md#post_contract_create) | **POST** /contract/create | Create contract
 [**post_contract_offer_uuid_cross**](ContractApi.md#post_contract_offer_uuid_cross) | **POST** /contract/{offer_uuid}/cross | Cross offer
 [**put_contract_uuid_resolve**](ContractApi.md#put_contract_uuid_resolve) | **PUT** /contract/{uuid}/resolve | Resolve contract
@@ -269,6 +271,126 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **post_contract_contract_uuid_cancel**
+> ContractCreated post_contract_contract_uuid_cancel(contract_uuid)
+
+Cancel contract
+
+Cancel contract
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+contract_uuid = 56 # Integer | 
+
+
+begin
+  #Cancel contract
+  result = api_instance.post_contract_contract_uuid_cancel(contract_uuid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->post_contract_contract_uuid_cancel: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract_uuid** | **Integer**|  | 
+
+### Return type
+
+[**ContractCreated**](ContractCreated.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **post_contract_contract_uuid_clone**
+> ContractCreated post_contract_contract_uuid_clone(contract_uuid, opts)
+
+Clone contract
+
+Clone contract
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+contract_uuid = 56 # Integer | 
+
+opts = { 
+  issue: "issue_example", # String | issue UUID
+  repo: "repo_example", # String | repo UUID
+  title: "title_example", # String | title
+  status: "status_example", # String | status
+  labels: "labels_example", # String | labels
+  maturation: "maturation_example" # String | YYMMDD_HHMM (default now + 1.week)
+}
+
+begin
+  #Clone contract
+  result = api_instance.post_contract_contract_uuid_clone(contract_uuid, opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->post_contract_contract_uuid_clone: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract_uuid** | **Integer**|  | 
+ **issue** | **String**| issue UUID | [optional] 
+ **repo** | **String**| repo UUID | [optional] 
+ **title** | **String**| title | [optional] 
+ **status** | **String**| status | [optional] 
+ **labels** | **String**| labels | [optional] 
+ **maturation** | **String**| YYMMDD_HHMM (default now + 1.week) | [optional] 
+
+### Return type
+
+[**ContractCreated**](ContractCreated.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

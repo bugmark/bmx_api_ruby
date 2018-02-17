@@ -91,6 +91,36 @@ describe 'ContractApi' do
     end
   end
 
+  # unit tests for post_contract_contract_uuid_cancel
+  # Cancel contract
+  # Cancel contract
+  # @param contract_uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [ContractCreated]
+  describe 'post_contract_contract_uuid_cancel test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_contract_contract_uuid_clone
+  # Clone contract
+  # Clone contract
+  # @param contract_uuid 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :issue issue UUID
+  # @option opts [String] :repo repo UUID
+  # @option opts [String] :title title
+  # @option opts [String] :status status
+  # @option opts [String] :labels labels
+  # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+  # @return [ContractCreated]
+  describe 'post_contract_contract_uuid_clone test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_contract_create
   # Create contract
   # Create contract

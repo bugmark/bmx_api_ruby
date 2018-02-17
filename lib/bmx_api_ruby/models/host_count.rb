@@ -30,6 +30,9 @@ module BmxApiRuby
     # Number of Issues
     attr_accessor :num_issues
 
+    # Number of Open Offers
+    attr_accessor :offers
+
     # Number of Offers to Buy Fixed
     attr_accessor :bu_offers
 
@@ -60,6 +63,7 @@ module BmxApiRuby
         :'num_users' => :'num_users',
         :'num_repos' => :'num_repos',
         :'num_issues' => :'num_issues',
+        :'offers' => :'offers',
         :'bu_offers' => :'bu_offers',
         :'bf_offers' => :'bf_offers',
         :'contracts' => :'contracts',
@@ -78,6 +82,7 @@ module BmxApiRuby
         :'num_users' => :'Integer',
         :'num_repos' => :'Integer',
         :'num_issues' => :'Integer',
+        :'offers' => :'Integer',
         :'bu_offers' => :'Integer',
         :'bf_offers' => :'Integer',
         :'contracts' => :'Integer',
@@ -114,6 +119,10 @@ module BmxApiRuby
 
       if attributes.has_key?(:'num_issues')
         self.num_issues = attributes[:'num_issues']
+      end
+
+      if attributes.has_key?(:'offers')
+        self.offers = attributes[:'offers']
       end
 
       if attributes.has_key?(:'bu_offers')
@@ -169,6 +178,7 @@ module BmxApiRuby
           num_users == o.num_users &&
           num_repos == o.num_repos &&
           num_issues == o.num_issues &&
+          offers == o.offers &&
           bu_offers == o.bu_offers &&
           bf_offers == o.bf_offers &&
           contracts == o.contracts &&
@@ -187,7 +197,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host_name, host_time, num_users, num_repos, num_issues, bu_offers, bf_offers, contracts, positions, escrows, amendments, events].hash
+      [host_name, host_time, num_users, num_repos, num_issues, offers, bu_offers, bf_offers, contracts, positions, escrows, amendments, events].hash
     end
 
     # Builds the object from hash

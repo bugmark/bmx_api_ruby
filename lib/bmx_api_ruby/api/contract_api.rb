@@ -279,6 +279,134 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Cancel contract
+    # Cancel contract
+    # @param contract_uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [ContractCreated]
+    def post_contract_contract_uuid_cancel(contract_uuid, opts = {})
+      data, _status_code, _headers = post_contract_contract_uuid_cancel_with_http_info(contract_uuid, opts)
+      return data
+    end
+
+    # Cancel contract
+    # Cancel contract
+    # @param contract_uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ContractCreated, Fixnum, Hash)>] ContractCreated data, response status code and response headers
+    def post_contract_contract_uuid_cancel_with_http_info(contract_uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.post_contract_contract_uuid_cancel ..."
+      end
+      # verify the required parameter 'contract_uuid' is set
+      if @api_client.config.client_side_validation && contract_uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'contract_uuid' when calling ContractApi.post_contract_contract_uuid_cancel"
+      end
+      # resource path
+      local_var_path = "/contract/{contract_uuid}/cancel".sub('{' + 'contract_uuid' + '}', contract_uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ContractCreated')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#post_contract_contract_uuid_cancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Clone contract
+    # Clone contract
+    # @param contract_uuid 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :title title
+    # @option opts [String] :status status
+    # @option opts [String] :labels labels
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @return [ContractCreated]
+    def post_contract_contract_uuid_clone(contract_uuid, opts = {})
+      data, _status_code, _headers = post_contract_contract_uuid_clone_with_http_info(contract_uuid, opts)
+      return data
+    end
+
+    # Clone contract
+    # Clone contract
+    # @param contract_uuid 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :title title
+    # @option opts [String] :status status
+    # @option opts [String] :labels labels
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @return [Array<(ContractCreated, Fixnum, Hash)>] ContractCreated data, response status code and response headers
+    def post_contract_contract_uuid_clone_with_http_info(contract_uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.post_contract_contract_uuid_clone ..."
+      end
+      # verify the required parameter 'contract_uuid' is set
+      if @api_client.config.client_side_validation && contract_uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'contract_uuid' when calling ContractApi.post_contract_contract_uuid_clone"
+      end
+      # resource path
+      local_var_path = "/contract/{contract_uuid}/clone".sub('{' + 'contract_uuid' + '}', contract_uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
+      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
+      form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
+      form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
+      form_params["maturation"] = opts[:'maturation'] if !opts[:'maturation'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ContractCreated')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#post_contract_contract_uuid_clone\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create contract
     # Create contract
     # @param [Hash] opts the optional parameters

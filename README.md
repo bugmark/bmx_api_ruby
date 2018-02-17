@@ -84,6 +84,8 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_escrows**](docs/ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_open_offers**](docs/ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_series**](docs/ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
+*BmxApiRuby::ContractApi* | [**post_contract_contract_uuid_cancel**](docs/ContractApi.md#post_contract_contract_uuid_cancel) | **POST** /contract/{contract_uuid}/cancel | Cancel contract
+*BmxApiRuby::ContractApi* | [**post_contract_contract_uuid_clone**](docs/ContractApi.md#post_contract_contract_uuid_clone) | **POST** /contract/{contract_uuid}/clone | Clone contract
 *BmxApiRuby::ContractApi* | [**post_contract_create**](docs/ContractApi.md#post_contract_create) | **POST** /contract/create | Create contract
 *BmxApiRuby::ContractApi* | [**post_contract_offer_uuid_cross**](docs/ContractApi.md#post_contract_offer_uuid_cross) | **POST** /contract/{offer_uuid}/cross | Cross offer
 *BmxApiRuby::ContractApi* | [**put_contract_uuid_resolve**](docs/ContractApi.md#put_contract_uuid_resolve) | **PUT** /contract/{uuid}/resolve | Resolve contract
