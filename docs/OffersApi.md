@@ -154,6 +154,8 @@ opts = {
   status: "status_example", # String | issue status
   maturation: "maturation_example", # String | YYMMDD_HHMM (default now + 1.week)
   expiration: "expiration_example", # String | YYMMDD_HHMM (default now + 1.day)
+  maturation_offset: "maturation_offset_example", # String | offset string (see long description)
+  expiration_offset: "expiration_offset_example", # String | offset string (see long description)
   poolable: true, # BOOLEAN | poolable? (default false)
   aon: true # BOOLEAN | all-or-none? (default false)
 }
@@ -181,6 +183,8 @@ Name | Type | Description  | Notes
  **status** | **String**| issue status | [optional] 
  **maturation** | **String**| YYMMDD_HHMM (default now + 1.week) | [optional] 
  **expiration** | **String**| YYMMDD_HHMM (default now + 1.day) | [optional] 
+ **maturation_offset** | **String**| offset string (see long description) | [optional] 
+ **expiration_offset** | **String**| offset string (see long description) | [optional] 
  **poolable** | **BOOLEAN**| poolable? (default false) | [optional] 
  **aon** | **BOOLEAN**| all-or-none? (default false) | [optional] 
 

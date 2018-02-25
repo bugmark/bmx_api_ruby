@@ -70,6 +70,7 @@ module BmxApiRuby
     # get host info
     # Show host info: host-time, day offset, datastore type, etc. 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :strftime STRFTIME string for host_time
     # @return [HostInfo]
     def get_host_info(opts = {})
       data, _status_code, _headers = get_host_info_with_http_info(opts)
@@ -79,6 +80,7 @@ module BmxApiRuby
     # get host info
     # Show host info: host-time, day offset, datastore type, etc. 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :strftime STRFTIME string for host_time
     # @return [Array<(HostInfo, Fixnum, Hash)>] HostInfo data, response status code and response headers
     def get_host_info_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -89,6 +91,7 @@ module BmxApiRuby
 
       # query parameters
       query_params = {}
+      query_params[:'strftime'] = opts[:'strftime'] if !opts[:'strftime'].nil?
 
       # header parameters
       header_params = {}

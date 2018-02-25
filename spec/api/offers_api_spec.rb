@@ -72,6 +72,8 @@ describe 'OffersApi' do
   # @option opts [String] :status issue status
   # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
   # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+  # @option opts [String] :maturation_offset offset string (see long description)
+  # @option opts [String] :expiration_offset offset string (see long description)
   # @option opts [BOOLEAN] :poolable poolable? (default false)
   # @option opts [BOOLEAN] :aon all-or-none? (default false)
   # @return [OfferCreated]

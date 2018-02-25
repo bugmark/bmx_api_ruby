@@ -47,6 +47,7 @@ describe 'HostApi' do
   # get host info
   # Show host info: host-time, day offset, datastore type, etc. 
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :strftime STRFTIME string for host_time
   # @return [HostInfo]
   describe 'get_host_info test' do
     it "should work" do

@@ -142,6 +142,8 @@ module BmxApiRuby
     # @option opts [String] :status issue status
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
     # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+    # @option opts [String] :maturation_offset offset string (see long description)
+    # @option opts [String] :expiration_offset offset string (see long description)
     # @option opts [BOOLEAN] :poolable poolable? (default false)
     # @option opts [BOOLEAN] :aon all-or-none? (default false)
     # @return [OfferCreated]
@@ -163,6 +165,8 @@ module BmxApiRuby
     # @option opts [String] :status issue status
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
     # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+    # @option opts [String] :maturation_offset offset string (see long description)
+    # @option opts [String] :expiration_offset offset string (see long description)
     # @option opts [BOOLEAN] :poolable poolable? (default false)
     # @option opts [BOOLEAN] :aon all-or-none? (default false)
     # @return [Array<(OfferCreated, Fixnum, Hash)>] OfferCreated data, response status code and response headers
@@ -214,6 +218,8 @@ module BmxApiRuby
       form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
       form_params["maturation"] = opts[:'maturation'] if !opts[:'maturation'].nil?
       form_params["expiration"] = opts[:'expiration'] if !opts[:'expiration'].nil?
+      form_params["maturation_offset"] = opts[:'maturation_offset'] if !opts[:'maturation_offset'].nil?
+      form_params["expiration_offset"] = opts[:'expiration_offset'] if !opts[:'expiration_offset'].nil?
       form_params["poolable"] = opts[:'poolable'] if !opts[:'poolable'].nil?
       form_params["aon"] = opts[:'aon'] if !opts[:'aon'].nil?
 

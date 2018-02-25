@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 
 # **get_host_info**
-> HostInfo get_host_info
+> HostInfo get_host_info(opts)
 
 get host info
 
@@ -81,9 +81,13 @@ end
 
 api_instance = BmxApiRuby::HostApi.new
 
+opts = { 
+  strftime: "strftime_example" # String | STRFTIME string for host_time
+}
+
 begin
   #get host info
-  result = api_instance.get_host_info
+  result = api_instance.get_host_info(opts)
   p result
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling HostApi->get_host_info: #{e}"
@@ -91,7 +95,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **strftime** | **String**| STRFTIME string for host_time | [optional] 
 
 ### Return type
 
