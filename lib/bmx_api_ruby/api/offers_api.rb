@@ -238,5 +238,212 @@ module BmxApiRuby
       end
       return data, status_code, headers
     end
+
+    # Create a clone
+    # Create a clone
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :volume number of positions
+    # @option opts [Float] :price between 0.0 and 1.0
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :title issue title
+    # @option opts [String] :labels issue labels
+    # @option opts [String] :status issue status
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+    # @option opts [String] :maturation_offset offset string (see long description)
+    # @option opts [String] :expiration_offset offset string (see long description)
+    # @option opts [BOOLEAN] :poolable poolable? (default false)
+    # @option opts [BOOLEAN] :aon all-or-none? (default false)
+    # @return [OfferCreated]
+    def post_offers_uuid_clone(uuid, opts = {})
+      data, _status_code, _headers = post_offers_uuid_clone_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Create a clone
+    # Create a clone
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :volume number of positions
+    # @option opts [Float] :price between 0.0 and 1.0
+    # @option opts [String] :repo repo UUID
+    # @option opts [String] :issue issue UUID
+    # @option opts [String] :title issue title
+    # @option opts [String] :labels issue labels
+    # @option opts [String] :status issue status
+    # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+    # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+    # @option opts [String] :maturation_offset offset string (see long description)
+    # @option opts [String] :expiration_offset offset string (see long description)
+    # @option opts [BOOLEAN] :poolable poolable? (default false)
+    # @option opts [BOOLEAN] :aon all-or-none? (default false)
+    # @return [Array<(OfferCreated, Fixnum, Hash)>] OfferCreated data, response status code and response headers
+    def post_offers_uuid_clone_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: OffersApi.post_offers_uuid_clone ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling OffersApi.post_offers_uuid_clone"
+      end
+      if @api_client.config.client_side_validation && opts[:'status'] && !['open', 'closed'].include?(opts[:'status'])
+        fail ArgumentError, 'invalid value for "status", must be one of open, closed'
+      end
+      # resource path
+      local_var_path = "/offers/{uuid}/clone".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["volume"] = opts[:'volume'] if !opts[:'volume'].nil?
+      form_params["price"] = opts[:'price'] if !opts[:'price'].nil?
+      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
+      form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
+      form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
+      form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
+      form_params["maturation"] = opts[:'maturation'] if !opts[:'maturation'].nil?
+      form_params["expiration"] = opts[:'expiration'] if !opts[:'expiration'].nil?
+      form_params["maturation_offset"] = opts[:'maturation_offset'] if !opts[:'maturation_offset'].nil?
+      form_params["expiration_offset"] = opts[:'expiration_offset'] if !opts[:'expiration_offset'].nil?
+      form_params["poolable"] = opts[:'poolable'] if !opts[:'poolable'].nil?
+      form_params["aon"] = opts[:'aon'] if !opts[:'aon'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OfferCreated')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OffersApi#post_offers_uuid_clone\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create a counter-offer
+    # Create a counter-offer
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [OfferCreated]
+    def post_offers_uuid_counter(uuid, opts = {})
+      data, _status_code, _headers = post_offers_uuid_counter_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Create a counter-offer
+    # Create a counter-offer
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OfferCreated, Fixnum, Hash)>] OfferCreated data, response status code and response headers
+    def post_offers_uuid_counter_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: OffersApi.post_offers_uuid_counter ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling OffersApi.post_offers_uuid_counter"
+      end
+      # resource path
+      local_var_path = "/offers/{uuid}/counter".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OfferCreated')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OffersApi#post_offers_uuid_counter\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Cancel offer
+    # Cancel offer
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [OfferDetail]
+    def put_offers_uuid_cancel(uuid, opts = {})
+      data, _status_code, _headers = put_offers_uuid_cancel_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Cancel offer
+    # Cancel offer
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OfferDetail, Fixnum, Hash)>] OfferDetail data, response status code and response headers
+    def put_offers_uuid_cancel_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: OffersApi.put_offers_uuid_cancel ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling OffersApi.put_offers_uuid_cancel"
+      end
+      # resource path
+      local_var_path = "/offers/{uuid}/cancel".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OfferDetail')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OffersApi#put_offers_uuid_cancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
   end
 end

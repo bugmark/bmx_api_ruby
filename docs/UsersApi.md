@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost:3000/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_users**](UsersApi.md#get_users) | **GET** /users | List all users
-[**get_users_email**](UsersApi.md#get_users_email) | **GET** /users/{email} | Show user detail
+[**get_users_uuid**](UsersApi.md#get_users_uuid) | **GET** /users/{uuid} | Show user detail
 [**post_users**](UsersApi.md#post_users) | **POST** /users | Create a user
 [**put_users_uuid_deposit**](UsersApi.md#put_users_uuid_deposit) | **PUT** /users/{uuid}/deposit | Deposit funds
 [**put_users_uuid_withdraw**](UsersApi.md#put_users_uuid_withdraw) | **PUT** /users/{uuid}/withdraw | Withdraw funds
@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
 
 
 
-# **get_users_email**
-> UserDetail get_users_email(email, opts)
+# **get_users_uuid**
+> UserDetail get_users_uuid(uuid, opts)
 
 Show user detail
 
@@ -85,7 +85,7 @@ end
 
 api_instance = BmxApiRuby::UsersApi.new
 
-email = "email_example" # String | user email address
+uuid = "uuid_example" # String | user uuid
 
 opts = { 
   offers: true, # BOOLEAN | include open offers
@@ -94,10 +94,10 @@ opts = {
 
 begin
   #Show user detail
-  result = api_instance.get_users_email(email, opts)
+  result = api_instance.get_users_uuid(uuid, opts)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling UsersApi->get_users_email: #{e}"
+  puts "Exception when calling UsersApi->get_users_uuid: #{e}"
 end
 ```
 
@@ -105,7 +105,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **String**| user email address | 
+ **uuid** | **String**| user uuid | 
  **offers** | **BOOLEAN**| include open offers | [optional] 
  **positions** | **BOOLEAN**| include open positions | [optional] 
 

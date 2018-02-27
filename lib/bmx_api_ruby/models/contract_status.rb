@@ -13,58 +13,38 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Show host info: host-time, day offset, datastore type, etc. 
-  class HostInfo
-    # Bugmark hostname
-    attr_accessor :host_name
+  # Resolve contract
+  class ContractStatus
+    # status
+    attr_accessor :status
 
-    # current Bugmark time
-    attr_accessor :host_time
+    # event UUID
+    attr_accessor :event_uuid
 
-    # day offset from realtime
-    attr_accessor :day_offset
+    # contract UUID
+    attr_accessor :contract_uuid
 
-    # hour offset from realtime
-    attr_accessor :hour_offset
-
-    # current user email
-    attr_accessor :usermail
-
-    # current user uuid
-    attr_accessor :useruuid
-
-    # permanent | mutable
-    attr_accessor :datastore
-
-    # last release date
-    attr_accessor :released_at
+    # contract status
+    attr_accessor :contract_status
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'host_name' => :'host_name',
-        :'host_time' => :'host_time',
-        :'day_offset' => :'day_offset',
-        :'hour_offset' => :'hour_offset',
-        :'usermail' => :'usermail',
-        :'useruuid' => :'useruuid',
-        :'datastore' => :'datastore',
-        :'released_at' => :'released_at'
+        :'status' => :'status',
+        :'event_uuid' => :'event_uuid',
+        :'contract_uuid' => :'contract_uuid',
+        :'contract_status' => :'contract_status'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'host_name' => :'String',
-        :'host_time' => :'DateTime',
-        :'day_offset' => :'Integer',
-        :'hour_offset' => :'Integer',
-        :'usermail' => :'String',
-        :'useruuid' => :'String',
-        :'datastore' => :'String',
-        :'released_at' => :'String'
+        :'status' => :'String',
+        :'event_uuid' => :'String',
+        :'contract_uuid' => :'String',
+        :'contract_status' => :'String'
       }
     end
 
@@ -76,36 +56,20 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'host_name')
-        self.host_name = attributes[:'host_name']
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
 
-      if attributes.has_key?(:'host_time')
-        self.host_time = attributes[:'host_time']
+      if attributes.has_key?(:'event_uuid')
+        self.event_uuid = attributes[:'event_uuid']
       end
 
-      if attributes.has_key?(:'day_offset')
-        self.day_offset = attributes[:'day_offset']
+      if attributes.has_key?(:'contract_uuid')
+        self.contract_uuid = attributes[:'contract_uuid']
       end
 
-      if attributes.has_key?(:'hour_offset')
-        self.hour_offset = attributes[:'hour_offset']
-      end
-
-      if attributes.has_key?(:'usermail')
-        self.usermail = attributes[:'usermail']
-      end
-
-      if attributes.has_key?(:'useruuid')
-        self.useruuid = attributes[:'useruuid']
-      end
-
-      if attributes.has_key?(:'datastore')
-        self.datastore = attributes[:'datastore']
-      end
-
-      if attributes.has_key?(:'released_at')
-        self.released_at = attributes[:'released_at']
+      if attributes.has_key?(:'contract_status')
+        self.contract_status = attributes[:'contract_status']
       end
 
     end
@@ -128,14 +92,10 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          host_name == o.host_name &&
-          host_time == o.host_time &&
-          day_offset == o.day_offset &&
-          hour_offset == o.hour_offset &&
-          usermail == o.usermail &&
-          useruuid == o.useruuid &&
-          datastore == o.datastore &&
-          released_at == o.released_at
+          status == o.status &&
+          event_uuid == o.event_uuid &&
+          contract_uuid == o.contract_uuid &&
+          contract_status == o.contract_status
     end
 
     # @see the `==` method
@@ -147,7 +107,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host_name, host_time, day_offset, hour_offset, usermail, useruuid, datastore, released_at].hash
+      [status, event_uuid, contract_uuid, contract_status].hash
     end
 
     # Builds the object from hash

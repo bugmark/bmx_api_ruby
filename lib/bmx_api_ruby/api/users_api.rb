@@ -72,33 +72,33 @@ module BmxApiRuby
 
     # Show user detail
     # Show user detail
-    # @param email user email address
+    # @param uuid user uuid
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :offers include open offers
     # @option opts [BOOLEAN] :positions include open positions
     # @return [UserDetail]
-    def get_users_email(email, opts = {})
-      data, _status_code, _headers = get_users_email_with_http_info(email, opts)
+    def get_users_uuid(uuid, opts = {})
+      data, _status_code, _headers = get_users_uuid_with_http_info(uuid, opts)
       return data
     end
 
     # Show user detail
     # Show user detail
-    # @param email user email address
+    # @param uuid user uuid
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :offers include open offers
     # @option opts [BOOLEAN] :positions include open positions
     # @return [Array<(UserDetail, Fixnum, Hash)>] UserDetail data, response status code and response headers
-    def get_users_email_with_http_info(email, opts = {})
+    def get_users_uuid_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UsersApi.get_users_email ..."
+        @api_client.config.logger.debug "Calling API: UsersApi.get_users_uuid ..."
       end
-      # verify the required parameter 'email' is set
-      if @api_client.config.client_side_validation && email.nil?
-        fail ArgumentError, "Missing the required parameter 'email' when calling UsersApi.get_users_email"
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling UsersApi.get_users_uuid"
       end
       # resource path
-      local_var_path = "/users/{email}".sub('{' + 'email' + '}', email.to_s)
+      local_var_path = "/users/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
 
       # query parameters
       query_params = {}
@@ -124,7 +124,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'UserDetail')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UsersApi#get_users_email\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UsersApi#get_users_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

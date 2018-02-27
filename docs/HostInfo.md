@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **day_offset** | **Integer** | day offset from realtime | [optional] 
 **hour_offset** | **Integer** | hour offset from realtime | [optional] 
 **usermail** | **String** | current user email | [optional] 
+**useruuid** | **String** | current user uuid | [optional] 
 **datastore** | **String** | permanent | mutable | [optional] 
 **released_at** | **String** | last release date | [optional] 
 

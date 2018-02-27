@@ -13,5 +13,7 @@ Name | Type | Description | Notes
 **stm_labels** | **String** | TBD | [optional] 
 **xfields** | **String** | TBD | [optional] 
 **jfields** | **String** | TBD | [optional] 
+**num_contracts** | **Integer** | TBD | [optional] 
+**updated_at** | **DateTime** | TBD | [optional] 
 
 

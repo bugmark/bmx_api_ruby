@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_contract**](ContractApi.md#get_contract) | **GET** /contract | List all contracts
 [**get_contract_uuid**](ContractApi.md#get_contract_uuid) | **GET** /contract/{uuid} | Show contract detail
+[**get_contract_uuid_amendments**](ContractApi.md#get_contract_uuid_amendments) | **GET** /contract/{uuid}/amendments | Show contract amendments
 [**get_contract_uuid_escrows**](ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
+[**get_contract_uuid_positions**](ContractApi.md#get_contract_uuid_positions) | **GET** /contract/{uuid}/positions | Show contract positions
 [**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 [**post_contract_contract_uuid_cancel**](ContractApi.md#post_contract_contract_uuid_cancel) | **POST** /contract/{contract_uuid}/cancel | Cancel contract
 [**post_contract_contract_uuid_clone**](ContractApi.md#post_contract_contract_uuid_clone) | **POST** /contract/{contract_uuid}/clone | Clone contract
@@ -104,6 +106,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ContractDetail**](ContractDetail.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_contract_uuid_amendments**
+> Array&lt;AmendmentDetail&gt; get_contract_uuid_amendments(uuid)
+
+Show contract amendments
+
+Show contract amendments
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+uuid = 56 # Integer | 
+
+
+begin
+  #Show contract amendments
+  result = api_instance.get_contract_uuid_amendments(uuid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->get_contract_uuid_amendments: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **Integer**|  | 
+
+### Return type
+
+[**Array&lt;AmendmentDetail&gt;**](AmendmentDetail.md)
 
 ### Authorization
 
@@ -222,6 +277,59 @@ Name | Type | Description  | Notes
 
 
 
+# **get_contract_uuid_positions**
+> Array&lt;PositionDetail&gt; get_contract_uuid_positions(uuid)
+
+Show contract positions
+
+Show contract positions
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ContractApi.new
+
+uuid = 56 # Integer | 
+
+
+begin
+  #Show contract positions
+  result = api_instance.get_contract_uuid_positions(uuid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ContractApi->get_contract_uuid_positions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **Integer**|  | 
+
+### Return type
+
+[**Array&lt;PositionDetail&gt;**](PositionDetail.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **get_contract_uuid_series**
 > Status get_contract_uuid_series(uuid)
 
@@ -276,7 +384,7 @@ Name | Type | Description  | Notes
 
 
 # **post_contract_contract_uuid_cancel**
-> ContractCreated post_contract_contract_uuid_cancel(contract_uuid)
+> ContractStatus post_contract_contract_uuid_cancel(contract_uuid)
 
 Cancel contract
 
@@ -315,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContractCreated**](ContractCreated.md)
+[**ContractStatus**](ContractStatus.md)
 
 ### Authorization
 
@@ -329,7 +437,7 @@ Name | Type | Description  | Notes
 
 
 # **post_contract_contract_uuid_clone**
-> ContractCreated post_contract_contract_uuid_clone(contract_uuid, opts)
+> ContractStatus post_contract_contract_uuid_clone(contract_uuid, opts)
 
 Clone contract
 
@@ -382,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContractCreated**](ContractCreated.md)
+[**ContractStatus**](ContractStatus.md)
 
 ### Authorization
 
@@ -396,7 +504,7 @@ Name | Type | Description  | Notes
 
 
 # **post_contract_create**
-> ContractCreated post_contract_create(opts)
+> ContractStatus post_contract_create(opts)
 
 Create contract
 
@@ -446,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContractCreated**](ContractCreated.md)
+[**ContractStatus**](ContractStatus.md)
 
 ### Authorization
 
@@ -460,7 +568,7 @@ Name | Type | Description  | Notes
 
 
 # **post_contract_offer_uuid_cross**
-> Status post_contract_offer_uuid_cross(commit_type, offer_uuid)
+> ContractStatus post_contract_offer_uuid_cross(commit_type, offer_uuid)
 
 Cross offer
 
@@ -502,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Status**](Status.md)
+[**ContractStatus**](ContractStatus.md)
 
 ### Authorization
 
@@ -516,7 +624,7 @@ Name | Type | Description  | Notes
 
 
 # **put_contract_uuid_resolve**
-> Status put_contract_uuid_resolve(uuid)
+> ContractStatus put_contract_uuid_resolve(uuid)
 
 Resolve contract
 
@@ -555,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Status**](Status.md)
+[**ContractStatus**](ContractStatus.md)
 
 ### Authorization
 

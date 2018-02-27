@@ -45,6 +45,12 @@ module BmxApiRuby
     # TBD
     attr_accessor :jfields
 
+    # TBD
+    attr_accessor :num_contracts
+
+    # TBD
+    attr_accessor :updated_at
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -58,7 +64,9 @@ module BmxApiRuby
         :'stm_status' => :'stm_status',
         :'stm_labels' => :'stm_labels',
         :'xfields' => :'xfields',
-        :'jfields' => :'jfields'
+        :'jfields' => :'jfields',
+        :'num_contracts' => :'num_contracts',
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -74,7 +82,9 @@ module BmxApiRuby
         :'stm_status' => :'String',
         :'stm_labels' => :'String',
         :'xfields' => :'String',
-        :'jfields' => :'String'
+        :'jfields' => :'String',
+        :'num_contracts' => :'Integer',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -126,6 +136,14 @@ module BmxApiRuby
         self.jfields = attributes[:'jfields']
       end
 
+      if attributes.has_key?(:'num_contracts')
+        self.num_contracts = attributes[:'num_contracts']
+      end
+
+      if attributes.has_key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -155,7 +173,9 @@ module BmxApiRuby
           stm_status == o.stm_status &&
           stm_labels == o.stm_labels &&
           xfields == o.xfields &&
-          jfields == o.jfields
+          jfields == o.jfields &&
+          num_contracts == o.num_contracts &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -167,7 +187,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid, exid, stm_repo_uuid, stm_issue_uuid, stm_title, stm_status, stm_labels, xfields, jfields].hash
+      [type, uuid, exid, stm_repo_uuid, stm_issue_uuid, stm_title, stm_status, stm_labels, xfields, jfields, num_contracts, updated_at].hash
     end
 
     # Builds the object from hash

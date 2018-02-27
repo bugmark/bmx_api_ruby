@@ -44,15 +44,15 @@ describe 'UsersApi' do
     end
   end
 
-  # unit tests for get_users_email
+  # unit tests for get_users_uuid
   # Show user detail
   # Show user detail
-  # @param email user email address
+  # @param uuid user uuid
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :offers include open offers
   # @option opts [BOOLEAN] :positions include open positions
   # @return [UserDetail]
-  describe 'get_users_email test' do
+  describe 'get_users_uuid test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

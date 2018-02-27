@@ -123,6 +123,59 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Show issue contracts
+    # Show issue contracts
+    # @param issue_exid issue exid
+    # @param [Hash] opts the optional parameters
+    # @return [Array<ContractDetail>]
+    def get_issues_issue_exid_contracts(issue_exid, opts = {})
+      data, _status_code, _headers = get_issues_issue_exid_contracts_with_http_info(issue_exid, opts)
+      return data
+    end
+
+    # Show issue contracts
+    # Show issue contracts
+    # @param issue_exid issue exid
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<ContractDetail>, Fixnum, Hash)>] Array<ContractDetail> data, response status code and response headers
+    def get_issues_issue_exid_contracts_with_http_info(issue_exid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_issue_exid_contracts ..."
+      end
+      # verify the required parameter 'issue_exid' is set
+      if @api_client.config.client_side_validation && issue_exid.nil?
+        fail ArgumentError, "Missing the required parameter 'issue_exid' when calling IssuesApi.get_issues_issue_exid_contracts"
+      end
+      # resource path
+      local_var_path = "/issues/{issue_exid}/contracts".sub('{' + 'issue_exid' + '}', issue_exid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<ContractDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: IssuesApi#get_issues_issue_exid_contracts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Sync
     # Sync
     # @param exid issue exid

@@ -56,6 +56,18 @@ describe 'IssuesApi' do
     end
   end
 
+  # unit tests for get_issues_issue_exid_contracts
+  # Show issue contracts
+  # Show issue contracts
+  # @param issue_exid issue exid
+  # @param [Hash] opts the optional parameters
+  # @return [Array<ContractDetail>]
+  describe 'get_issues_issue_exid_contracts test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_issues_exid
   # Sync
   # Sync

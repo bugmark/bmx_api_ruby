@@ -55,6 +55,18 @@ describe 'ContractApi' do
     end
   end
 
+  # unit tests for get_contract_uuid_amendments
+  # Show contract amendments
+  # Show contract amendments
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [Array<AmendmentDetail>]
+  describe 'get_contract_uuid_amendments test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_contract_uuid_escrows
   # Show contract escrows
   # Show contract escrows
@@ -79,6 +91,18 @@ describe 'ContractApi' do
     end
   end
 
+  # unit tests for get_contract_uuid_positions
+  # Show contract positions
+  # Show contract positions
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [Array<PositionDetail>]
+  describe 'get_contract_uuid_positions test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_contract_uuid_series
   # Show contract series
   # Show contract series
@@ -96,7 +120,7 @@ describe 'ContractApi' do
   # Cancel contract
   # @param contract_uuid 
   # @param [Hash] opts the optional parameters
-  # @return [ContractCreated]
+  # @return [ContractStatus]
   describe 'post_contract_contract_uuid_cancel test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -114,7 +138,7 @@ describe 'ContractApi' do
   # @option opts [String] :status status
   # @option opts [String] :labels labels
   # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
-  # @return [ContractCreated]
+  # @return [ContractStatus]
   describe 'post_contract_contract_uuid_clone test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -131,7 +155,7 @@ describe 'ContractApi' do
   # @option opts [String] :status status
   # @option opts [String] :labels labels
   # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
-  # @return [ContractCreated]
+  # @return [ContractStatus]
   describe 'post_contract_create test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -144,7 +168,7 @@ describe 'ContractApi' do
   # @param commit_type expand, transfer or reduce
   # @param offer_uuid 
   # @param [Hash] opts the optional parameters
-  # @return [Status]
+  # @return [ContractStatus]
   describe 'post_contract_offer_uuid_cross test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -156,7 +180,7 @@ describe 'ContractApi' do
   # Resolve contract
   # @param uuid 
   # @param [Hash] opts the optional parameters
-  # @return [Status]
+  # @return [ContractStatus]
   describe 'put_contract_uuid_resolve test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

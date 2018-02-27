@@ -83,4 +83,53 @@ describe 'OffersApi' do
     end
   end
 
+  # unit tests for post_offers_uuid_clone
+  # Create a clone
+  # Create a clone
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :volume number of positions
+  # @option opts [Float] :price between 0.0 and 1.0
+  # @option opts [String] :repo repo UUID
+  # @option opts [String] :issue issue UUID
+  # @option opts [String] :title issue title
+  # @option opts [String] :labels issue labels
+  # @option opts [String] :status issue status
+  # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
+  # @option opts [String] :expiration YYMMDD_HHMM (default now + 1.day)
+  # @option opts [String] :maturation_offset offset string (see long description)
+  # @option opts [String] :expiration_offset offset string (see long description)
+  # @option opts [BOOLEAN] :poolable poolable? (default false)
+  # @option opts [BOOLEAN] :aon all-or-none? (default false)
+  # @return [OfferCreated]
+  describe 'post_offers_uuid_clone test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_offers_uuid_counter
+  # Create a counter-offer
+  # Create a counter-offer
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [OfferCreated]
+  describe 'post_offers_uuid_counter test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_offers_uuid_cancel
+  # Cancel offer
+  # Cancel offer
+  # @param uuid 
+  # @param [Hash] opts the optional parameters
+  # @return [OfferDetail]
+  describe 'put_offers_uuid_cancel test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

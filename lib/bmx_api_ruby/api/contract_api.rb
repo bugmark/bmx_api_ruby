@@ -120,6 +120,59 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Show contract amendments
+    # Show contract amendments
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<AmendmentDetail>]
+    def get_contract_uuid_amendments(uuid, opts = {})
+      data, _status_code, _headers = get_contract_uuid_amendments_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show contract amendments
+    # Show contract amendments
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<AmendmentDetail>, Fixnum, Hash)>] Array<AmendmentDetail> data, response status code and response headers
+    def get_contract_uuid_amendments_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.get_contract_uuid_amendments ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ContractApi.get_contract_uuid_amendments"
+      end
+      # resource path
+      local_var_path = "/contract/{uuid}/amendments".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<AmendmentDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#get_contract_uuid_amendments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show contract escrows
     # Show contract escrows
     # @param uuid 
@@ -226,6 +279,59 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # Show contract positions
+    # Show contract positions
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<PositionDetail>]
+    def get_contract_uuid_positions(uuid, opts = {})
+      data, _status_code, _headers = get_contract_uuid_positions_with_http_info(uuid, opts)
+      return data
+    end
+
+    # Show contract positions
+    # Show contract positions
+    # @param uuid 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<PositionDetail>, Fixnum, Hash)>] Array<PositionDetail> data, response status code and response headers
+    def get_contract_uuid_positions_with_http_info(uuid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ContractApi.get_contract_uuid_positions ..."
+      end
+      # verify the required parameter 'uuid' is set
+      if @api_client.config.client_side_validation && uuid.nil?
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ContractApi.get_contract_uuid_positions"
+      end
+      # resource path
+      local_var_path = "/contract/{uuid}/positions".sub('{' + 'uuid' + '}', uuid.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<PositionDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContractApi#get_contract_uuid_positions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show contract series
     # Show contract series
     # @param uuid 
@@ -283,7 +389,7 @@ module BmxApiRuby
     # Cancel contract
     # @param contract_uuid 
     # @param [Hash] opts the optional parameters
-    # @return [ContractCreated]
+    # @return [ContractStatus]
     def post_contract_contract_uuid_cancel(contract_uuid, opts = {})
       data, _status_code, _headers = post_contract_contract_uuid_cancel_with_http_info(contract_uuid, opts)
       return data
@@ -293,7 +399,7 @@ module BmxApiRuby
     # Cancel contract
     # @param contract_uuid 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(ContractCreated, Fixnum, Hash)>] ContractCreated data, response status code and response headers
+    # @return [Array<(ContractStatus, Fixnum, Hash)>] ContractStatus data, response status code and response headers
     def post_contract_contract_uuid_cancel_with_http_info(contract_uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ContractApi.post_contract_contract_uuid_cancel ..."
@@ -327,7 +433,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'ContractCreated')
+        :return_type => 'ContractStatus')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContractApi#post_contract_contract_uuid_cancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -344,7 +450,7 @@ module BmxApiRuby
     # @option opts [String] :status status
     # @option opts [String] :labels labels
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
-    # @return [ContractCreated]
+    # @return [ContractStatus]
     def post_contract_contract_uuid_clone(contract_uuid, opts = {})
       data, _status_code, _headers = post_contract_contract_uuid_clone_with_http_info(contract_uuid, opts)
       return data
@@ -360,7 +466,7 @@ module BmxApiRuby
     # @option opts [String] :status status
     # @option opts [String] :labels labels
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
-    # @return [Array<(ContractCreated, Fixnum, Hash)>] ContractCreated data, response status code and response headers
+    # @return [Array<(ContractStatus, Fixnum, Hash)>] ContractStatus data, response status code and response headers
     def post_contract_contract_uuid_clone_with_http_info(contract_uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ContractApi.post_contract_contract_uuid_clone ..."
@@ -400,7 +506,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'ContractCreated')
+        :return_type => 'ContractStatus')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContractApi#post_contract_contract_uuid_clone\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -416,7 +522,7 @@ module BmxApiRuby
     # @option opts [String] :status status
     # @option opts [String] :labels labels
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
-    # @return [ContractCreated]
+    # @return [ContractStatus]
     def post_contract_create(opts = {})
       data, _status_code, _headers = post_contract_create_with_http_info(opts)
       return data
@@ -431,7 +537,7 @@ module BmxApiRuby
     # @option opts [String] :status status
     # @option opts [String] :labels labels
     # @option opts [String] :maturation YYMMDD_HHMM (default now + 1.week)
-    # @return [Array<(ContractCreated, Fixnum, Hash)>] ContractCreated data, response status code and response headers
+    # @return [Array<(ContractStatus, Fixnum, Hash)>] ContractStatus data, response status code and response headers
     def post_contract_create_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ContractApi.post_contract_create ..."
@@ -467,7 +573,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'ContractCreated')
+        :return_type => 'ContractStatus')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContractApi#post_contract_create\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -479,7 +585,7 @@ module BmxApiRuby
     # @param commit_type expand, transfer or reduce
     # @param offer_uuid 
     # @param [Hash] opts the optional parameters
-    # @return [Status]
+    # @return [ContractStatus]
     def post_contract_offer_uuid_cross(commit_type, offer_uuid, opts = {})
       data, _status_code, _headers = post_contract_offer_uuid_cross_with_http_info(commit_type, offer_uuid, opts)
       return data
@@ -490,7 +596,7 @@ module BmxApiRuby
     # @param commit_type expand, transfer or reduce
     # @param offer_uuid 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    # @return [Array<(ContractStatus, Fixnum, Hash)>] ContractStatus data, response status code and response headers
     def post_contract_offer_uuid_cross_with_http_info(commit_type, offer_uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ContractApi.post_contract_offer_uuid_cross ..."
@@ -533,7 +639,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Status')
+        :return_type => 'ContractStatus')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContractApi#post_contract_offer_uuid_cross\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -544,7 +650,7 @@ module BmxApiRuby
     # Resolve contract
     # @param uuid 
     # @param [Hash] opts the optional parameters
-    # @return [Status]
+    # @return [ContractStatus]
     def put_contract_uuid_resolve(uuid, opts = {})
       data, _status_code, _headers = put_contract_uuid_resolve_with_http_info(uuid, opts)
       return data
@@ -554,7 +660,7 @@ module BmxApiRuby
     # Resolve contract
     # @param uuid 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    # @return [Array<(ContractStatus, Fixnum, Hash)>] ContractStatus data, response status code and response headers
     def put_contract_uuid_resolve_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ContractApi.put_contract_uuid_resolve ..."
@@ -588,7 +694,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Status')
+        :return_type => 'ContractStatus')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContractApi#put_contract_uuid_resolve\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

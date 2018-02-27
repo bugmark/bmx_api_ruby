@@ -13,33 +13,28 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Cancel contract
-  class ContractCreated
-    # status
-    attr_accessor :status
+  # Show contract amendments
+  class AmendmentDetail
+    # Escrow Type
+    attr_accessor :type
 
-    # event UUID
-    attr_accessor :event_uuid
-
-    # contract UUID
-    attr_accessor :contract_uuid
+    # Escrow UUID
+    attr_accessor :uuid
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'status' => :'status',
-        :'event_uuid' => :'event_uuid',
-        :'contract_uuid' => :'contract_uuid'
+        :'type' => :'type',
+        :'uuid' => :'uuid'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'status' => :'String',
-        :'event_uuid' => :'String',
-        :'contract_uuid' => :'String'
+        :'type' => :'String',
+        :'uuid' => :'String'
       }
     end
 
@@ -51,16 +46,12 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
-      if attributes.has_key?(:'event_uuid')
-        self.event_uuid = attributes[:'event_uuid']
-      end
-
-      if attributes.has_key?(:'contract_uuid')
-        self.contract_uuid = attributes[:'contract_uuid']
+      if attributes.has_key?(:'uuid')
+        self.uuid = attributes[:'uuid']
       end
 
     end
@@ -83,9 +74,8 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          status == o.status &&
-          event_uuid == o.event_uuid &&
-          contract_uuid == o.contract_uuid
+          type == o.type &&
+          uuid == o.uuid
     end
 
     # @see the `==` method
@@ -97,7 +87,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, event_uuid, contract_uuid].hash
+      [type, uuid].hash
     end
 
     # Builds the object from hash
