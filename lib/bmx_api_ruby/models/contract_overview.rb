@@ -18,18 +18,28 @@ module BmxApiRuby
     # UUID
     attr_accessor :uuid
 
+    # Contract Status
+    attr_accessor :status
+
+    # TBD
+    attr_accessor :maturation
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'uuid' => :'uuid'
+        :'uuid' => :'uuid',
+        :'status' => :'status',
+        :'maturation' => :'maturation'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'uuid' => :'String'
+        :'uuid' => :'String',
+        :'status' => :'String',
+        :'maturation' => :'DateTime'
       }
     end
 
@@ -43,6 +53,14 @@ module BmxApiRuby
 
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'maturation')
+        self.maturation = attributes[:'maturation']
       end
 
     end
@@ -65,7 +83,9 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          uuid == o.uuid
+          uuid == o.uuid &&
+          status == o.status &&
+          maturation == o.maturation
     end
 
     # @see the `==` method
@@ -77,7 +97,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid].hash
+      [uuid, status, maturation].hash
     end
 
     # Builds the object from hash

@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** | Contract Type | [optional] 
 **uuid** | **String** | Contract UUID | [optional] 
+**status** | **String** | Contract Status | [optional] 
 **prototype_uuid** | **String** | TBD | [optional] 
 **num_escrows** | **Integer** | TBD | [optional] 
 **num_amendments** | **Integer** | TBD | [optional] 

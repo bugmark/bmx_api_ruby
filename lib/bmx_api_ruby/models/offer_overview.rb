@@ -30,6 +30,9 @@ module BmxApiRuby
     # offer price
     attr_accessor :price
 
+    # TBD
+    attr_accessor :maturation
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -38,7 +41,8 @@ module BmxApiRuby
         :'type' => :'type',
         :'status' => :'status',
         :'volume' => :'volume',
-        :'price' => :'price'
+        :'price' => :'price',
+        :'maturation' => :'maturation'
       }
     end
 
@@ -49,7 +53,8 @@ module BmxApiRuby
         :'type' => :'String',
         :'status' => :'String',
         :'volume' => :'Integer',
-        :'price' => :'Float'
+        :'price' => :'Float',
+        :'maturation' => :'DateTime'
       }
     end
 
@@ -81,6 +86,10 @@ module BmxApiRuby
         self.price = attributes[:'price']
       end
 
+      if attributes.has_key?(:'maturation')
+        self.maturation = attributes[:'maturation']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -105,7 +114,8 @@ module BmxApiRuby
           type == o.type &&
           status == o.status &&
           volume == o.volume &&
-          price == o.price
+          price == o.price &&
+          maturation == o.maturation
     end
 
     # @see the `==` method
@@ -117,7 +127,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, type, status, volume, price].hash
+      [uuid, type, status, volume, price, maturation].hash
     end
 
     # Builds the object from hash

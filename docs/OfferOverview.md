@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **status** | **String** | offer status | [optional] 
 **volume** | **Integer** | offer volume | [optional] 
 **price** | **Float** | offer price | [optional] 
+**maturation** | **DateTime** | TBD | [optional] 
 
 

@@ -21,6 +21,9 @@ module BmxApiRuby
     # Contract UUID
     attr_accessor :uuid
 
+    # Contract Status
+    attr_accessor :status
+
     # TBD
     attr_accessor :prototype_uuid
 
@@ -57,6 +60,7 @@ module BmxApiRuby
       {
         :'type' => :'type',
         :'uuid' => :'uuid',
+        :'status' => :'status',
         :'prototype_uuid' => :'prototype_uuid',
         :'num_escrows' => :'num_escrows',
         :'num_amendments' => :'num_amendments',
@@ -75,6 +79,7 @@ module BmxApiRuby
       {
         :'type' => :'String',
         :'uuid' => :'String',
+        :'status' => :'String',
         :'prototype_uuid' => :'String',
         :'num_escrows' => :'Integer',
         :'num_amendments' => :'Integer',
@@ -102,6 +107,10 @@ module BmxApiRuby
 
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
+      end
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.has_key?(:'prototype_uuid')
@@ -166,6 +175,7 @@ module BmxApiRuby
       self.class == o.class &&
           type == o.type &&
           uuid == o.uuid &&
+          status == o.status &&
           prototype_uuid == o.prototype_uuid &&
           num_escrows == o.num_escrows &&
           num_amendments == o.num_amendments &&
@@ -187,7 +197,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid, prototype_uuid, num_escrows, num_amendments, num_positions, maturation, stm_issue_uuid, stm_repo_uuid, stm_title, stm_status, stm_labels].hash
+      [type, uuid, status, prototype_uuid, num_escrows, num_amendments, num_positions, maturation, stm_issue_uuid, stm_repo_uuid, stm_title, stm_status, stm_labels].hash
     end
 
     # Builds the object from hash

@@ -57,6 +57,9 @@ module BmxApiRuby
     # expiration
     attr_accessor :expiration
 
+    # TBD
+    attr_accessor :maturation
+
     # maturation_beg
     attr_accessor :maturation_beg
 
@@ -81,6 +84,7 @@ module BmxApiRuby
         :'stm_title' => :'stm_title',
         :'stm_status' => :'stm_status',
         :'expiration' => :'expiration',
+        :'maturation' => :'maturation',
         :'maturation_beg' => :'maturation_beg',
         :'maturation_end' => :'maturation_end'
       }
@@ -103,6 +107,7 @@ module BmxApiRuby
         :'stm_title' => :'String',
         :'stm_status' => :'String',
         :'expiration' => :'DateTime',
+        :'maturation' => :'DateTime',
         :'maturation_beg' => :'DateTime',
         :'maturation_end' => :'DateTime'
       }
@@ -172,6 +177,10 @@ module BmxApiRuby
         self.expiration = attributes[:'expiration']
       end
 
+      if attributes.has_key?(:'maturation')
+        self.maturation = attributes[:'maturation']
+      end
+
       if attributes.has_key?(:'maturation_beg')
         self.maturation_beg = attributes[:'maturation_beg']
       end
@@ -214,6 +223,7 @@ module BmxApiRuby
           stm_title == o.stm_title &&
           stm_status == o.stm_status &&
           expiration == o.expiration &&
+          maturation == o.maturation &&
           maturation_beg == o.maturation_beg &&
           maturation_end == o.maturation_end
     end
@@ -227,7 +237,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, type, side, intent, status, volume, price, value, poolable, aon, stm_repo_uuid, stm_title, stm_status, expiration, maturation_beg, maturation_end].hash
+      [uuid, type, side, intent, status, volume, price, value, poolable, aon, stm_repo_uuid, stm_title, stm_status, expiration, maturation, maturation_beg, maturation_end].hash
     end
 
     # Builds the object from hash

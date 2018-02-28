@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **stm_title** | **String** | stm_title | [optional] 
 **stm_status** | **String** | stm_status | [optional] 
 **expiration** | **DateTime** | expiration | [optional] 
+**maturation** | **DateTime** | TBD | [optional] 
 **maturation_beg** | **DateTime** | maturation_beg | [optional] 
 **maturation_end** | **DateTime** | maturation_end | [optional] 
 
