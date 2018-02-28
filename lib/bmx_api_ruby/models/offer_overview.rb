@@ -24,13 +24,21 @@ module BmxApiRuby
     # offer status
     attr_accessor :status
 
+    # offer volume
+    attr_accessor :volume
+
+    # offer price
+    attr_accessor :price
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'uuid' => :'uuid',
         :'type' => :'type',
-        :'status' => :'status'
+        :'status' => :'status',
+        :'volume' => :'volume',
+        :'price' => :'price'
       }
     end
 
@@ -39,7 +47,9 @@ module BmxApiRuby
       {
         :'uuid' => :'String',
         :'type' => :'String',
-        :'status' => :'String'
+        :'status' => :'String',
+        :'volume' => :'Integer',
+        :'price' => :'Float'
       }
     end
 
@@ -61,6 +71,14 @@ module BmxApiRuby
 
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.has_key?(:'volume')
+        self.volume = attributes[:'volume']
+      end
+
+      if attributes.has_key?(:'price')
+        self.price = attributes[:'price']
       end
 
     end
@@ -85,7 +103,9 @@ module BmxApiRuby
       self.class == o.class &&
           uuid == o.uuid &&
           type == o.type &&
-          status == o.status
+          status == o.status &&
+          volume == o.volume &&
+          price == o.price
     end
 
     # @see the `==` method
@@ -97,7 +117,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, type, status].hash
+      [uuid, type, status, volume, price].hash
     end
 
     # Builds the object from hash
