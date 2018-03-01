@@ -4,17 +4,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host_name** | **String** | Bugmark Hostname | [optional] 
-**host_time** | **String** | System Time | [optional] 
-**num_users** | **Integer** | Number of Users | [optional] 
-**num_repos** | **Integer** | Number of Repos | [optional] 
-**num_issues** | **Integer** | Number of Issues | [optional] 
-**offers** | **Integer** | Number of Open Offers | [optional] 
-**bu_offers** | **Integer** | Number of Offers to Buy Fixed | [optional] 
-**bf_offers** | **Integer** | Number of Offers to Buy Unfixed | [optional] 
+**users** | **Integer** | Number of Users | [optional] 
+**repos** | **Integer** | Number of Repos | [optional] 
+**issues** | **Integer** | Number of Issues | [optional] 
+**offers** | **Integer** | Number of Offers | [optional] 
+**offers_open** | **Integer** | Number of Open Offers | [optional] 
+**offers_open_bf** | **Integer** | Number of Open Offers to Buy Fixed | [optional] 
+**offers_open_bu** | **Integer** | Number of Open Offers to Buy Unfixed | [optional] 
 **contracts** | **Integer** | Number of Contracts | [optional] 
+**contracts_open** | **Integer** | Number of Open Contracts | [optional] 
 **positions** | **Integer** | Number of Positions | [optional] 
-**escrows** | **Integer** | Number of Escrows | [optional] 
 **amendments** | **Integer** | Number of Amendments | [optional] 
+**escrows** | **Integer** | Number of Escrows | [optional] 
 **events** | **Integer** | Number of Events | [optional] 
 
 

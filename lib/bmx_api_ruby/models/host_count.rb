@@ -18,38 +18,41 @@ module BmxApiRuby
     # Bugmark Hostname
     attr_accessor :host_name
 
-    # System Time
-    attr_accessor :host_time
-
     # Number of Users
-    attr_accessor :num_users
+    attr_accessor :users
 
     # Number of Repos
-    attr_accessor :num_repos
+    attr_accessor :repos
 
     # Number of Issues
-    attr_accessor :num_issues
+    attr_accessor :issues
 
-    # Number of Open Offers
+    # Number of Offers
     attr_accessor :offers
 
-    # Number of Offers to Buy Fixed
-    attr_accessor :bu_offers
+    # Number of Open Offers
+    attr_accessor :offers_open
 
-    # Number of Offers to Buy Unfixed
-    attr_accessor :bf_offers
+    # Number of Open Offers to Buy Fixed
+    attr_accessor :offers_open_bf
+
+    # Number of Open Offers to Buy Unfixed
+    attr_accessor :offers_open_bu
 
     # Number of Contracts
     attr_accessor :contracts
 
+    # Number of Open Contracts
+    attr_accessor :contracts_open
+
     # Number of Positions
     attr_accessor :positions
 
-    # Number of Escrows
-    attr_accessor :escrows
-
     # Number of Amendments
     attr_accessor :amendments
+
+    # Number of Escrows
+    attr_accessor :escrows
 
     # Number of Events
     attr_accessor :events
@@ -59,17 +62,18 @@ module BmxApiRuby
     def self.attribute_map
       {
         :'host_name' => :'host_name',
-        :'host_time' => :'host_time',
-        :'num_users' => :'num_users',
-        :'num_repos' => :'num_repos',
-        :'num_issues' => :'num_issues',
+        :'users' => :'users',
+        :'repos' => :'repos',
+        :'issues' => :'issues',
         :'offers' => :'offers',
-        :'bu_offers' => :'bu_offers',
-        :'bf_offers' => :'bf_offers',
+        :'offers_open' => :'offers_open',
+        :'offers_open_bf' => :'offers_open_bf',
+        :'offers_open_bu' => :'offers_open_bu',
         :'contracts' => :'contracts',
+        :'contracts_open' => :'contracts_open',
         :'positions' => :'positions',
-        :'escrows' => :'escrows',
         :'amendments' => :'amendments',
+        :'escrows' => :'escrows',
         :'events' => :'events'
       }
     end
@@ -78,17 +82,18 @@ module BmxApiRuby
     def self.swagger_types
       {
         :'host_name' => :'String',
-        :'host_time' => :'String',
-        :'num_users' => :'Integer',
-        :'num_repos' => :'Integer',
-        :'num_issues' => :'Integer',
+        :'users' => :'Integer',
+        :'repos' => :'Integer',
+        :'issues' => :'Integer',
         :'offers' => :'Integer',
-        :'bu_offers' => :'Integer',
-        :'bf_offers' => :'Integer',
+        :'offers_open' => :'Integer',
+        :'offers_open_bf' => :'Integer',
+        :'offers_open_bu' => :'Integer',
         :'contracts' => :'Integer',
+        :'contracts_open' => :'Integer',
         :'positions' => :'Integer',
-        :'escrows' => :'Integer',
         :'amendments' => :'Integer',
+        :'escrows' => :'Integer',
         :'events' => :'Integer'
       }
     end
@@ -105,48 +110,52 @@ module BmxApiRuby
         self.host_name = attributes[:'host_name']
       end
 
-      if attributes.has_key?(:'host_time')
-        self.host_time = attributes[:'host_time']
+      if attributes.has_key?(:'users')
+        self.users = attributes[:'users']
       end
 
-      if attributes.has_key?(:'num_users')
-        self.num_users = attributes[:'num_users']
+      if attributes.has_key?(:'repos')
+        self.repos = attributes[:'repos']
       end
 
-      if attributes.has_key?(:'num_repos')
-        self.num_repos = attributes[:'num_repos']
-      end
-
-      if attributes.has_key?(:'num_issues')
-        self.num_issues = attributes[:'num_issues']
+      if attributes.has_key?(:'issues')
+        self.issues = attributes[:'issues']
       end
 
       if attributes.has_key?(:'offers')
         self.offers = attributes[:'offers']
       end
 
-      if attributes.has_key?(:'bu_offers')
-        self.bu_offers = attributes[:'bu_offers']
+      if attributes.has_key?(:'offers_open')
+        self.offers_open = attributes[:'offers_open']
       end
 
-      if attributes.has_key?(:'bf_offers')
-        self.bf_offers = attributes[:'bf_offers']
+      if attributes.has_key?(:'offers_open_bf')
+        self.offers_open_bf = attributes[:'offers_open_bf']
+      end
+
+      if attributes.has_key?(:'offers_open_bu')
+        self.offers_open_bu = attributes[:'offers_open_bu']
       end
 
       if attributes.has_key?(:'contracts')
         self.contracts = attributes[:'contracts']
       end
 
+      if attributes.has_key?(:'contracts_open')
+        self.contracts_open = attributes[:'contracts_open']
+      end
+
       if attributes.has_key?(:'positions')
         self.positions = attributes[:'positions']
       end
 
-      if attributes.has_key?(:'escrows')
-        self.escrows = attributes[:'escrows']
-      end
-
       if attributes.has_key?(:'amendments')
         self.amendments = attributes[:'amendments']
+      end
+
+      if attributes.has_key?(:'escrows')
+        self.escrows = attributes[:'escrows']
       end
 
       if attributes.has_key?(:'events')
@@ -174,17 +183,18 @@ module BmxApiRuby
       return true if self.equal?(o)
       self.class == o.class &&
           host_name == o.host_name &&
-          host_time == o.host_time &&
-          num_users == o.num_users &&
-          num_repos == o.num_repos &&
-          num_issues == o.num_issues &&
+          users == o.users &&
+          repos == o.repos &&
+          issues == o.issues &&
           offers == o.offers &&
-          bu_offers == o.bu_offers &&
-          bf_offers == o.bf_offers &&
+          offers_open == o.offers_open &&
+          offers_open_bf == o.offers_open_bf &&
+          offers_open_bu == o.offers_open_bu &&
           contracts == o.contracts &&
+          contracts_open == o.contracts_open &&
           positions == o.positions &&
-          escrows == o.escrows &&
           amendments == o.amendments &&
+          escrows == o.escrows &&
           events == o.events
     end
 
@@ -197,7 +207,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host_name, host_time, num_users, num_repos, num_issues, offers, bu_offers, bf_offers, contracts, positions, escrows, amendments, events].hash
+      [host_name, users, repos, issues, offers, offers_open, offers_open_bf, offers_open_bu, contracts, contracts_open, positions, amendments, escrows, events].hash
     end
 
     # Builds the object from hash
