@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
 *BmxApiRuby::IssuesApi* | [**get_issues_issue_exid**](docs/IssuesApi.md#get_issues_issue_exid) | **GET** /issues/{issue_exid} | Show issue detail
 *BmxApiRuby::IssuesApi* | [**get_issues_issue_exid_contracts**](docs/IssuesApi.md#get_issues_issue_exid_contracts) | **GET** /issues/{issue_exid}/contracts | Show issue contracts
+*BmxApiRuby::IssuesApi* | [**get_issues_issue_exid_offers**](docs/IssuesApi.md#get_issues_issue_exid_offers) | **GET** /issues/{issue_exid}/offers | Show issue offers
 *BmxApiRuby::IssuesApi* | [**post_issues_exid**](docs/IssuesApi.md#post_issues_exid) | **POST** /issues/{exid} | Sync
 *BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
 *BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail

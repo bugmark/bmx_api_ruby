@@ -16,5 +16,7 @@ Name | Type | Description | Notes
 **stm_title** | **String** | TBD | [optional] 
 **stm_status** | **String** | TBD | [optional] 
 **stm_labels** | **String** | TBD | [optional] 
+**total_value** | **Integer** | TBD | [optional] 
+**awardee** | **String** | TBD | [optional] 
 
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_issues**](IssuesApi.md#get_issues) | **GET** /issues | List all issues
 [**get_issues_issue_exid**](IssuesApi.md#get_issues_issue_exid) | **GET** /issues/{issue_exid} | Show issue detail
 [**get_issues_issue_exid_contracts**](IssuesApi.md#get_issues_issue_exid_contracts) | **GET** /issues/{issue_exid}/contracts | Show issue contracts
+[**get_issues_issue_exid_offers**](IssuesApi.md#get_issues_issue_exid_offers) | **GET** /issues/{issue_exid}/offers | Show issue offers
 [**post_issues_exid**](IssuesApi.md#post_issues_exid) | **POST** /issues/{exid} | Sync
 
 
@@ -158,6 +159,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Array&lt;ContractDetail&gt;**](ContractDetail.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_issues_issue_exid_offers**
+> Array&lt;OfferDetail&gt; get_issues_issue_exid_offers(issue_exid)
+
+Show issue offers
+
+Show issue offers
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::IssuesApi.new
+
+issue_exid = "issue_exid_example" # String | issue exid
+
+
+begin
+  #Show issue offers
+  result = api_instance.get_issues_issue_exid_offers(issue_exid)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling IssuesApi->get_issues_issue_exid_offers: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **issue_exid** | **String**| issue exid | 
+
+### Return type
+
+[**Array&lt;OfferDetail&gt;**](OfferDetail.md)
 
 ### Authorization
 

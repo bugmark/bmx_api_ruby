@@ -15,26 +15,66 @@ require 'date'
 module BmxApiRuby
   # Show position detail
   class PositionDetail
-    # Position Type
-    attr_accessor :type
-
     # Position UUID
     attr_accessor :uuid
+
+    # TBD
+    attr_accessor :side
+
+    # TBD
+    attr_accessor :offer_uuid
+
+    # TBD
+    attr_accessor :user_uuid
+
+    # TBD
+    attr_accessor :escrow_uuid
+
+    # TBD
+    attr_accessor :amendment_uuid
+
+    # TBD
+    attr_accessor :parent_uuid
+
+    # TBD
+    attr_accessor :volume
+
+    # TBD
+    attr_accessor :price
+
+    # TBD
+    attr_accessor :value
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'uuid' => :'uuid'
+        :'uuid' => :'uuid',
+        :'side' => :'side',
+        :'offer_uuid' => :'offer_uuid',
+        :'user_uuid' => :'user_uuid',
+        :'escrow_uuid' => :'escrow_uuid',
+        :'amendment_uuid' => :'amendment_uuid',
+        :'parent_uuid' => :'parent_uuid',
+        :'volume' => :'volume',
+        :'price' => :'price',
+        :'value' => :'value'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'String',
-        :'uuid' => :'String'
+        :'uuid' => :'String',
+        :'side' => :'String',
+        :'offer_uuid' => :'String',
+        :'user_uuid' => :'String',
+        :'escrow_uuid' => :'String',
+        :'amendment_uuid' => :'String',
+        :'parent_uuid' => :'String',
+        :'volume' => :'Integer',
+        :'price' => :'Float',
+        :'value' => :'Float'
       }
     end
 
@@ -46,12 +86,44 @@ module BmxApiRuby
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
-      end
-
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
+      end
+
+      if attributes.has_key?(:'side')
+        self.side = attributes[:'side']
+      end
+
+      if attributes.has_key?(:'offer_uuid')
+        self.offer_uuid = attributes[:'offer_uuid']
+      end
+
+      if attributes.has_key?(:'user_uuid')
+        self.user_uuid = attributes[:'user_uuid']
+      end
+
+      if attributes.has_key?(:'escrow_uuid')
+        self.escrow_uuid = attributes[:'escrow_uuid']
+      end
+
+      if attributes.has_key?(:'amendment_uuid')
+        self.amendment_uuid = attributes[:'amendment_uuid']
+      end
+
+      if attributes.has_key?(:'parent_uuid')
+        self.parent_uuid = attributes[:'parent_uuid']
+      end
+
+      if attributes.has_key?(:'volume')
+        self.volume = attributes[:'volume']
+      end
+
+      if attributes.has_key?(:'price')
+        self.price = attributes[:'price']
+      end
+
+      if attributes.has_key?(:'value')
+        self.value = attributes[:'value']
       end
 
     end
@@ -74,8 +146,16 @@ module BmxApiRuby
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          uuid == o.uuid
+          uuid == o.uuid &&
+          side == o.side &&
+          offer_uuid == o.offer_uuid &&
+          user_uuid == o.user_uuid &&
+          escrow_uuid == o.escrow_uuid &&
+          amendment_uuid == o.amendment_uuid &&
+          parent_uuid == o.parent_uuid &&
+          volume == o.volume &&
+          price == o.price &&
+          value == o.value
     end
 
     # @see the `==` method
@@ -87,7 +167,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid].hash
+      [uuid, side, offer_uuid, user_uuid, escrow_uuid, amendment_uuid, parent_uuid, volume, price, value].hash
     end
 
     # Builds the object from hash

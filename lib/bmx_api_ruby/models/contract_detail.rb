@@ -54,6 +54,12 @@ module BmxApiRuby
     # TBD
     attr_accessor :stm_labels
 
+    # TBD
+    attr_accessor :total_value
+
+    # TBD
+    attr_accessor :awardee
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -70,7 +76,9 @@ module BmxApiRuby
         :'stm_repo_uuid' => :'stm_repo_uuid',
         :'stm_title' => :'stm_title',
         :'stm_status' => :'stm_status',
-        :'stm_labels' => :'stm_labels'
+        :'stm_labels' => :'stm_labels',
+        :'total_value' => :'total_value',
+        :'awardee' => :'awardee'
       }
     end
 
@@ -89,7 +97,9 @@ module BmxApiRuby
         :'stm_repo_uuid' => :'String',
         :'stm_title' => :'String',
         :'stm_status' => :'String',
-        :'stm_labels' => :'String'
+        :'stm_labels' => :'String',
+        :'total_value' => :'Integer',
+        :'awardee' => :'String'
       }
     end
 
@@ -153,6 +163,14 @@ module BmxApiRuby
         self.stm_labels = attributes[:'stm_labels']
       end
 
+      if attributes.has_key?(:'total_value')
+        self.total_value = attributes[:'total_value']
+      end
+
+      if attributes.has_key?(:'awardee')
+        self.awardee = attributes[:'awardee']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -185,7 +203,9 @@ module BmxApiRuby
           stm_repo_uuid == o.stm_repo_uuid &&
           stm_title == o.stm_title &&
           stm_status == o.stm_status &&
-          stm_labels == o.stm_labels
+          stm_labels == o.stm_labels &&
+          total_value == o.total_value &&
+          awardee == o.awardee
     end
 
     # @see the `==` method
@@ -197,7 +217,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid, status, prototype_uuid, num_escrows, num_amendments, num_positions, maturation, stm_issue_uuid, stm_repo_uuid, stm_title, stm_status, stm_labels].hash
+      [type, uuid, status, prototype_uuid, num_escrows, num_amendments, num_positions, maturation, stm_issue_uuid, stm_repo_uuid, stm_title, stm_status, stm_labels, total_value, awardee].hash
     end
 
     # Builds the object from hash

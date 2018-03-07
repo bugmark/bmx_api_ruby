@@ -68,6 +68,18 @@ describe 'IssuesApi' do
     end
   end
 
+  # unit tests for get_issues_issue_exid_offers
+  # Show issue offers
+  # Show issue offers
+  # @param issue_exid issue exid
+  # @param [Hash] opts the optional parameters
+  # @return [Array<OfferDetail>]
+  describe 'get_issues_issue_exid_offers test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_issues_exid
   # Sync
   # Sync
