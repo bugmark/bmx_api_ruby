@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**get_contract_uuid_escrows**](ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 [**get_contract_uuid_open_offers**](ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 [**get_contract_uuid_positions**](ContractApi.md#get_contract_uuid_positions) | **GET** /contract/{uuid}/positions | Show contract positions
-[**get_contract_uuid_series**](ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 [**post_contract_contract_uuid_cancel**](ContractApi.md#post_contract_contract_uuid_cancel) | **POST** /contract/{contract_uuid}/cancel | Cancel contract
 [**post_contract_contract_uuid_clone**](ContractApi.md#post_contract_contract_uuid_clone) | **POST** /contract/{contract_uuid}/clone | Clone contract
 [**post_contract_create**](ContractApi.md#post_contract_create) | **POST** /contract/create | Create contract
@@ -318,59 +317,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Array&lt;PositionDetail&gt;**](PositionDetail.md)
-
-### Authorization
-
-[base](../README.md#base)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **get_contract_uuid_series**
-> Status get_contract_uuid_series(uuid)
-
-Show contract series
-
-Show contract series
-
-### Example
-```ruby
-# load the gem
-require 'bmx_api_ruby'
-# setup authorization
-BmxApiRuby.configure do |config|
-  # Configure HTTP basic authorization: base
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = BmxApiRuby::ContractApi.new
-
-uuid = 56 # Integer | 
-
-
-begin
-  #Show contract series
-  result = api_instance.get_contract_uuid_series(uuid)
-  p result
-rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ContractApi->get_contract_uuid_series: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **Integer**|  | 
-
-### Return type
-
-[**Status**](Status.md)
 
 ### Authorization
 

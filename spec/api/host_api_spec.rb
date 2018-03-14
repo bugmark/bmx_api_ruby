@@ -91,6 +91,42 @@ describe 'HostApi' do
     end
   end
 
+  # unit tests for put_host_go_past_end_of_day
+  # go past end-of-day
+  # go past end-of-day
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :count count (default 1)
+  # @return [Status]
+  describe 'put_host_go_past_end_of_day test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_host_go_past_end_of_month
+  # go past end-of-month
+  # go past end-of-month
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :count count (default 1)
+  # @return [Status]
+  describe 'put_host_go_past_end_of_month test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for put_host_go_past_end_of_week
+  # go past end-of-week
+  # go past end-of-week
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :count count (default 1)
+  # @return [Status]
+  describe 'put_host_go_past_end_of_week test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for put_host_increment_day_offset
   # increment day offset
   # increment day offset

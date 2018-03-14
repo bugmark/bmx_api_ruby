@@ -9,6 +9,9 @@ Method | HTTP request | Description
 [**get_host_next_week_ends**](HostApi.md#get_host_next_week_ends) | **GET** /host/next_week_ends | next week-ends
 [**get_host_ping**](HostApi.md#get_host_ping) | **GET** /host/ping | check server access
 [**post_host_rebuild**](HostApi.md#post_host_rebuild) | **POST** /host/rebuild | rebuild
+[**put_host_go_past_end_of_day**](HostApi.md#put_host_go_past_end_of_day) | **PUT** /host/go_past_end_of_day | go past end-of-day
+[**put_host_go_past_end_of_month**](HostApi.md#put_host_go_past_end_of_month) | **PUT** /host/go_past_end_of_month | go past end-of-month
+[**put_host_go_past_end_of_week**](HostApi.md#put_host_go_past_end_of_week) | **PUT** /host/go_past_end_of_week | go past end-of-week
 [**put_host_increment_day_offset**](HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 [**put_host_increment_hour_offset**](HostApi.md#put_host_increment_hour_offset) | **PUT** /host/increment_hour_offset | increment hour offset
 [**put_host_set_current_time**](HostApi.md#put_host_set_current_time) | **PUT** /host/set_current_time | set current time
@@ -257,6 +260,168 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **affirm** | **String**| confirmation | 
  **with_day_offset** | **Integer**| initial day offset | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **put_host_go_past_end_of_day**
+> Status put_host_go_past_end_of_day(opts)
+
+go past end-of-day
+
+go past end-of-day
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+opts = { 
+  count: 56 # Integer | count (default 1)
+}
+
+begin
+  #go past end-of-day
+  result = api_instance.put_host_go_past_end_of_day(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->put_host_go_past_end_of_day: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **count** | **Integer**| count (default 1) | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **put_host_go_past_end_of_month**
+> Status put_host_go_past_end_of_month(opts)
+
+go past end-of-month
+
+go past end-of-month
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+opts = { 
+  count: 56 # Integer | count (default 1)
+}
+
+begin
+  #go past end-of-month
+  result = api_instance.put_host_go_past_end_of_month(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->put_host_go_past_end_of_month: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **count** | **Integer**| count (default 1) | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+
+# **put_host_go_past_end_of_week**
+> Status put_host_go_past_end_of_week(opts)
+
+go past end-of-week
+
+go past end-of-week
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::HostApi.new
+
+opts = { 
+  count: 56 # Integer | count (default 1)
+}
+
+begin
+  #go past end-of-week
+  result = api_instance.put_host_go_past_end_of_week(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling HostApi->put_host_go_past_end_of_week: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **count** | **Integer**| count (default 1) | [optional] 
 
 ### Return type
 

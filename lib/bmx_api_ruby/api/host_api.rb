@@ -277,6 +277,162 @@ module BmxApiRuby
       return data, status_code, headers
     end
 
+    # go past end-of-day
+    # go past end-of-day
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Status]
+    def put_host_go_past_end_of_day(opts = {})
+      data, _status_code, _headers = put_host_go_past_end_of_day_with_http_info(opts)
+      return data
+    end
+
+    # go past end-of-day
+    # go past end-of-day
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_host_go_past_end_of_day_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HostApi.put_host_go_past_end_of_day ..."
+      end
+      # resource path
+      local_var_path = "/host/go_past_end_of_day"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["count"] = opts[:'count'] if !opts[:'count'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HostApi#put_host_go_past_end_of_day\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # go past end-of-month
+    # go past end-of-month
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Status]
+    def put_host_go_past_end_of_month(opts = {})
+      data, _status_code, _headers = put_host_go_past_end_of_month_with_http_info(opts)
+      return data
+    end
+
+    # go past end-of-month
+    # go past end-of-month
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_host_go_past_end_of_month_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HostApi.put_host_go_past_end_of_month ..."
+      end
+      # resource path
+      local_var_path = "/host/go_past_end_of_month"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["count"] = opts[:'count'] if !opts[:'count'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HostApi#put_host_go_past_end_of_month\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # go past end-of-week
+    # go past end-of-week
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Status]
+    def put_host_go_past_end_of_week(opts = {})
+      data, _status_code, _headers = put_host_go_past_end_of_week_with_http_info(opts)
+      return data
+    end
+
+    # go past end-of-week
+    # go past end-of-week
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count count (default 1)
+    # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
+    def put_host_go_past_end_of_week_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HostApi.put_host_go_past_end_of_week ..."
+      end
+      # resource path
+      local_var_path = "/host/go_past_end_of_week"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # form parameters
+      form_params = {}
+      form_params["count"] = opts[:'count'] if !opts[:'count'].nil?
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Status')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HostApi#put_host_go_past_end_of_week\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # increment day offset
     # increment day offset
     # @param [Hash] opts the optional parameters

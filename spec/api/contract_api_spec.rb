@@ -103,18 +103,6 @@ describe 'ContractApi' do
     end
   end
 
-  # unit tests for get_contract_uuid_series
-  # Show contract series
-  # Show contract series
-  # @param uuid 
-  # @param [Hash] opts the optional parameters
-  # @return [Status]
-  describe 'get_contract_uuid_series test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for post_contract_contract_uuid_cancel
   # Cancel contract
   # Cancel contract

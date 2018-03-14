@@ -85,7 +85,6 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_escrows**](docs/ContractApi.md#get_contract_uuid_escrows) | **GET** /contract/{uuid}/escrows | Show contract escrows
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_open_offers**](docs/ContractApi.md#get_contract_uuid_open_offers) | **GET** /contract/{uuid}/open_offers | Show contract open_offers
 *BmxApiRuby::ContractApi* | [**get_contract_uuid_positions**](docs/ContractApi.md#get_contract_uuid_positions) | **GET** /contract/{uuid}/positions | Show contract positions
-*BmxApiRuby::ContractApi* | [**get_contract_uuid_series**](docs/ContractApi.md#get_contract_uuid_series) | **GET** /contract/{uuid}/series | Show contract series
 *BmxApiRuby::ContractApi* | [**post_contract_contract_uuid_cancel**](docs/ContractApi.md#post_contract_contract_uuid_cancel) | **POST** /contract/{contract_uuid}/cancel | Cancel contract
 *BmxApiRuby::ContractApi* | [**post_contract_contract_uuid_clone**](docs/ContractApi.md#post_contract_contract_uuid_clone) | **POST** /contract/{contract_uuid}/clone | Clone contract
 *BmxApiRuby::ContractApi* | [**post_contract_create**](docs/ContractApi.md#post_contract_create) | **POST** /contract/create | Create contract
@@ -99,6 +98,9 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::HostApi* | [**get_host_next_week_ends**](docs/HostApi.md#get_host_next_week_ends) | **GET** /host/next_week_ends | next week-ends
 *BmxApiRuby::HostApi* | [**get_host_ping**](docs/HostApi.md#get_host_ping) | **GET** /host/ping | check server access
 *BmxApiRuby::HostApi* | [**post_host_rebuild**](docs/HostApi.md#post_host_rebuild) | **POST** /host/rebuild | rebuild
+*BmxApiRuby::HostApi* | [**put_host_go_past_end_of_day**](docs/HostApi.md#put_host_go_past_end_of_day) | **PUT** /host/go_past_end_of_day | go past end-of-day
+*BmxApiRuby::HostApi* | [**put_host_go_past_end_of_month**](docs/HostApi.md#put_host_go_past_end_of_month) | **PUT** /host/go_past_end_of_month | go past end-of-month
+*BmxApiRuby::HostApi* | [**put_host_go_past_end_of_week**](docs/HostApi.md#put_host_go_past_end_of_week) | **PUT** /host/go_past_end_of_week | go past end-of-week
 *BmxApiRuby::HostApi* | [**put_host_increment_day_offset**](docs/HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 *BmxApiRuby::HostApi* | [**put_host_increment_hour_offset**](docs/HostApi.md#put_host_increment_hour_offset) | **PUT** /host/increment_hour_offset | increment hour offset
 *BmxApiRuby::HostApi* | [**put_host_set_current_time**](docs/HostApi.md#put_host_set_current_time) | **PUT** /host/set_current_time | set current time
