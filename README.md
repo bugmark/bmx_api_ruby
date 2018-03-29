@@ -104,25 +104,29 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::HostApi* | [**put_host_increment_day_offset**](docs/HostApi.md#put_host_increment_day_offset) | **PUT** /host/increment_day_offset | increment day offset
 *BmxApiRuby::HostApi* | [**put_host_increment_hour_offset**](docs/HostApi.md#put_host_increment_hour_offset) | **PUT** /host/increment_hour_offset | increment hour offset
 *BmxApiRuby::HostApi* | [**put_host_set_current_time**](docs/HostApi.md#put_host_set_current_time) | **PUT** /host/set_current_time | set current time
-*BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issues
-*BmxApiRuby::IssuesApi* | [**get_issues_issue_exid**](docs/IssuesApi.md#get_issues_issue_exid) | **GET** /issues/{issue_exid} | Show issue detail
+*BmxApiRuby::IssuesApi* | [**get_issues**](docs/IssuesApi.md#get_issues) | **GET** /issues | List all issue ids
+*BmxApiRuby::IssuesApi* | [**get_issues_detail**](docs/IssuesApi.md#get_issues_detail) | **GET** /issues/detail | List all issues details
+*BmxApiRuby::IssuesApi* | [**get_issues_issue_exid**](docs/IssuesApi.md#get_issues_issue_exid) | **GET** /issues/{issue_exid} | Show detail for one issue
 *BmxApiRuby::IssuesApi* | [**get_issues_issue_exid_contracts**](docs/IssuesApi.md#get_issues_issue_exid_contracts) | **GET** /issues/{issue_exid}/contracts | Show issue contracts
 *BmxApiRuby::IssuesApi* | [**get_issues_issue_exid_offers**](docs/IssuesApi.md#get_issues_issue_exid_offers) | **GET** /issues/{issue_exid}/offers | Show issue offers
 *BmxApiRuby::IssuesApi* | [**post_issues_exid**](docs/IssuesApi.md#post_issues_exid) | **POST** /issues/{exid} | Sync
-*BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offers
-*BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
+*BmxApiRuby::OffersApi* | [**get_offers**](docs/OffersApi.md#get_offers) | **GET** /offers | List all offer ids
+*BmxApiRuby::OffersApi* | [**get_offers_detail**](docs/OffersApi.md#get_offers_detail) | **GET** /offers/detail | List all offer details
+*BmxApiRuby::OffersApi* | [**get_offers_uuid**](docs/OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show details for one offer
 *BmxApiRuby::OffersApi* | [**post_offers_buy**](docs/OffersApi.md#post_offers_buy) | **POST** /offers/buy | Create a buy offer
 *BmxApiRuby::OffersApi* | [**post_offers_uuid_clone**](docs/OffersApi.md#post_offers_uuid_clone) | **POST** /offers/{uuid}/clone | Create a clone
 *BmxApiRuby::OffersApi* | [**post_offers_uuid_counter**](docs/OffersApi.md#post_offers_uuid_counter) | **POST** /offers/{uuid}/counter | Create a counter-offer
 *BmxApiRuby::OffersApi* | [**put_offers_uuid_cancel**](docs/OffersApi.md#put_offers_uuid_cancel) | **PUT** /offers/{uuid}/cancel | Cancel offer
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | List all positions
 *BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
-*BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repos
-*BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
+*BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repo ids
+*BmxApiRuby::ReposApi* | [**get_repos_detail**](docs/ReposApi.md#get_repos_detail) | **GET** /repos/detail | List all repo details
+*BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show detail for one repo
 *BmxApiRuby::ReposApi* | [**post_repos**](docs/ReposApi.md#post_repos) | **POST** /repos | Create a repo
 *BmxApiRuby::ReposApi* | [**put_repos**](docs/ReposApi.md#put_repos) | **PUT** /repos | Sync a repo
-*BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all users
-*BmxApiRuby::UsersApi* | [**get_users_uuid**](docs/UsersApi.md#get_users_uuid) | **GET** /users/{uuid} | Show user detail
+*BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all user ids
+*BmxApiRuby::UsersApi* | [**get_users_detail**](docs/UsersApi.md#get_users_detail) | **GET** /users/detail | List all user details
+*BmxApiRuby::UsersApi* | [**get_users_uuid**](docs/UsersApi.md#get_users_uuid) | **GET** /users/{uuid} | Show details for one user
 *BmxApiRuby::UsersApi* | [**post_users**](docs/UsersApi.md#post_users) | **POST** /users | Create a user
 *BmxApiRuby::UsersApi* | [**put_users_uuid_deposit**](docs/UsersApi.md#put_users_uuid_deposit) | **PUT** /users/{uuid}/deposit | Deposit funds
 *BmxApiRuby::UsersApi* | [**put_users_uuid_withdraw**](docs/UsersApi.md#put_users_uuid_withdraw) | **PUT** /users/{uuid}/withdraw | Withdraw funds
@@ -132,25 +136,25 @@ Class | Method | HTTP request | Description
 
  - [BmxApiRuby::AmendmentDetail](docs/AmendmentDetail.md)
  - [BmxApiRuby::ContractDetail](docs/ContractDetail.md)
- - [BmxApiRuby::ContractOverview](docs/ContractOverview.md)
+ - [BmxApiRuby::ContractIds](docs/ContractIds.md)
  - [BmxApiRuby::ContractStatus](docs/ContractStatus.md)
  - [BmxApiRuby::EscrowDetail](docs/EscrowDetail.md)
  - [BmxApiRuby::Event](docs/Event.md)
  - [BmxApiRuby::HostCount](docs/HostCount.md)
  - [BmxApiRuby::HostInfo](docs/HostInfo.md)
  - [BmxApiRuby::IssueDetail](docs/IssueDetail.md)
- - [BmxApiRuby::IssueOverview](docs/IssueOverview.md)
+ - [BmxApiRuby::IssueIds](docs/IssueIds.md)
  - [BmxApiRuby::NextWeekEnds](docs/NextWeekEnds.md)
  - [BmxApiRuby::OfferCreated](docs/OfferCreated.md)
  - [BmxApiRuby::OfferDetail](docs/OfferDetail.md)
- - [BmxApiRuby::OfferOverview](docs/OfferOverview.md)
+ - [BmxApiRuby::OfferIds](docs/OfferIds.md)
  - [BmxApiRuby::PositionDetail](docs/PositionDetail.md)
- - [BmxApiRuby::PositionOverview](docs/PositionOverview.md)
+ - [BmxApiRuby::PositionIds](docs/PositionIds.md)
  - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
- - [BmxApiRuby::RepoOverview](docs/RepoOverview.md)
+ - [BmxApiRuby::RepoIds](docs/RepoIds.md)
  - [BmxApiRuby::Status](docs/Status.md)
  - [BmxApiRuby::UserDetail](docs/UserDetail.md)
- - [BmxApiRuby::UserOverview](docs/UserOverview.md)
+ - [BmxApiRuby::UserIds](docs/UserIds.md)
 
 
 ## Documentation for Authorization

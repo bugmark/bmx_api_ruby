@@ -20,21 +20,21 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # List all issues
-    # List all issues
+    # List all issue ids
+    # List all issue ids
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit count limit
-    # @return [Array<IssueOverview>]
+    # @return [Array<IssueIds>]
     def get_issues(opts = {})
       data, _status_code, _headers = get_issues_with_http_info(opts)
       return data
     end
 
-    # List all issues
-    # List all issues
+    # List all issue ids
+    # List all issue ids
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit count limit
-    # @return [Array<(Array<IssueOverview>, Fixnum, Hash)>] Array<IssueOverview> data, response status code and response headers
+    # @return [Array<(Array<IssueIds>, Fixnum, Hash)>] Array<IssueIds> data, response status code and response headers
     def get_issues_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: IssuesApi.get_issues ..."
@@ -63,15 +63,65 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<IssueOverview>')
+        :return_type => 'Array<IssueIds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: IssuesApi#get_issues\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Show issue detail
-    # Show issue detail
+    # List all issues details
+    # List all issues details
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit count limit
+    # @return [Array<IssueDetail>]
+    def get_issues_detail(opts = {})
+      data, _status_code, _headers = get_issues_detail_with_http_info(opts)
+      return data
+    end
+
+    # List all issues details
+    # List all issues details
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit count limit
+    # @return [Array<(Array<IssueDetail>, Fixnum, Hash)>] Array<IssueDetail> data, response status code and response headers
+    def get_issues_detail_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: IssuesApi.get_issues_detail ..."
+      end
+      # resource path
+      local_var_path = "/issues/detail"
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<IssueDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: IssuesApi#get_issues_detail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show detail for one issue
+    # Show detail for one issue
     # @param issue_exid issue exid
     # @param [Hash] opts the optional parameters
     # @return [IssueDetail]
@@ -80,8 +130,8 @@ module BmxApiRuby
       return data
     end
 
-    # Show issue detail
-    # Show issue detail
+    # Show detail for one issue
+    # Show detail for one issue
     # @param issue_exid issue exid
     # @param [Hash] opts the optional parameters
     # @return [Array<(IssueDetail, Fixnum, Hash)>] IssueDetail data, response status code and response headers

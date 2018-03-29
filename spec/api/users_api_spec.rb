@@ -33,20 +33,32 @@ describe 'UsersApi' do
   end
 
   # unit tests for get_users
-  # List all users
-  # List all users
+  # List all user ids
+  # List all user ids
   # @param [Hash] opts the optional parameters
   # @option opts [String] :with_email email filter
-  # @return [Array<UserOverview>]
+  # @return [Array<UserIds>]
   describe 'get_users test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
+  # unit tests for get_users_detail
+  # List all user details
+  # List all user details
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :with_email email filter
+  # @return [Array<UserDetail>]
+  describe 'get_users_detail test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_users_uuid
-  # Show user detail
-  # Show user detail
+  # Show details for one user
+  # Show details for one user
   # @param uuid user uuid
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :offers include open offers
@@ -65,7 +77,7 @@ describe 'UsersApi' do
   # @param password user password
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :balance opening balance
-  # @return [UserOverview]
+  # @return [UserIds]
   describe 'post_users test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Show repo detail
+  # Show detail for one repo
   class RepoDetail
     # Repo Type
     attr_accessor :type

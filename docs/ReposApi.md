@@ -4,18 +4,19 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_repos**](ReposApi.md#get_repos) | **GET** /repos | List all repos
-[**get_repos_uuid**](ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show repo detail
+[**get_repos**](ReposApi.md#get_repos) | **GET** /repos | List all repo ids
+[**get_repos_detail**](ReposApi.md#get_repos_detail) | **GET** /repos/detail | List all repo details
+[**get_repos_uuid**](ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show detail for one repo
 [**post_repos**](ReposApi.md#post_repos) | **POST** /repos | Create a repo
 [**put_repos**](ReposApi.md#put_repos) | **PUT** /repos | Sync a repo
 
 
 # **get_repos**
-> Array&lt;RepoOverview&gt; get_repos
+> Array&lt;RepoIds&gt; get_repos
 
-List all repos
+List all repo ids
 
-List all repos
+List all repo ids
 
 ### Example
 ```ruby
@@ -31,7 +32,7 @@ end
 api_instance = BmxApiRuby::ReposApi.new
 
 begin
-  #List all repos
+  #List all repo ids
   result = api_instance.get_repos
   p result
 rescue BmxApiRuby::ApiError => e
@@ -44,7 +45,54 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;RepoOverview&gt;**](RepoOverview.md)
+[**Array&lt;RepoIds&gt;**](RepoIds.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_repos_detail**
+> Array&lt;RepoDetail&gt; get_repos_detail
+
+List all repo details
+
+List all repo details
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::ReposApi.new
+
+begin
+  #List all repo details
+  result = api_instance.get_repos_detail
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling ReposApi->get_repos_detail: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Array&lt;RepoDetail&gt;**](RepoDetail.md)
 
 ### Authorization
 
@@ -60,9 +108,9 @@ This endpoint does not need any parameter.
 # **get_repos_uuid**
 > RepoDetail get_repos_uuid(uuid, opts)
 
-Show repo detail
+Show detail for one repo
 
-Show repo detail
+Show detail for one repo
 
 ### Example
 ```ruby
@@ -84,7 +132,7 @@ opts = {
 }
 
 begin
-  #Show repo detail
+  #Show detail for one repo
   result = api_instance.get_repos_uuid(uuid, opts)
   p result
 rescue BmxApiRuby::ApiError => e
@@ -115,7 +163,7 @@ Name | Type | Description  | Notes
 
 
 # **post_repos**
-> RepoOverview post_repos(type, name, opts)
+> RepoIds post_repos(type, name, opts)
 
 Create a repo
 
@@ -161,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RepoOverview**](RepoOverview.md)
+[**RepoIds**](RepoIds.md)
 
 ### Authorization
 

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **get_contract**
-> Array&lt;ContractOverview&gt; get_contract
+> Array&lt;ContractIds&gt; get_contract
 
 List all contracts
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;ContractOverview&gt;**](ContractOverview.md)
+[**Array&lt;ContractIds&gt;**](ContractIds.md)
 
 ### Authorization
 

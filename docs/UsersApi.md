@@ -4,19 +4,20 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_users**](UsersApi.md#get_users) | **GET** /users | List all users
-[**get_users_uuid**](UsersApi.md#get_users_uuid) | **GET** /users/{uuid} | Show user detail
+[**get_users**](UsersApi.md#get_users) | **GET** /users | List all user ids
+[**get_users_detail**](UsersApi.md#get_users_detail) | **GET** /users/detail | List all user details
+[**get_users_uuid**](UsersApi.md#get_users_uuid) | **GET** /users/{uuid} | Show details for one user
 [**post_users**](UsersApi.md#post_users) | **POST** /users | Create a user
 [**put_users_uuid_deposit**](UsersApi.md#put_users_uuid_deposit) | **PUT** /users/{uuid}/deposit | Deposit funds
 [**put_users_uuid_withdraw**](UsersApi.md#put_users_uuid_withdraw) | **PUT** /users/{uuid}/withdraw | Withdraw funds
 
 
 # **get_users**
-> Array&lt;UserOverview&gt; get_users(opts)
+> Array&lt;UserIds&gt; get_users(opts)
 
-List all users
+List all user ids
 
-List all users
+List all user ids
 
 ### Example
 ```ruby
@@ -36,7 +37,7 @@ opts = {
 }
 
 begin
-  #List all users
+  #List all user ids
   result = api_instance.get_users(opts)
   p result
 rescue BmxApiRuby::ApiError => e
@@ -52,7 +53,61 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;UserOverview&gt;**](UserOverview.md)
+[**Array&lt;UserIds&gt;**](UserIds.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_users_detail**
+> Array&lt;UserDetail&gt; get_users_detail(opts)
+
+List all user details
+
+List all user details
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::UsersApi.new
+
+opts = { 
+  with_email: "with_email_example" # String | email filter
+}
+
+begin
+  #List all user details
+  result = api_instance.get_users_detail(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling UsersApi->get_users_detail: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **with_email** | **String**| email filter | [optional] 
+
+### Return type
+
+[**Array&lt;UserDetail&gt;**](UserDetail.md)
 
 ### Authorization
 
@@ -68,9 +123,9 @@ Name | Type | Description  | Notes
 # **get_users_uuid**
 > UserDetail get_users_uuid(uuid, opts)
 
-Show user detail
+Show details for one user
 
-Show user detail
+Show details for one user
 
 ### Example
 ```ruby
@@ -93,7 +148,7 @@ opts = {
 }
 
 begin
-  #Show user detail
+  #Show details for one user
   result = api_instance.get_users_uuid(uuid, opts)
   p result
 rescue BmxApiRuby::ApiError => e
@@ -125,7 +180,7 @@ Name | Type | Description  | Notes
 
 
 # **post_users**
-> UserOverview post_users(usermail, password, opts)
+> UserIds post_users(usermail, password, opts)
 
 Create a user
 
@@ -171,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserOverview**](UserOverview.md)
+[**UserIds**](UserIds.md)
 
 ### Authorization
 

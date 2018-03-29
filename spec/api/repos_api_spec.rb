@@ -33,19 +33,30 @@ describe 'ReposApi' do
   end
 
   # unit tests for get_repos
-  # List all repos
-  # List all repos
+  # List all repo ids
+  # List all repo ids
   # @param [Hash] opts the optional parameters
-  # @return [Array<RepoOverview>]
+  # @return [Array<RepoIds>]
   describe 'get_repos test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
+  # unit tests for get_repos_detail
+  # List all repo details
+  # List all repo details
+  # @param [Hash] opts the optional parameters
+  # @return [Array<RepoDetail>]
+  describe 'get_repos_detail test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_repos_uuid
-  # Show repo detail
-  # Show repo detail
+  # Show detail for one repo
+  # Show detail for one repo
   # @param uuid repo UUID
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :issues include issues
@@ -63,7 +74,7 @@ describe 'ReposApi' do
   # @param name repo name
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :ghsync GH sync on create
-  # @return [RepoOverview]
+  # @return [RepoIds]
   describe 'post_repos test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -23,7 +23,7 @@ module BmxApiRuby
     # List all positions
     # List all positions
     # @param [Hash] opts the optional parameters
-    # @return [Array<PositionOverview>]
+    # @return [Array<PositionIds>]
     def get_positions(opts = {})
       data, _status_code, _headers = get_positions_with_http_info(opts)
       return data
@@ -32,7 +32,7 @@ module BmxApiRuby
     # List all positions
     # List all positions
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<PositionOverview>, Fixnum, Hash)>] Array<PositionOverview> data, response status code and response headers
+    # @return [Array<(Array<PositionIds>, Fixnum, Hash)>] Array<PositionIds> data, response status code and response headers
     def get_positions_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PositionsApi.get_positions ..."
@@ -60,7 +60,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<PositionOverview>')
+        :return_type => 'Array<PositionIds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PositionsApi#get_positions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

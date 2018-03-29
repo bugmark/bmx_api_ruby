@@ -33,22 +33,36 @@ describe 'OffersApi' do
   end
 
   # unit tests for get_offers
-  # List all offers
-  # List all offers
+  # List all offer ids
+  # List all offer ids
   # @param [Hash] opts the optional parameters
   # @option opts [String] :with_type type filter
   # @option opts [String] :with_status status filter
   # @option opts [Integer] :limit limit
-  # @return [Array<OfferOverview>]
+  # @return [Array<OfferIds>]
   describe 'get_offers test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
+  # unit tests for get_offers_detail
+  # List all offer details
+  # List all offer details
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :with_type type filter
+  # @option opts [String] :with_status status filter
+  # @option opts [Integer] :limit limit
+  # @return [Array<OfferDetail>]
+  describe 'get_offers_detail test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_offers_uuid
-  # Show offer detail
-  # Show offer detail
+  # Show details for one offer
+  # Show details for one offer
   # @param uuid 
   # @param [Hash] opts the optional parameters
   # @return [OfferDetail]

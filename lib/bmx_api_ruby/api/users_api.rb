@@ -20,21 +20,21 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # List all users
-    # List all users
+    # List all user ids
+    # List all user ids
     # @param [Hash] opts the optional parameters
     # @option opts [String] :with_email email filter
-    # @return [Array<UserOverview>]
+    # @return [Array<UserIds>]
     def get_users(opts = {})
       data, _status_code, _headers = get_users_with_http_info(opts)
       return data
     end
 
-    # List all users
-    # List all users
+    # List all user ids
+    # List all user ids
     # @param [Hash] opts the optional parameters
     # @option opts [String] :with_email email filter
-    # @return [Array<(Array<UserOverview>, Fixnum, Hash)>] Array<UserOverview> data, response status code and response headers
+    # @return [Array<(Array<UserIds>, Fixnum, Hash)>] Array<UserIds> data, response status code and response headers
     def get_users_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.get_users ..."
@@ -63,15 +63,65 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<UserOverview>')
+        :return_type => 'Array<UserIds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#get_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Show user detail
-    # Show user detail
+    # List all user details
+    # List all user details
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :with_email email filter
+    # @return [Array<UserDetail>]
+    def get_users_detail(opts = {})
+      data, _status_code, _headers = get_users_detail_with_http_info(opts)
+      return data
+    end
+
+    # List all user details
+    # List all user details
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :with_email email filter
+    # @return [Array<(Array<UserDetail>, Fixnum, Hash)>] Array<UserDetail> data, response status code and response headers
+    def get_users_detail_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UsersApi.get_users_detail ..."
+      end
+      # resource path
+      local_var_path = "/users/detail"
+
+      # query parameters
+      query_params = {}
+      query_params[:'with_email'] = opts[:'with_email'] if !opts[:'with_email'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<UserDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UsersApi#get_users_detail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show details for one user
+    # Show details for one user
     # @param uuid user uuid
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :offers include open offers
@@ -82,8 +132,8 @@ module BmxApiRuby
       return data
     end
 
-    # Show user detail
-    # Show user detail
+    # Show details for one user
+    # Show details for one user
     # @param uuid user uuid
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :offers include open offers
@@ -135,7 +185,7 @@ module BmxApiRuby
     # @param password user password
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :balance opening balance
-    # @return [UserOverview]
+    # @return [UserIds]
     def post_users(usermail, password, opts = {})
       data, _status_code, _headers = post_users_with_http_info(usermail, password, opts)
       return data
@@ -147,7 +197,7 @@ module BmxApiRuby
     # @param password user password
     # @param [Hash] opts the optional parameters
     # @option opts [Float] :balance opening balance
-    # @return [Array<(UserOverview, Fixnum, Hash)>] UserOverview data, response status code and response headers
+    # @return [Array<(UserIds, Fixnum, Hash)>] UserIds data, response status code and response headers
     def post_users_with_http_info(usermail, password, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UsersApi.post_users ..."
@@ -188,7 +238,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'UserOverview')
+        :return_type => 'UserIds')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UsersApi#post_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

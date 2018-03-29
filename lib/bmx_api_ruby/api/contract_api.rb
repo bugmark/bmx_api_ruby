@@ -23,7 +23,7 @@ module BmxApiRuby
     # List all contracts
     # List all contracts
     # @param [Hash] opts the optional parameters
-    # @return [Array<ContractOverview>]
+    # @return [Array<ContractIds>]
     def get_contract(opts = {})
       data, _status_code, _headers = get_contract_with_http_info(opts)
       return data
@@ -32,7 +32,7 @@ module BmxApiRuby
     # List all contracts
     # List all contracts
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<ContractOverview>, Fixnum, Hash)>] Array<ContractOverview> data, response status code and response headers
+    # @return [Array<(Array<ContractIds>, Fixnum, Hash)>] Array<ContractIds> data, response status code and response headers
     def get_contract_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ContractApi.get_contract ..."
@@ -60,7 +60,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<ContractOverview>')
+        :return_type => 'Array<ContractIds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContractApi#get_contract\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

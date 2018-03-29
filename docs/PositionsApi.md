@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_positions**
-> Array&lt;PositionOverview&gt; get_positions
+> Array&lt;PositionIds&gt; get_positions
 
 List all positions
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;PositionOverview&gt;**](PositionOverview.md)
+[**Array&lt;PositionIds&gt;**](PositionIds.md)
 
 ### Authorization
 

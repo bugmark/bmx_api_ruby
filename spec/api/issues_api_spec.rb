@@ -33,20 +33,32 @@ describe 'IssuesApi' do
   end
 
   # unit tests for get_issues
-  # List all issues
-  # List all issues
+  # List all issue ids
+  # List all issue ids
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit count limit
-  # @return [Array<IssueOverview>]
+  # @return [Array<IssueIds>]
   describe 'get_issues test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
+  # unit tests for get_issues_detail
+  # List all issues details
+  # List all issues details
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit count limit
+  # @return [Array<IssueDetail>]
+  describe 'get_issues_detail test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_issues_issue_exid
-  # Show issue detail
-  # Show issue detail
+  # Show detail for one issue
+  # Show detail for one issue
   # @param issue_exid issue exid
   # @param [Hash] opts the optional parameters
   # @return [IssueDetail]

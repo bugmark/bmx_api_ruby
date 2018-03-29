@@ -4,8 +4,9 @@ All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_offers**](OffersApi.md#get_offers) | **GET** /offers | List all offers
-[**get_offers_uuid**](OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show offer detail
+[**get_offers**](OffersApi.md#get_offers) | **GET** /offers | List all offer ids
+[**get_offers_detail**](OffersApi.md#get_offers_detail) | **GET** /offers/detail | List all offer details
+[**get_offers_uuid**](OffersApi.md#get_offers_uuid) | **GET** /offers/{uuid} | Show details for one offer
 [**post_offers_buy**](OffersApi.md#post_offers_buy) | **POST** /offers/buy | Create a buy offer
 [**post_offers_uuid_clone**](OffersApi.md#post_offers_uuid_clone) | **POST** /offers/{uuid}/clone | Create a clone
 [**post_offers_uuid_counter**](OffersApi.md#post_offers_uuid_counter) | **POST** /offers/{uuid}/counter | Create a counter-offer
@@ -13,11 +14,11 @@ Method | HTTP request | Description
 
 
 # **get_offers**
-> Array&lt;OfferOverview&gt; get_offers(opts)
+> Array&lt;OfferIds&gt; get_offers(opts)
 
-List all offers
+List all offer ids
 
-List all offers
+List all offer ids
 
 ### Example
 ```ruby
@@ -39,7 +40,7 @@ opts = {
 }
 
 begin
-  #List all offers
+  #List all offer ids
   result = api_instance.get_offers(opts)
   p result
 rescue BmxApiRuby::ApiError => e
@@ -57,7 +58,65 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;OfferOverview&gt;**](OfferOverview.md)
+[**Array&lt;OfferIds&gt;**](OfferIds.md)
+
+### Authorization
+
+[base](../README.md#base)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_offers_detail**
+> Array&lt;OfferDetail&gt; get_offers_detail(opts)
+
+List all offer details
+
+List all offer details
+
+### Example
+```ruby
+# load the gem
+require 'bmx_api_ruby'
+# setup authorization
+BmxApiRuby.configure do |config|
+  # Configure HTTP basic authorization: base
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = BmxApiRuby::OffersApi.new
+
+opts = { 
+  with_type: "with_type_example", # String | type filter
+  with_status: "with_status_example", # String | status filter
+  limit: 56 # Integer | limit
+}
+
+begin
+  #List all offer details
+  result = api_instance.get_offers_detail(opts)
+  p result
+rescue BmxApiRuby::ApiError => e
+  puts "Exception when calling OffersApi->get_offers_detail: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **with_type** | **String**| type filter | [optional] 
+ **with_status** | **String**| status filter | [optional] 
+ **limit** | **Integer**| limit | [optional] 
+
+### Return type
+
+[**Array&lt;OfferDetail&gt;**](OfferDetail.md)
 
 ### Authorization
 
@@ -73,9 +132,9 @@ Name | Type | Description  | Notes
 # **get_offers_uuid**
 > OfferDetail get_offers_uuid(uuid)
 
-Show offer detail
+Show details for one offer
 
-Show offer detail
+Show details for one offer
 
 ### Example
 ```ruby
@@ -94,7 +153,7 @@ uuid = 56 # Integer |
 
 
 begin
-  #Show offer detail
+  #Show details for one offer
   result = api_instance.get_offers_uuid(uuid)
   p result
 rescue BmxApiRuby::ApiError => e

@@ -36,7 +36,7 @@ describe 'PositionsApi' do
   # List all positions
   # List all positions
   # @param [Hash] opts the optional parameters
-  # @return [Array<PositionOverview>]
+  # @return [Array<PositionIds>]
   describe 'get_positions test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

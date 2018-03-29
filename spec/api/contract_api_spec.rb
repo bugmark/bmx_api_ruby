@@ -36,7 +36,7 @@ describe 'ContractApi' do
   # List all contracts
   # List all contracts
   # @param [Hash] opts the optional parameters
-  # @return [Array<ContractOverview>]
+  # @return [Array<ContractIds>]
   describe 'get_contract test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

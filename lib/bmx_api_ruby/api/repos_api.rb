@@ -20,19 +20,19 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # List all repos
-    # List all repos
+    # List all repo ids
+    # List all repo ids
     # @param [Hash] opts the optional parameters
-    # @return [Array<RepoOverview>]
+    # @return [Array<RepoIds>]
     def get_repos(opts = {})
       data, _status_code, _headers = get_repos_with_http_info(opts)
       return data
     end
 
-    # List all repos
-    # List all repos
+    # List all repo ids
+    # List all repo ids
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<RepoOverview>, Fixnum, Hash)>] Array<RepoOverview> data, response status code and response headers
+    # @return [Array<(Array<RepoIds>, Fixnum, Hash)>] Array<RepoIds> data, response status code and response headers
     def get_repos_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReposApi.get_repos ..."
@@ -60,15 +60,62 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<RepoOverview>')
+        :return_type => 'Array<RepoIds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReposApi#get_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Show repo detail
-    # Show repo detail
+    # List all repo details
+    # List all repo details
+    # @param [Hash] opts the optional parameters
+    # @return [Array<RepoDetail>]
+    def get_repos_detail(opts = {})
+      data, _status_code, _headers = get_repos_detail_with_http_info(opts)
+      return data
+    end
+
+    # List all repo details
+    # List all repo details
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<RepoDetail>, Fixnum, Hash)>] Array<RepoDetail> data, response status code and response headers
+    def get_repos_detail_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReposApi.get_repos_detail ..."
+      end
+      # resource path
+      local_var_path = "/repos/detail"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<RepoDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReposApi#get_repos_detail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show detail for one repo
+    # Show detail for one repo
     # @param uuid repo UUID
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :issues include issues
@@ -78,8 +125,8 @@ module BmxApiRuby
       return data
     end
 
-    # Show repo detail
-    # Show repo detail
+    # Show detail for one repo
+    # Show detail for one repo
     # @param uuid repo UUID
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :issues include issues
@@ -129,7 +176,7 @@ module BmxApiRuby
     # @param name repo name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :ghsync GH sync on create
-    # @return [RepoOverview]
+    # @return [RepoIds]
     def post_repos(type, name, opts = {})
       data, _status_code, _headers = post_repos_with_http_info(type, name, opts)
       return data
@@ -141,7 +188,7 @@ module BmxApiRuby
     # @param name repo name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :ghsync GH sync on create
-    # @return [Array<(RepoOverview, Fixnum, Hash)>] RepoOverview data, response status code and response headers
+    # @return [Array<(RepoIds, Fixnum, Hash)>] RepoIds data, response status code and response headers
     def post_repos_with_http_info(type, name, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReposApi.post_repos ..."
@@ -186,7 +233,7 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'RepoOverview')
+        :return_type => 'RepoIds')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReposApi#post_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

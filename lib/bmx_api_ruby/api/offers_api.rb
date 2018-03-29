@@ -20,25 +20,25 @@ module BmxApiRuby
       @api_client = api_client
     end
 
-    # List all offers
-    # List all offers
+    # List all offer ids
+    # List all offer ids
     # @param [Hash] opts the optional parameters
     # @option opts [String] :with_type type filter
     # @option opts [String] :with_status status filter
     # @option opts [Integer] :limit limit
-    # @return [Array<OfferOverview>]
+    # @return [Array<OfferIds>]
     def get_offers(opts = {})
       data, _status_code, _headers = get_offers_with_http_info(opts)
       return data
     end
 
-    # List all offers
-    # List all offers
+    # List all offer ids
+    # List all offer ids
     # @param [Hash] opts the optional parameters
     # @option opts [String] :with_type type filter
     # @option opts [String] :with_status status filter
     # @option opts [Integer] :limit limit
-    # @return [Array<(Array<OfferOverview>, Fixnum, Hash)>] Array<OfferOverview> data, response status code and response headers
+    # @return [Array<(Array<OfferIds>, Fixnum, Hash)>] Array<OfferIds> data, response status code and response headers
     def get_offers_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: OffersApi.get_offers ..."
@@ -69,15 +69,71 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<OfferOverview>')
+        :return_type => 'Array<OfferIds>')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OffersApi#get_offers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Show offer detail
-    # Show offer detail
+    # List all offer details
+    # List all offer details
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :with_type type filter
+    # @option opts [String] :with_status status filter
+    # @option opts [Integer] :limit limit
+    # @return [Array<OfferDetail>]
+    def get_offers_detail(opts = {})
+      data, _status_code, _headers = get_offers_detail_with_http_info(opts)
+      return data
+    end
+
+    # List all offer details
+    # List all offer details
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :with_type type filter
+    # @option opts [String] :with_status status filter
+    # @option opts [Integer] :limit limit
+    # @return [Array<(Array<OfferDetail>, Fixnum, Hash)>] Array<OfferDetail> data, response status code and response headers
+    def get_offers_detail_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: OffersApi.get_offers_detail ..."
+      end
+      # resource path
+      local_var_path = "/offers/detail"
+
+      # query parameters
+      query_params = {}
+      query_params[:'with_type'] = opts[:'with_type'] if !opts[:'with_type'].nil?
+      query_params[:'with_status'] = opts[:'with_status'] if !opts[:'with_status'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['base']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<OfferDetail>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OffersApi#get_offers_detail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show details for one offer
+    # Show details for one offer
     # @param uuid 
     # @param [Hash] opts the optional parameters
     # @return [OfferDetail]
@@ -86,8 +142,8 @@ module BmxApiRuby
       return data
     end
 
-    # Show offer detail
-    # Show offer detail
+    # Show details for one offer
+    # Show details for one offer
     # @param uuid 
     # @param [Hash] opts the optional parameters
     # @return [Array<(OfferDetail, Fixnum, Hash)>] OfferDetail data, response status code and response headers
