@@ -13,15 +13,15 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Create a GitHub repo. 
-  class RepoIds
-    # Repo UUID
+  # List all tracker ids
+  class TrackerIds
+    # Tracker UUID
     attr_accessor :uuid
 
-    # Repo Name
+    # Tracker Name
     attr_accessor :name
 
-    # Repo Type
+    # Tracker Type
     attr_accessor :type
 
     # # open issues

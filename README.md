@@ -119,11 +119,11 @@ Class | Method | HTTP request | Description
 *BmxApiRuby::OffersApi* | [**put_offers_uuid_cancel**](docs/OffersApi.md#put_offers_uuid_cancel) | **PUT** /offers/{uuid}/cancel | Cancel offer
 *BmxApiRuby::PositionsApi* | [**get_positions**](docs/PositionsApi.md#get_positions) | **GET** /positions | List all positions
 *BmxApiRuby::PositionsApi* | [**get_positions_uuid**](docs/PositionsApi.md#get_positions_uuid) | **GET** /positions/{uuid} | Show position detail
-*BmxApiRuby::ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /repos | List all repo ids
-*BmxApiRuby::ReposApi* | [**get_repos_detail**](docs/ReposApi.md#get_repos_detail) | **GET** /repos/detail | List all repo details
-*BmxApiRuby::ReposApi* | [**get_repos_uuid**](docs/ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show detail for one repo
-*BmxApiRuby::ReposApi* | [**post_repos**](docs/ReposApi.md#post_repos) | **POST** /repos | Create a repo
-*BmxApiRuby::ReposApi* | [**put_repos**](docs/ReposApi.md#put_repos) | **PUT** /repos | Sync a repo
+*BmxApiRuby::TrackersApi* | [**get_trackers**](docs/TrackersApi.md#get_trackers) | **GET** /trackers | List all tracker ids
+*BmxApiRuby::TrackersApi* | [**get_trackers_detail**](docs/TrackersApi.md#get_trackers_detail) | **GET** /trackers/detail | List all tracker details
+*BmxApiRuby::TrackersApi* | [**get_trackers_uuid**](docs/TrackersApi.md#get_trackers_uuid) | **GET** /trackers/{uuid} | Show detail for one tracker
+*BmxApiRuby::TrackersApi* | [**post_trackers**](docs/TrackersApi.md#post_trackers) | **POST** /trackers | Create a tracker
+*BmxApiRuby::TrackersApi* | [**put_trackers**](docs/TrackersApi.md#put_trackers) | **PUT** /trackers | Sync a tracker
 *BmxApiRuby::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users | List all user ids
 *BmxApiRuby::UsersApi* | [**get_users_detail**](docs/UsersApi.md#get_users_detail) | **GET** /users/detail | List all user details
 *BmxApiRuby::UsersApi* | [**get_users_uuid**](docs/UsersApi.md#get_users_uuid) | **GET** /users/{uuid} | Show details for one user
@@ -150,9 +150,9 @@ Class | Method | HTTP request | Description
  - [BmxApiRuby::OfferIds](docs/OfferIds.md)
  - [BmxApiRuby::PositionDetail](docs/PositionDetail.md)
  - [BmxApiRuby::PositionIds](docs/PositionIds.md)
- - [BmxApiRuby::RepoDetail](docs/RepoDetail.md)
- - [BmxApiRuby::RepoIds](docs/RepoIds.md)
  - [BmxApiRuby::Status](docs/Status.md)
+ - [BmxApiRuby::TrackerDetail](docs/TrackerDetail.md)
+ - [BmxApiRuby::TrackerIds](docs/TrackerIds.md)
  - [BmxApiRuby::UserDetail](docs/UserDetail.md)
  - [BmxApiRuby::UserIds](docs/UserIds.md)
 

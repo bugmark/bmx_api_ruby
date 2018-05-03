@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Show details for one user
+  # List all user details
   class UserDetail
     # UUID
     attr_accessor :uuid

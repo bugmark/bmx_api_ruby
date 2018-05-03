@@ -302,7 +302,7 @@ api_instance = BmxApiRuby::IssuesApi.new
 exid = "exid_example" # String | issue exid
 
 opts = { 
-  repo_uuid: "repo_uuid_example", # String | repo uuid
+  tracker_uuid: "tracker_uuid_example", # String | tracker uuid
   issue_uuid: "issue_uuid_example", # String | issue uuid
   title: "title_example", # String | issue title
   status: "status_example", # String | issue status
@@ -325,7 +325,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exid** | **String**| issue exid | 
- **repo_uuid** | **String**| repo uuid | [optional] 
+ **tracker_uuid** | **String**| tracker uuid | [optional] 
  **issue_uuid** | **String**| issue uuid | [optional] 
  **title** | **String**| issue title | [optional] 
  **status** | **String**| issue status | [optional] 

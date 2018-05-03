@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 
 # **put_events**
-> Event put_events(id, etherscan_url)
+> put_events(id, etherscan_url)
 
 Update an event
 
@@ -145,8 +145,7 @@ etherscan_url = "etherscan_url_example" # String |
 
 begin
   #Update an event
-  result = api_instance.put_events(id, etherscan_url)
-  p result
+  api_instance.put_events(id, etherscan_url)
 rescue BmxApiRuby::ApiError => e
   puts "Exception when calling EventsApi->put_events: #{e}"
 end
@@ -161,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](Event.md)
+nil (empty response body)
 
 ### Authorization
 

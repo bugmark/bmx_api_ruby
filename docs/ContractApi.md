@@ -406,7 +406,7 @@ contract_uuid = 56 # Integer |
 
 opts = { 
   issue: "issue_example", # String | issue UUID
-  repo: "repo_example", # String | repo UUID
+  tracker: "tracker_example", # String | tracker UUID
   title: "title_example", # String | title
   status: "status_example", # String | status
   labels: "labels_example", # String | labels
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contract_uuid** | **Integer**|  | 
  **issue** | **String**| issue UUID | [optional] 
- **repo** | **String**| repo UUID | [optional] 
+ **tracker** | **String**| tracker UUID | [optional] 
  **title** | **String**| title | [optional] 
  **status** | **String**| status | [optional] 
  **labels** | **String**| labels | [optional] 
@@ -471,7 +471,7 @@ api_instance = BmxApiRuby::ContractApi.new
 
 opts = { 
   issue: "issue_example", # String | issue UUID
-  repo: "repo_example", # String | repo UUID
+  tracker: "tracker_example", # String | tracker UUID
   title: "title_example", # String | title
   status: "status_example", # String | status
   labels: "labels_example", # String | labels
@@ -492,7 +492,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **issue** | **String**| issue UUID | [optional] 
- **repo** | **String**| repo UUID | [optional] 
+ **tracker** | **String**| tracker UUID | [optional] 
  **title** | **String**| title | [optional] 
  **status** | **String**| status | [optional] 
  **labels** | **String**| labels | [optional] 

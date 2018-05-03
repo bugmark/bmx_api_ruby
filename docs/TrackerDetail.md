@@ -1,11 +1,11 @@
-# BmxApiRuby::RepoDetail
+# BmxApiRuby::TrackerDetail
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Repo Type | [optional] 
-**uuid** | **String** | Repo UUID | [optional] 
-**name** | **String** | Repo Name | [optional] 
+**type** | **String** | Tracker Type | [optional] 
+**uuid** | **String** | Tracker UUID | [optional] 
+**name** | **String** | Tracker Name | [optional] 
 **issue_count** | **Integer** | # open issues | [optional] 
 **issues** | **Array&lt;String&gt;** | issue UUIDs | [optional] 
 

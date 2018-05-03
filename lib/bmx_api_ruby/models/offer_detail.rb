@@ -45,8 +45,8 @@ module BmxApiRuby
     # offer aon
     attr_accessor :aon
 
-    # stm_repo_uuid
-    attr_accessor :stm_repo_uuid
+    # stm_tracker_uuid
+    attr_accessor :stm_tracker_uuid
 
     # stm_title
     attr_accessor :stm_title
@@ -80,7 +80,7 @@ module BmxApiRuby
         :'value' => :'value',
         :'poolable' => :'poolable',
         :'aon' => :'aon',
-        :'stm_repo_uuid' => :'stm_repo_uuid',
+        :'stm_tracker_uuid' => :'stm_tracker_uuid',
         :'stm_title' => :'stm_title',
         :'stm_status' => :'stm_status',
         :'expiration' => :'expiration',
@@ -103,7 +103,7 @@ module BmxApiRuby
         :'value' => :'Float',
         :'poolable' => :'String',
         :'aon' => :'String',
-        :'stm_repo_uuid' => :'String',
+        :'stm_tracker_uuid' => :'String',
         :'stm_title' => :'String',
         :'stm_status' => :'String',
         :'expiration' => :'DateTime',
@@ -161,8 +161,8 @@ module BmxApiRuby
         self.aon = attributes[:'aon']
       end
 
-      if attributes.has_key?(:'stm_repo_uuid')
-        self.stm_repo_uuid = attributes[:'stm_repo_uuid']
+      if attributes.has_key?(:'stm_tracker_uuid')
+        self.stm_tracker_uuid = attributes[:'stm_tracker_uuid']
       end
 
       if attributes.has_key?(:'stm_title')
@@ -219,7 +219,7 @@ module BmxApiRuby
           value == o.value &&
           poolable == o.poolable &&
           aon == o.aon &&
-          stm_repo_uuid == o.stm_repo_uuid &&
+          stm_tracker_uuid == o.stm_tracker_uuid &&
           stm_title == o.stm_title &&
           stm_status == o.stm_status &&
           expiration == o.expiration &&
@@ -237,7 +237,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, type, side, intent, status, volume, price, value, poolable, aon, stm_repo_uuid, stm_title, stm_status, expiration, maturation, maturation_beg, maturation_end].hash
+      [uuid, type, side, intent, status, volume, price, value, poolable, aon, stm_tracker_uuid, stm_title, stm_status, expiration, maturation, maturation_beg, maturation_end].hash
     end
 
     # Builds the object from hash

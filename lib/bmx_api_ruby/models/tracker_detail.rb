@@ -13,15 +13,15 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Show detail for one repo
-  class RepoDetail
-    # Repo Type
+  # List all tracker details
+  class TrackerDetail
+    # Tracker Type
     attr_accessor :type
 
-    # Repo UUID
+    # Tracker UUID
     attr_accessor :uuid
 
-    # Repo Name
+    # Tracker Name
     attr_accessor :name
 
     # # open issues

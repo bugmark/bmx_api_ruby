@@ -209,7 +209,7 @@ volume = 56 # Integer | number of positions
 price = 3.4 # Float | between 0.0 and 1.0
 
 opts = { 
-  repo: "repo_example", # String | repo UUID
+  tracker: "tracker_example", # String | tracker UUID
   issue: "issue_example", # String | issue UUID
   title: "title_example", # String | issue title
   labels: "labels_example", # String | issue labels
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
  **side** | **String**| fixed or unfixed | 
  **volume** | **Integer**| number of positions | 
  **price** | **Float**| between 0.0 and 1.0 | 
- **repo** | **String**| repo UUID | [optional] 
+ **tracker** | **String**| tracker UUID | [optional] 
  **issue** | **String**| issue UUID | [optional] 
  **title** | **String**| issue title | [optional] 
  **labels** | **String**| issue labels | [optional] 
@@ -290,7 +290,7 @@ uuid = 56 # Integer |
 opts = { 
   volume: 56, # Integer | number of positions
   price: 3.4, # Float | between 0.0 and 1.0
-  repo: "repo_example", # String | repo UUID
+  tracker: "tracker_example", # String | tracker UUID
   issue: "issue_example", # String | issue UUID
   title: "title_example", # String | issue title
   labels: "labels_example", # String | issue labels
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
  **uuid** | **Integer**|  | 
  **volume** | **Integer**| number of positions | [optional] 
  **price** | **Float**| between 0.0 and 1.0 | [optional] 
- **repo** | **String**| repo UUID | [optional] 
+ **tracker** | **String**| tracker UUID | [optional] 
  **issue** | **String**| issue UUID | [optional] 
  **title** | **String**| issue title | [optional] 
  **labels** | **String**| issue labels | [optional] 

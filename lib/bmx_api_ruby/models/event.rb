@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Update an event
+  # Return events
   class Event
     # Sequential ID
     attr_accessor :id

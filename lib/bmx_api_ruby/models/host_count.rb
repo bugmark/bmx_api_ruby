@@ -21,8 +21,8 @@ module BmxApiRuby
     # Number of Users
     attr_accessor :users
 
-    # Number of Repos
-    attr_accessor :repos
+    # Number of Trackers
+    attr_accessor :trackers
 
     # Number of Issues
     attr_accessor :issues
@@ -63,7 +63,7 @@ module BmxApiRuby
       {
         :'host_name' => :'host_name',
         :'users' => :'users',
-        :'repos' => :'repos',
+        :'trackers' => :'trackers',
         :'issues' => :'issues',
         :'offers' => :'offers',
         :'offers_open' => :'offers_open',
@@ -83,7 +83,7 @@ module BmxApiRuby
       {
         :'host_name' => :'String',
         :'users' => :'Integer',
-        :'repos' => :'Integer',
+        :'trackers' => :'Integer',
         :'issues' => :'Integer',
         :'offers' => :'Integer',
         :'offers_open' => :'Integer',
@@ -114,8 +114,8 @@ module BmxApiRuby
         self.users = attributes[:'users']
       end
 
-      if attributes.has_key?(:'repos')
-        self.repos = attributes[:'repos']
+      if attributes.has_key?(:'trackers')
+        self.trackers = attributes[:'trackers']
       end
 
       if attributes.has_key?(:'issues')
@@ -184,7 +184,7 @@ module BmxApiRuby
       self.class == o.class &&
           host_name == o.host_name &&
           users == o.users &&
-          repos == o.repos &&
+          trackers == o.trackers &&
           issues == o.issues &&
           offers == o.offers &&
           offers_open == o.offers_open &&
@@ -207,7 +207,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [host_name, users, repos, issues, offers, offers_open, offers_open_bf, offers_open_bu, contracts, contracts_open, positions, amendments, escrows, events].hash
+      [host_name, users, trackers, issues, offers, offers_open, offers_open_bf, offers_open_bu, contracts, contracts_open, positions, amendments, escrows, events].hash
     end
 
     # Builds the object from hash

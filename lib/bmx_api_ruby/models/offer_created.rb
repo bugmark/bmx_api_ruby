@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Create a counter-offer
+  # Create a buy offer
   class OfferCreated
     # status
     attr_accessor :status

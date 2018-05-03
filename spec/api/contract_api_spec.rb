@@ -121,7 +121,7 @@ describe 'ContractApi' do
   # @param contract_uuid 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :issue issue UUID
-  # @option opts [String] :repo repo UUID
+  # @option opts [String] :tracker tracker UUID
   # @option opts [String] :title title
   # @option opts [String] :status status
   # @option opts [String] :labels labels
@@ -138,7 +138,7 @@ describe 'ContractApi' do
   # Create contract
   # @param [Hash] opts the optional parameters
   # @option opts [String] :issue issue UUID
-  # @option opts [String] :repo repo UUID
+  # @option opts [String] :tracker tracker UUID
   # @option opts [String] :title title
   # @option opts [String] :status status
   # @option opts [String] :labels labels

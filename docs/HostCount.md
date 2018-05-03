@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host_name** | **String** | Bugmark Hostname | [optional] 
 **users** | **Integer** | Number of Users | [optional] 
-**repos** | **Integer** | Number of Repos | [optional] 
+**trackers** | **Integer** | Number of Trackers | [optional] 
 **issues** | **Integer** | Number of Issues | [optional] 
 **offers** | **Integer** | Number of Offers | [optional] 
 **offers_open** | **Integer** | Number of Open Offers | [optional] 

@@ -13,32 +13,32 @@ Swagger Codegen version: 2.3.0
 require "uri"
 
 module BmxApiRuby
-  class ReposApi
+  class TrackersApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
 
-    # List all repo ids
-    # List all repo ids
+    # List all tracker ids
+    # List all tracker ids
     # @param [Hash] opts the optional parameters
-    # @return [Array<RepoIds>]
-    def get_repos(opts = {})
-      data, _status_code, _headers = get_repos_with_http_info(opts)
+    # @return [Array<TrackerIds>]
+    def get_trackers(opts = {})
+      data, _status_code, _headers = get_trackers_with_http_info(opts)
       return data
     end
 
-    # List all repo ids
-    # List all repo ids
+    # List all tracker ids
+    # List all tracker ids
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<RepoIds>, Fixnum, Hash)>] Array<RepoIds> data, response status code and response headers
-    def get_repos_with_http_info(opts = {})
+    # @return [Array<(Array<TrackerIds>, Fixnum, Hash)>] Array<TrackerIds> data, response status code and response headers
+    def get_trackers_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ReposApi.get_repos ..."
+        @api_client.config.logger.debug "Calling API: TrackersApi.get_trackers ..."
       end
       # resource path
-      local_var_path = "/repos"
+      local_var_path = "/trackers"
 
       # query parameters
       query_params = {}
@@ -60,32 +60,32 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<RepoIds>')
+        :return_type => 'Array<TrackerIds>')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ReposApi#get_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TrackersApi#get_trackers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # List all repo details
-    # List all repo details
+    # List all tracker details
+    # List all tracker details
     # @param [Hash] opts the optional parameters
-    # @return [Array<RepoDetail>]
-    def get_repos_detail(opts = {})
-      data, _status_code, _headers = get_repos_detail_with_http_info(opts)
+    # @return [Array<TrackerDetail>]
+    def get_trackers_detail(opts = {})
+      data, _status_code, _headers = get_trackers_detail_with_http_info(opts)
       return data
     end
 
-    # List all repo details
-    # List all repo details
+    # List all tracker details
+    # List all tracker details
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<RepoDetail>, Fixnum, Hash)>] Array<RepoDetail> data, response status code and response headers
-    def get_repos_detail_with_http_info(opts = {})
+    # @return [Array<(Array<TrackerDetail>, Fixnum, Hash)>] Array<TrackerDetail> data, response status code and response headers
+    def get_trackers_detail_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ReposApi.get_repos_detail ..."
+        @api_client.config.logger.debug "Calling API: TrackersApi.get_trackers_detail ..."
       end
       # resource path
-      local_var_path = "/repos/detail"
+      local_var_path = "/trackers/detail"
 
       # query parameters
       query_params = {}
@@ -107,40 +107,40 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<RepoDetail>')
+        :return_type => 'Array<TrackerDetail>')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ReposApi#get_repos_detail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TrackersApi#get_trackers_detail\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Show detail for one repo
-    # Show detail for one repo
-    # @param uuid repo UUID
+    # Show detail for one tracker
+    # Show detail for one tracker
+    # @param uuid tracker UUID
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :issues include issues
-    # @return [RepoDetail]
-    def get_repos_uuid(uuid, opts = {})
-      data, _status_code, _headers = get_repos_uuid_with_http_info(uuid, opts)
+    # @return [TrackerDetail]
+    def get_trackers_uuid(uuid, opts = {})
+      data, _status_code, _headers = get_trackers_uuid_with_http_info(uuid, opts)
       return data
     end
 
-    # Show detail for one repo
-    # Show detail for one repo
-    # @param uuid repo UUID
+    # Show detail for one tracker
+    # Show detail for one tracker
+    # @param uuid tracker UUID
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :issues include issues
-    # @return [Array<(RepoDetail, Fixnum, Hash)>] RepoDetail data, response status code and response headers
-    def get_repos_uuid_with_http_info(uuid, opts = {})
+    # @return [Array<(TrackerDetail, Fixnum, Hash)>] TrackerDetail data, response status code and response headers
+    def get_trackers_uuid_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ReposApi.get_repos_uuid ..."
+        @api_client.config.logger.debug "Calling API: TrackersApi.get_trackers_uuid ..."
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ReposApi.get_repos_uuid"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling TrackersApi.get_trackers_uuid"
       end
       # resource path
-      local_var_path = "/repos/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
+      local_var_path = "/trackers/{uuid}".sub('{' + 'uuid' + '}', uuid.to_s)
 
       # query parameters
       query_params = {}
@@ -163,39 +163,39 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'RepoDetail')
+        :return_type => 'TrackerDetail')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ReposApi#get_repos_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TrackersApi#get_trackers_uuid\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Create a repo
-    # Create a GitHub repo. 
-    # @param type repo type
-    # @param name repo name
+    # Create a tracker
+    # Create a GitHub tracker. 
+    # @param type tracker type
+    # @param name tracker name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :ghsync GH sync on create
-    # @return [RepoIds]
-    def post_repos(type, name, opts = {})
-      data, _status_code, _headers = post_repos_with_http_info(type, name, opts)
+    # @return [TrackerIds]
+    def post_trackers(type, name, opts = {})
+      data, _status_code, _headers = post_trackers_with_http_info(type, name, opts)
       return data
     end
 
-    # Create a repo
-    # Create a GitHub repo. 
-    # @param type repo type
-    # @param name repo name
+    # Create a tracker
+    # Create a GitHub tracker. 
+    # @param type tracker type
+    # @param name tracker name
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :ghsync GH sync on create
-    # @return [Array<(RepoIds, Fixnum, Hash)>] RepoIds data, response status code and response headers
-    def post_repos_with_http_info(type, name, opts = {})
+    # @return [Array<(TrackerIds, Fixnum, Hash)>] TrackerIds data, response status code and response headers
+    def post_trackers_with_http_info(type, name, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ReposApi.post_repos ..."
+        @api_client.config.logger.debug "Calling API: TrackersApi.post_trackers ..."
       end
       # verify the required parameter 'type' is set
       if @api_client.config.client_side_validation && type.nil?
-        fail ArgumentError, "Missing the required parameter 'type' when calling ReposApi.post_repos"
+        fail ArgumentError, "Missing the required parameter 'type' when calling TrackersApi.post_trackers"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['GitHub', 'Test'].include?(type)
@@ -203,10 +203,10 @@ module BmxApiRuby
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling ReposApi.post_repos"
+        fail ArgumentError, "Missing the required parameter 'name' when calling TrackersApi.post_trackers"
       end
       # resource path
-      local_var_path = "/repos"
+      local_var_path = "/trackers"
 
       # query parameters
       query_params = {}
@@ -233,38 +233,38 @@ module BmxApiRuby
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'RepoIds')
+        :return_type => 'TrackerIds')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ReposApi#post_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TrackersApi#post_trackers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Sync a repo
-    # Sync a GitHub repo. 
-    # @param uuid repo uuid
+    # Sync a tracker
+    # Sync a GitHub tracker. 
+    # @param uuid tracker uuid
     # @param [Hash] opts the optional parameters
     # @return [Status]
-    def put_repos(uuid, opts = {})
-      data, _status_code, _headers = put_repos_with_http_info(uuid, opts)
+    def put_trackers(uuid, opts = {})
+      data, _status_code, _headers = put_trackers_with_http_info(uuid, opts)
       return data
     end
 
-    # Sync a repo
-    # Sync a GitHub repo. 
-    # @param uuid repo uuid
+    # Sync a tracker
+    # Sync a GitHub tracker. 
+    # @param uuid tracker uuid
     # @param [Hash] opts the optional parameters
     # @return [Array<(Status, Fixnum, Hash)>] Status data, response status code and response headers
-    def put_repos_with_http_info(uuid, opts = {})
+    def put_trackers_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ReposApi.put_repos ..."
+        @api_client.config.logger.debug "Calling API: TrackersApi.put_trackers ..."
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ReposApi.put_repos"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling TrackersApi.put_trackers"
       end
       # resource path
-      local_var_path = "/repos"
+      local_var_path = "/trackers"
 
       # query parameters
       query_params = {}
@@ -291,7 +291,7 @@ module BmxApiRuby
         :auth_names => auth_names,
         :return_type => 'Status')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ReposApi#put_repos\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TrackersApi#put_trackers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

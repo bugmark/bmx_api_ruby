@@ -63,7 +63,7 @@ describe 'EventsApi' do
   # @param id 
   # @param etherscan_url 
   # @param [Hash] opts the optional parameters
-  # @return [Event]
+  # @return [nil]
   describe 'put_events test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

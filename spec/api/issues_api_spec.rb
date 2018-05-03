@@ -97,7 +97,7 @@ describe 'IssuesApi' do
   # Sync
   # @param exid issue exid
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :repo_uuid repo uuid
+  # @option opts [String] :tracker_uuid tracker uuid
   # @option opts [String] :issue_uuid issue uuid
   # @option opts [String] :title issue title
   # @option opts [String] :status issue status

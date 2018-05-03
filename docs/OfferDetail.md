@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **value** | **Float** | offer value | [optional] 
 **poolable** | **String** | offer poolable | [optional] 
 **aon** | **String** | offer aon | [optional] 
-**stm_repo_uuid** | **String** | stm_repo_uuid | [optional] 
+**stm_tracker_uuid** | **String** | stm_tracker_uuid | [optional] 
 **stm_title** | **String** | stm_title | [optional] 
 **stm_status** | **String** | stm_status | [optional] 
 **expiration** | **DateTime** | expiration | [optional] 

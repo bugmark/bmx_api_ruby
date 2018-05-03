@@ -392,7 +392,7 @@ module BmxApiRuby
     # @param contract_uuid 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :issue issue UUID
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :title title
     # @option opts [String] :status status
     # @option opts [String] :labels labels
@@ -408,7 +408,7 @@ module BmxApiRuby
     # @param contract_uuid 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :issue issue UUID
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :title title
     # @option opts [String] :status status
     # @option opts [String] :labels labels
@@ -438,7 +438,7 @@ module BmxApiRuby
       # form parameters
       form_params = {}
       form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
-      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["tracker"] = opts[:'tracker'] if !opts[:'tracker'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
       form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
@@ -464,7 +464,7 @@ module BmxApiRuby
     # Create contract
     # @param [Hash] opts the optional parameters
     # @option opts [String] :issue issue UUID
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :title title
     # @option opts [String] :status status
     # @option opts [String] :labels labels
@@ -479,7 +479,7 @@ module BmxApiRuby
     # Create contract
     # @param [Hash] opts the optional parameters
     # @option opts [String] :issue issue UUID
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :title title
     # @option opts [String] :status status
     # @option opts [String] :labels labels
@@ -505,7 +505,7 @@ module BmxApiRuby
       # form parameters
       form_params = {}
       form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
-      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["tracker"] = opts[:'tracker'] if !opts[:'tracker'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["status"] = opts[:'status'] if !opts[:'status'].nil?
       form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?

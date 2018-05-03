@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **num_positions** | **Integer** | TBD | [optional] 
 **maturation** | **DateTime** | TBD | [optional] 
 **stm_issue_uuid** | **String** | TBD | [optional] 
-**stm_repo_uuid** | **String** | TBD | [optional] 
+**stm_tracker_uuid** | **String** | TBD | [optional] 
 **stm_title** | **String** | TBD | [optional] 
 **stm_status** | **String** | TBD | [optional] 
 **stm_labels** | **String** | TBD | [optional] 

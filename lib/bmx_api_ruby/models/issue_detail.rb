@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.0
 require 'date'
 
 module BmxApiRuby
-  # Sync
+  # List all issues details
   class IssueDetail
     # Issue Type
     attr_accessor :type
@@ -25,7 +25,7 @@ module BmxApiRuby
     attr_accessor :exid
 
     # TBD
-    attr_accessor :stm_repo_uuid
+    attr_accessor :stm_tracker_uuid
 
     # TBD
     attr_accessor :stm_issue_uuid
@@ -58,7 +58,7 @@ module BmxApiRuby
         :'type' => :'type',
         :'uuid' => :'uuid',
         :'exid' => :'exid',
-        :'stm_repo_uuid' => :'stm_repo_uuid',
+        :'stm_tracker_uuid' => :'stm_tracker_uuid',
         :'stm_issue_uuid' => :'stm_issue_uuid',
         :'stm_title' => :'stm_title',
         :'stm_status' => :'stm_status',
@@ -76,7 +76,7 @@ module BmxApiRuby
         :'type' => :'String',
         :'uuid' => :'String',
         :'exid' => :'String',
-        :'stm_repo_uuid' => :'String',
+        :'stm_tracker_uuid' => :'String',
         :'stm_issue_uuid' => :'String',
         :'stm_title' => :'String',
         :'stm_status' => :'String',
@@ -108,8 +108,8 @@ module BmxApiRuby
         self.exid = attributes[:'exid']
       end
 
-      if attributes.has_key?(:'stm_repo_uuid')
-        self.stm_repo_uuid = attributes[:'stm_repo_uuid']
+      if attributes.has_key?(:'stm_tracker_uuid')
+        self.stm_tracker_uuid = attributes[:'stm_tracker_uuid']
       end
 
       if attributes.has_key?(:'stm_issue_uuid')
@@ -167,7 +167,7 @@ module BmxApiRuby
           type == o.type &&
           uuid == o.uuid &&
           exid == o.exid &&
-          stm_repo_uuid == o.stm_repo_uuid &&
+          stm_tracker_uuid == o.stm_tracker_uuid &&
           stm_issue_uuid == o.stm_issue_uuid &&
           stm_title == o.stm_title &&
           stm_status == o.stm_status &&
@@ -187,7 +187,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid, exid, stm_repo_uuid, stm_issue_uuid, stm_title, stm_status, stm_labels, xfields, jfields, num_contracts, updated_at].hash
+      [type, uuid, exid, stm_tracker_uuid, stm_issue_uuid, stm_title, stm_status, stm_labels, xfields, jfields, num_contracts, updated_at].hash
     end
 
     # Builds the object from hash

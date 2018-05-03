@@ -79,7 +79,7 @@ describe 'OffersApi' do
   # @param volume number of positions
   # @param price between 0.0 and 1.0
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :repo repo UUID
+  # @option opts [String] :tracker tracker UUID
   # @option opts [String] :issue issue UUID
   # @option opts [String] :title issue title
   # @option opts [String] :labels issue labels
@@ -104,7 +104,7 @@ describe 'OffersApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :volume number of positions
   # @option opts [Float] :price between 0.0 and 1.0
-  # @option opts [String] :repo repo UUID
+  # @option opts [String] :tracker tracker UUID
   # @option opts [String] :issue issue UUID
   # @option opts [String] :title issue title
   # @option opts [String] :labels issue labels

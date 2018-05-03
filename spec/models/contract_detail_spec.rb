@@ -86,7 +86,7 @@ describe 'ContractDetail' do
     end
   end
 
-  describe 'test attribute "stm_repo_uuid"' do
+  describe 'test attribute "stm_tracker_uuid"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

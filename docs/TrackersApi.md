@@ -1,22 +1,22 @@
-# BmxApiRuby::ReposApi
+# BmxApiRuby::TrackersApi
 
 All URIs are relative to *https://localhost:3000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_repos**](ReposApi.md#get_repos) | **GET** /repos | List all repo ids
-[**get_repos_detail**](ReposApi.md#get_repos_detail) | **GET** /repos/detail | List all repo details
-[**get_repos_uuid**](ReposApi.md#get_repos_uuid) | **GET** /repos/{uuid} | Show detail for one repo
-[**post_repos**](ReposApi.md#post_repos) | **POST** /repos | Create a repo
-[**put_repos**](ReposApi.md#put_repos) | **PUT** /repos | Sync a repo
+[**get_trackers**](TrackersApi.md#get_trackers) | **GET** /trackers | List all tracker ids
+[**get_trackers_detail**](TrackersApi.md#get_trackers_detail) | **GET** /trackers/detail | List all tracker details
+[**get_trackers_uuid**](TrackersApi.md#get_trackers_uuid) | **GET** /trackers/{uuid} | Show detail for one tracker
+[**post_trackers**](TrackersApi.md#post_trackers) | **POST** /trackers | Create a tracker
+[**put_trackers**](TrackersApi.md#put_trackers) | **PUT** /trackers | Sync a tracker
 
 
-# **get_repos**
-> Array&lt;RepoIds&gt; get_repos
+# **get_trackers**
+> Array&lt;TrackerIds&gt; get_trackers
 
-List all repo ids
+List all tracker ids
 
-List all repo ids
+List all tracker ids
 
 ### Example
 ```ruby
@@ -29,14 +29,14 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::ReposApi.new
+api_instance = BmxApiRuby::TrackersApi.new
 
 begin
-  #List all repo ids
-  result = api_instance.get_repos
+  #List all tracker ids
+  result = api_instance.get_trackers
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ReposApi->get_repos: #{e}"
+  puts "Exception when calling TrackersApi->get_trackers: #{e}"
 end
 ```
 
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;RepoIds&gt;**](RepoIds.md)
+[**Array&lt;TrackerIds&gt;**](TrackerIds.md)
 
 ### Authorization
 
@@ -58,12 +58,12 @@ This endpoint does not need any parameter.
 
 
 
-# **get_repos_detail**
-> Array&lt;RepoDetail&gt; get_repos_detail
+# **get_trackers_detail**
+> Array&lt;TrackerDetail&gt; get_trackers_detail
 
-List all repo details
+List all tracker details
 
-List all repo details
+List all tracker details
 
 ### Example
 ```ruby
@@ -76,14 +76,14 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::ReposApi.new
+api_instance = BmxApiRuby::TrackersApi.new
 
 begin
-  #List all repo details
-  result = api_instance.get_repos_detail
+  #List all tracker details
+  result = api_instance.get_trackers_detail
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ReposApi->get_repos_detail: #{e}"
+  puts "Exception when calling TrackersApi->get_trackers_detail: #{e}"
 end
 ```
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;RepoDetail&gt;**](RepoDetail.md)
+[**Array&lt;TrackerDetail&gt;**](TrackerDetail.md)
 
 ### Authorization
 
@@ -105,12 +105,12 @@ This endpoint does not need any parameter.
 
 
 
-# **get_repos_uuid**
-> RepoDetail get_repos_uuid(uuid, opts)
+# **get_trackers_uuid**
+> TrackerDetail get_trackers_uuid(uuid, opts)
 
-Show detail for one repo
+Show detail for one tracker
 
-Show detail for one repo
+Show detail for one tracker
 
 ### Example
 ```ruby
@@ -123,20 +123,20 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::ReposApi.new
+api_instance = BmxApiRuby::TrackersApi.new
 
-uuid = "uuid_example" # String | repo UUID
+uuid = "uuid_example" # String | tracker UUID
 
 opts = { 
   issues: true # BOOLEAN | include issues
 }
 
 begin
-  #Show detail for one repo
-  result = api_instance.get_repos_uuid(uuid, opts)
+  #Show detail for one tracker
+  result = api_instance.get_trackers_uuid(uuid, opts)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ReposApi->get_repos_uuid: #{e}"
+  puts "Exception when calling TrackersApi->get_trackers_uuid: #{e}"
 end
 ```
 
@@ -144,12 +144,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **String**| repo UUID | 
+ **uuid** | **String**| tracker UUID | 
  **issues** | **BOOLEAN**| include issues | [optional] 
 
 ### Return type
 
-[**RepoDetail**](RepoDetail.md)
+[**TrackerDetail**](TrackerDetail.md)
 
 ### Authorization
 
@@ -162,12 +162,12 @@ Name | Type | Description  | Notes
 
 
 
-# **post_repos**
-> RepoIds post_repos(type, name, opts)
+# **post_trackers**
+> TrackerIds post_trackers(type, name, opts)
 
-Create a repo
+Create a tracker
 
-Create a GitHub repo. 
+Create a GitHub tracker. 
 
 ### Example
 ```ruby
@@ -180,22 +180,22 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::ReposApi.new
+api_instance = BmxApiRuby::TrackersApi.new
 
-type = "type_example" # String | repo type
+type = "type_example" # String | tracker type
 
-name = "name_example" # String | repo name
+name = "name_example" # String | tracker name
 
 opts = { 
   ghsync: true # BOOLEAN | GH sync on create
 }
 
 begin
-  #Create a repo
-  result = api_instance.post_repos(type, name, opts)
+  #Create a tracker
+  result = api_instance.post_trackers(type, name, opts)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ReposApi->post_repos: #{e}"
+  puts "Exception when calling TrackersApi->post_trackers: #{e}"
 end
 ```
 
@@ -203,13 +203,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| repo type | 
- **name** | **String**| repo name | 
+ **type** | **String**| tracker type | 
+ **name** | **String**| tracker name | 
  **ghsync** | **BOOLEAN**| GH sync on create | [optional] 
 
 ### Return type
 
-[**RepoIds**](RepoIds.md)
+[**TrackerIds**](TrackerIds.md)
 
 ### Authorization
 
@@ -222,12 +222,12 @@ Name | Type | Description  | Notes
 
 
 
-# **put_repos**
-> Status put_repos(uuid)
+# **put_trackers**
+> Status put_trackers(uuid)
 
-Sync a repo
+Sync a tracker
 
-Sync a GitHub repo. 
+Sync a GitHub tracker. 
 
 ### Example
 ```ruby
@@ -240,17 +240,17 @@ BmxApiRuby.configure do |config|
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = BmxApiRuby::ReposApi.new
+api_instance = BmxApiRuby::TrackersApi.new
 
-uuid = "uuid_example" # String | repo uuid
+uuid = "uuid_example" # String | tracker uuid
 
 
 begin
-  #Sync a repo
-  result = api_instance.put_repos(uuid)
+  #Sync a tracker
+  result = api_instance.put_trackers(uuid)
   p result
 rescue BmxApiRuby::ApiError => e
-  puts "Exception when calling ReposApi->put_repos: #{e}"
+  puts "Exception when calling TrackersApi->put_trackers: #{e}"
 end
 ```
 
@@ -258,7 +258,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **String**| repo uuid | 
+ **uuid** | **String**| tracker uuid | 
 
 ### Return type
 

@@ -283,7 +283,7 @@ module BmxApiRuby
     # Sync
     # @param exid issue exid
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :repo_uuid repo uuid
+    # @option opts [String] :tracker_uuid tracker uuid
     # @option opts [String] :issue_uuid issue uuid
     # @option opts [String] :title issue title
     # @option opts [String] :status issue status
@@ -300,7 +300,7 @@ module BmxApiRuby
     # Sync
     # @param exid issue exid
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :repo_uuid repo uuid
+    # @option opts [String] :tracker_uuid tracker uuid
     # @option opts [String] :issue_uuid issue uuid
     # @option opts [String] :title issue title
     # @option opts [String] :status issue status
@@ -334,7 +334,7 @@ module BmxApiRuby
 
       # form parameters
       form_params = {}
-      form_params["repo_uuid"] = opts[:'repo_uuid'] if !opts[:'repo_uuid'].nil?
+      form_params["tracker_uuid"] = opts[:'tracker_uuid'] if !opts[:'tracker_uuid'].nil?
       form_params["issue_uuid"] = opts[:'issue_uuid'] if !opts[:'issue_uuid'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["status"] = opts[:'status'] if !opts[:'status'].nil?

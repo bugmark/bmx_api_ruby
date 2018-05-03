@@ -43,7 +43,7 @@ module BmxApiRuby
     attr_accessor :stm_issue_uuid
 
     # TBD
-    attr_accessor :stm_repo_uuid
+    attr_accessor :stm_tracker_uuid
 
     # TBD
     attr_accessor :stm_title
@@ -73,7 +73,7 @@ module BmxApiRuby
         :'num_positions' => :'num_positions',
         :'maturation' => :'maturation',
         :'stm_issue_uuid' => :'stm_issue_uuid',
-        :'stm_repo_uuid' => :'stm_repo_uuid',
+        :'stm_tracker_uuid' => :'stm_tracker_uuid',
         :'stm_title' => :'stm_title',
         :'stm_status' => :'stm_status',
         :'stm_labels' => :'stm_labels',
@@ -94,7 +94,7 @@ module BmxApiRuby
         :'num_positions' => :'Integer',
         :'maturation' => :'DateTime',
         :'stm_issue_uuid' => :'String',
-        :'stm_repo_uuid' => :'String',
+        :'stm_tracker_uuid' => :'String',
         :'stm_title' => :'String',
         :'stm_status' => :'String',
         :'stm_labels' => :'String',
@@ -147,8 +147,8 @@ module BmxApiRuby
         self.stm_issue_uuid = attributes[:'stm_issue_uuid']
       end
 
-      if attributes.has_key?(:'stm_repo_uuid')
-        self.stm_repo_uuid = attributes[:'stm_repo_uuid']
+      if attributes.has_key?(:'stm_tracker_uuid')
+        self.stm_tracker_uuid = attributes[:'stm_tracker_uuid']
       end
 
       if attributes.has_key?(:'stm_title')
@@ -200,7 +200,7 @@ module BmxApiRuby
           num_positions == o.num_positions &&
           maturation == o.maturation &&
           stm_issue_uuid == o.stm_issue_uuid &&
-          stm_repo_uuid == o.stm_repo_uuid &&
+          stm_tracker_uuid == o.stm_tracker_uuid &&
           stm_title == o.stm_title &&
           stm_status == o.stm_status &&
           stm_labels == o.stm_labels &&
@@ -217,7 +217,7 @@ module BmxApiRuby
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, uuid, status, prototype_uuid, num_escrows, num_amendments, num_positions, maturation, stm_issue_uuid, stm_repo_uuid, stm_title, stm_status, stm_labels, total_value, awardee].hash
+      [type, uuid, status, prototype_uuid, num_escrows, num_amendments, num_positions, maturation, stm_issue_uuid, stm_tracker_uuid, stm_title, stm_status, stm_labels, total_value, awardee].hash
     end
 
     # Builds the object from hash

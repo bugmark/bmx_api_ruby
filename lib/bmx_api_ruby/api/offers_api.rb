@@ -191,7 +191,7 @@ module BmxApiRuby
     # @param volume number of positions
     # @param price between 0.0 and 1.0
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :issue issue UUID
     # @option opts [String] :title issue title
     # @option opts [String] :labels issue labels
@@ -214,7 +214,7 @@ module BmxApiRuby
     # @param volume number of positions
     # @param price between 0.0 and 1.0
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :issue issue UUID
     # @option opts [String] :title issue title
     # @option opts [String] :labels issue labels
@@ -267,7 +267,7 @@ module BmxApiRuby
       form_params["side"] = side
       form_params["volume"] = volume
       form_params["price"] = price
-      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["tracker"] = opts[:'tracker'] if !opts[:'tracker'].nil?
       form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?
@@ -301,7 +301,7 @@ module BmxApiRuby
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :volume number of positions
     # @option opts [Float] :price between 0.0 and 1.0
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :issue issue UUID
     # @option opts [String] :title issue title
     # @option opts [String] :labels issue labels
@@ -324,7 +324,7 @@ module BmxApiRuby
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :volume number of positions
     # @option opts [Float] :price between 0.0 and 1.0
-    # @option opts [String] :repo repo UUID
+    # @option opts [String] :tracker tracker UUID
     # @option opts [String] :issue issue UUID
     # @option opts [String] :title issue title
     # @option opts [String] :labels issue labels
@@ -364,7 +364,7 @@ module BmxApiRuby
       form_params = {}
       form_params["volume"] = opts[:'volume'] if !opts[:'volume'].nil?
       form_params["price"] = opts[:'price'] if !opts[:'price'].nil?
-      form_params["repo"] = opts[:'repo'] if !opts[:'repo'].nil?
+      form_params["tracker"] = opts[:'tracker'] if !opts[:'tracker'].nil?
       form_params["issue"] = opts[:'issue'] if !opts[:'issue'].nil?
       form_params["title"] = opts[:'title'] if !opts[:'title'].nil?
       form_params["labels"] = opts[:'labels'] if !opts[:'labels'].nil?

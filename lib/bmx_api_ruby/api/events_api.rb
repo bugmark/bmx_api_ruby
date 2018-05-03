@@ -131,10 +131,10 @@ module BmxApiRuby
     # @param id 
     # @param etherscan_url 
     # @param [Hash] opts the optional parameters
-    # @return [Event]
+    # @return [nil]
     def put_events(id, etherscan_url, opts = {})
-      data, _status_code, _headers = put_events_with_http_info(id, etherscan_url, opts)
-      return data
+      put_events_with_http_info(id, etherscan_url, opts)
+      return nil
     end
 
     # Update an event
@@ -142,7 +142,7 @@ module BmxApiRuby
     # @param id 
     # @param etherscan_url 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Event, Fixnum, Hash)>] Event data, response status code and response headers
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def put_events_with_http_info(id, etherscan_url, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: EventsApi.put_events ..."
@@ -181,8 +181,7 @@ module BmxApiRuby
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Event')
+        :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EventsApi#put_events\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
